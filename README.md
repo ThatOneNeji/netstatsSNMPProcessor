@@ -1,0 +1,2 @@
+# netstatsNodeSNMPProcessor
+SNMP results processor
