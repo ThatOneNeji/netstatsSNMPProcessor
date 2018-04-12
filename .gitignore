@@ -1,4 +1,8 @@
-/nbproject/private/
+/nbproject/
+/logs/
+/node_modules/
 /package-lock.json
-node_modules
-nbproject
+
+# Ignore coverage results
+/coverage/
+.coveralls.yml
