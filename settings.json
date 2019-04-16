@@ -1,10 +1,10 @@
 {
     "amqp": {
         "server": "192.168.72.250",
-        "user": "nodeSNMPProcessor",
-        "password": "nodeSNMPProcessor",
-        "queuenamedata": "snmp/rawdata",
-        "mysqlqueuename": "netflow/mysql/data"
+        "user": "netstatsNodeSNMPProcessor",
+        "password": "netstatsNodeSNMPProcessor",
+        "consumeQueueName": "netstats/rawdata/snmp",
+        "publishQueueName": "netstats/mysql/data"
     },
     "logger": {
         "appenders": {
@@ -12,10 +12,10 @@
                 "type": "console"
             },
             "task": {
-                "type": "dateFile",
-                "filename": "logs/nodeSNMPProcessor.log",
-                "pattern": "-dd.log",
-                "alwaysIncludePattern": true
+                "type": "file",
+                "filename": "logs/netstatsNodeSNMPProcessor.log",
+                "maxLogSize": 1048576,
+                "backups": 10
             }
         },
         "categories": {
@@ -25,7 +25,7 @@
             },
             "task": {
                 "appenders": ["task"],
-                "level": "info"
+                "level": "error"
             }
         }
     }
