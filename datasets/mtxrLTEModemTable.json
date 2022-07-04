@@ -1,0 +1,182 @@
+{
+    "name": "mtxrLTEModemTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.16.1",
+    "parent": "mtxrLTEModem",
+    "description": "LTE Modems",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.1": {
+                "name": "mtxrLTEModemInterfaceIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.2": {
+                "name": "mtxrLTEModemSignalRSSI",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "description": "dBm",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.3": {
+                "name": "mtxrLTEModemSignalRSRQ",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "dB",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.4": {
+                "name": "mtxrLTEModemSignalRSRP",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "dBm",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.5": {
+                "name": "mtxrLTEModemCellId",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "current cell ID",
+                "status": "Current",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.6": {
+                "name": "mtxrLTEModemAccessTechnology",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "as reported by +CREG",
+                "status": "Current",
+                "types": [{
+                        "-1": "unknown"
+                    },
+                    {
+                        "0": "gsmcompact"
+                    },
+                    {
+                        "1": "gsm"
+                    },
+                    {
+                        "2": "utran"
+                    },
+                    {
+                        "3": "egprs"
+                    },
+                    {
+                        "4": "hsdpa"
+                    },
+                    {
+                        "5": "hsupa"
+                    },
+                    {
+                        "6": "hsdpahsupa"
+                    },
+                    {
+                        "7": "eutran"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.7": {
+                "name": "mtxrLTEModemSignalSINR",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "dB",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.8": {
+                "name": "mtxrLTEModemEnbId",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.9": {
+                "name": "mtxrLTEModemSectorId",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.10": {
+                "name": "mtxrLTEModemLac",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.11": {
+                "name": "mtxrLTEModemIMEI",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "11",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.12": {
+                "name": "mtxrLTEModemIMSI",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.13": {
+                "name": "mtxrLTEModemUICC",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.14": {
+                "name": "mtxrLTEModemRAT",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "14",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

@@ -1,0 +1,211 @@
+{
+    "name": "mtxrHotspotActiveUsersTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.5.1",
+    "parent": "mtxrHotspot",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.1": {
+                "name": "mtxrHotspotActiveUserIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.2": {
+                "name": "mtxrHotspotActiveUserServerID",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.3": {
+                "name": "mtxrHotspotActiveUserName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.4": {
+                "name": "mtxrHotspotActiveUserDomain",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.5": {
+                "name": "mtxrHotspotActiveUserIP",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.6": {
+                "name": "mtxrHotspotActiveUserMAC",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.7": {
+                "name": "mtxrHotspotActiveUserConnectTime",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.8": {
+                "name": "mtxrHotspotActiveUserValidTillTime",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.9": {
+                "name": "mtxrHotspotActiveUserIdleStartTime",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.10": {
+                "name": "mtxrHotspotActiveUserIdleTimeout",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.11": {
+                "name": "mtxrHotspotActiveUserPingTimeout",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "11",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.12": {
+                "name": "mtxrHotspotActiveUserBytesIn",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.13": {
+                "name": "mtxrHotspotActiveUserBytesOut",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.14": {
+                "name": "mtxrHotspotActiveUserPacketsIn",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "14",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.15": {
+                "name": "mtxrHotspotActiveUserPacketsOut",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "15",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.16": {
+                "name": "mtxrHotspotActiveUserLimitBytesIn",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "16",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.17": {
+                "name": "mtxrHotspotActiveUserLimitBytesOut",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "17",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.18": {
+                "name": "mtxrHotspotActiveUserAdvertStatus",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "18",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.19": {
+                "name": "mtxrHotspotActiveUserRadius",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "19",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.5.1.1.20": {
+                "name": "mtxrHotspotActiveUserBlockedByAdvert",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "20",
+                "description": "",
+                "status": "Current"
+            }
+        }
+    ]
+}

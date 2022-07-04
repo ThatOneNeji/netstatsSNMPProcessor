@@ -1,0 +1,146 @@
+{
+    "name": "ipv6IfTable",
+    "type": "table",
+    "mib": "IPV6-MIB",
+    "oid": ".1.3.6.1.2.1.55.1.5",
+    "parent": "ipv6MIBObjects",
+    "description": "The IPv6 Interfaces table contains information on the entity's internetwork-layer interfaces. An IPv6 interface constitutes a logical network layer attachment to the layer immediately below IPv6 including internet layer 'tunnels', such as tunnels over IPv4 or IPv6 itself.",
+    "objects": [{
+            ".1.3.6.1.2.1.55.1.5.1.1": {
+                "name": "ipv6IfIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique non-zero value identifying the particular IPv6 interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.2": {
+                "name": "ipv6IfDescr",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "A textual string containing information about the interface. This string may be set by the network management system.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.3": {
+                "name": "ipv6IfLowerLayer",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "3",
+                "description": "This object identifies the protocol layer over which this network interface operates. If this network interface operates over the data-link layer, then the value of this object refers to an instance of ifIndex [6]. If this network interface operates over an IPv4 interface, the value of this object refers to an instance of ipAdEntAddr [3]. If this network interface operates over another IPv6 interface, the value of this object refers to an instance of ipv6IfIndex. If this network interface is not currently operating over an active protocol layer, then the value of this object should be set to the OBJECT ID { 0 0 }.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.4": {
+                "name": "ipv6IfEffectiveMtu",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "4",
+                "description": "The size of the largest IPv6 packet which can be sent/received on the interface, specified in octets.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.5": {
+                "name": "ipv6IfReasmMaxSize",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "5",
+                "description": "The size of the largest IPv6 datagram which this entity can re-assemble from incoming IPv6 fragmented datagrams received on this interface.",
+                "status": "Current",
+                "range": "0..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.6": {
+                "name": "ipv6IfIdentifier",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "The Interface Identifier for this interface that is (at least) unique on the link this interface is attached to. The Interface Identifier is combined with an address prefix to form an interface address. By default, the Interface Identifier is autoconfigured according to the rules of the link type this interface is attached to.",
+                "status": "Current",
+                "range": "0..8"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.7": {
+                "name": "ipv6IfIdentifierLength",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "7",
+                "description": "The length of the Interface Identifier in bits.",
+                "status": "Current",
+                "range": "0..64"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.8": {
+                "name": "ipv6IfPhysicalAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "The interface's physical address. For example, for an IPv6 interface attached to an 802.x link, this object normally contains a MAC address. Note that in some cases this address may differ from the address of the interface's protocol sub-layer. The interface's media-specific MIB must define the bit and byte ordering and the format of the value of this object. For interfaces which do not have such an address (e.g., a serial line), this object should contain an octet string of zero length.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.9": {
+                "name": "ipv6IfAdminStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "9",
+                "description": "The desired state of the interface. When a managed system initializes, all IPv6 interfaces start with ipv6IfAdminStatus in the down(2) state. As a result of either explicit management action or per configuration information retained by the managed system, ipv6IfAdminStatus is then changed to the up(1) state (or remains in the down(2) state).",
+                "status": "Current",
+                "types": [{
+                        "1": "up"
+                    },
+                    {
+                        "2": "down"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.10": {
+                "name": "ipv6IfOperStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The current operational state of the interface. The noIfIdentifier(3) state indicates that no valid Interface Identifier is assigned to the interface. This state usually indicates that the link-local interface address failed Duplicate Address Detection. If ipv6IfAdminStatus is down(2) then ipv6IfOperStatus should be down(2). If ipv6IfAdminStatus is changed to up(1) then ipv6IfOperStatus should change to up(1) if the interface is ready to transmit and receive network traffic; it should remain in the down(2) or noIfIdentifier(3) state if and only if there is a fault that prevents it from going to the up(1) state; it should remain in the notPresent(5) state if the interface has missing (typically, lower layer) components.",
+                "status": "Current",
+                "types": [{
+                        "1": "up"
+                    },
+                    {
+                        "2": "down"
+                    },
+                    {
+                        "3": "noIfIdentifier"
+                    },
+                    {
+                        "4": "unknown"
+                    },
+                    {
+                        "5": "notPresent"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.5.1.11": {
+                "name": "ipv6IfLastChange",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "11",
+                "description": "The value of sysUpTime at the time the interface entered its current operational state. If the current state was entered prior to the last re-initialization of the local network management subsystem, then this object contains a zero value.",
+                "status": "Current"
+            }
+        }
+    ]
+}

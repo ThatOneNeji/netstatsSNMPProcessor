@@ -1,0 +1,83 @@
+{
+    "name": "mtxrGps",
+    "type": "scalar",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.12",
+    "parent": "mtXRouterOs",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.12.1": {
+                "name": "mtxrDate",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "1",
+                "description": "UNIX time",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.12.2": {
+                "name": "mtxrLongtitude",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "longtitude",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.12.3": {
+                "name": "mtxrLatitude",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "latitude",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.12.4": {
+                "name": "mtxrAltitude",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "altitude",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.12.5": {
+                "name": "mtxrSpeed",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "speed",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.12.6": {
+                "name": "mtxrSattelites",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "visible sattelite count",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.12.7": {
+                "name": "mtxrValid",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "is the data valid",
+                "status": "Current"
+            }
+        }
+    ]
+}

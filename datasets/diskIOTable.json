@@ -1,0 +1,133 @@
+{
+    "name": "diskIOTable",
+    "type": "table",
+    "mib": "UCD-DISKIO-MIB",
+    "oid": ".1.3.6.1.4.1.2021.13.15.1",
+    "parent": "ucdDiskIOMIB",
+    "description": "Table of IO devices and how much data they have read/written.",
+    "objects": [{
+            ".1.3.6.1.4.1.2021.13.15.1.1.1": {
+                "name": "diskIOIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "Reference index for each observed device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.2": {
+                "name": "diskIODevice",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The name of the device we are counting/checking.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.3": {
+                "name": "diskIONRead",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of bytes read from this device since boot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.4": {
+                "name": "diskIONWritten",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The number of bytes written to this device since boot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.5": {
+                "name": "diskIOReads",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The number of read accesses from this device since boot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.6": {
+                "name": "diskIOWrites",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "The number of write accesses to this device since boot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.9": {
+                "name": "diskIOLA1",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "The 1 minute average load of disk (%)",
+                "status": "Current",
+                "range": "0..100"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.10": {
+                "name": "diskIOLA5",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "The 5 minute average load of disk (%)",
+                "status": "Current",
+                "range": "0..100"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.11": {
+                "name": "diskIOLA15",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "11",
+                "description": "The 15 minute average load of disk (%)",
+                "status": "Current",
+                "range": "0..100"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.12": {
+                "name": "diskIONReadX",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "12",
+                "description": "The number of bytes read from this device since boot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.13": {
+                "name": "diskIONWrittenX",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "13",
+                "description": "The number of bytes written to this device since boot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.15.1.1.14": {
+                "name": "diskIOBusyTime",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "14",
+                "description": "The number of usecs the drive has been busy since boot.",
+                "status": "Current"
+            }
+        }
+    ]
+}

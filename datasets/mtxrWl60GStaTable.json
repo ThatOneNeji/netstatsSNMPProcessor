@@ -1,0 +1,106 @@
+{
+    "name": "mtxrWl60GStaTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.1.9",
+    "parent": "mtxrWireless",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.1": {
+                "name": "mtxrWl60GStaIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.2": {
+                "name": "mtxrWl60GStaConnected",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.3": {
+                "name": "mtxrWl60GStaRemote",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.4": {
+                "name": "mtxrWl60GStaMcs",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.5": {
+                "name": "mtxrWl60GStaSignal",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.6": {
+                "name": "mtxrWl60GStaTxSector",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.8": {
+                "name": "mtxrWl60GStaPhyRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "8",
+                "description": "Mbits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.9": {
+                "name": "mtxrWl60GStaRssi",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.9.1.10": {
+                "name": "mtxrWl60GStaDistance",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "meters",
+                "status": "Current"
+            }
+        }
+    ]
+}

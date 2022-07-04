@@ -1,0 +1,39 @@
+{
+    "name": "vmwCpuTable",
+    "type": "table",
+    "mib": "VMWARE-OBSOLETE-MIB",
+    "oid": ".1.3.6.1.4.1.6876.3.1.2",
+    "parent": "vmwCPU",
+    "description": "CPU Usage table by virtual machine.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.3.1.2.1.1": {
+                "name": "vmwCpuVMID",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "ID allocated to running vm by the vmkernel.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.1.2.1.2": {
+                "name": "vmwCpuShares",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "2",
+                "description": "Share of CPU allocated to vm by vmkernel.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.1.2.1.3": {
+                "name": "vmwCpuUtil",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "3",
+                "description": "Time the virtual machine has been running on the CPU (seconds).",
+                "status": "Current"
+            }
+        }
+    ]
+}

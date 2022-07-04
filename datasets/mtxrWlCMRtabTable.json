@@ -1,0 +1,141 @@
+{
+    "name": "mtxrWlCMRtabTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.1.5",
+    "parent": "mtxrWireless",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.1": {
+                "name": "mtxrWlCMRtabAddr",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.2": {
+                "name": "mtxrWlCMRtabIface",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.3": {
+                "name": "mtxrWlCMRtabUptime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "3",
+                "description": "uptime",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.4": {
+                "name": "mtxrWlCMRtabTxBytes",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.5": {
+                "name": "mtxrWlCMRtabRxBytes",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.6": {
+                "name": "mtxrWlCMRtabTxPackets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.7": {
+                "name": "mtxrWlCMRtabRxPackets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "7",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.8": {
+                "name": "mtxrWlCMRtabTxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "8",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.9": {
+                "name": "mtxrWlCMRtabRxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "9",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.10": {
+                "name": "mtxrWlCMRtabTxStrength",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.11": {
+                "name": "mtxrWlCMRtabRxStrength",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "11",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.12": {
+                "name": "mtxrWlCMRtabSsid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.13": {
+                "name": "mtxrWlCMRtabEapIdent",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

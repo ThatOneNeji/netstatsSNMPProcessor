@@ -1,0 +1,30 @@
+{
+    "name": "mtxrScriptRunTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.18.1",
+    "parent": "mtxrScriptRun",
+    "description": "invisible to getnext, accesible only with get request and write premission",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.18.1.1.1": {
+                "name": "mtxrScriptRunIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.18.1.1.2": {
+                "name": "mtxrScriptRunOutput",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "this oid on get request will run script and return it's output",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

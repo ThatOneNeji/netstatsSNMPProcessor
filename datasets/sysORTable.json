@@ -1,0 +1,50 @@
+{
+    "name": "sysORTable",
+    "type": "table",
+    "mib": "SNMPv2-MIB",
+    "oid": ".1.3.6.1.2.1.1.9",
+    "parent": "system",
+    "description": "The (conceptual) table listing the capabilities of the local SNMP application acting as a command responder with respect to various MIB modules. SNMP entities having dynamically-configurable support of MIB modules will have a dynamically-varying number of conceptual rows.",
+    "objects": [{
+            ".1.3.6.1.2.1.1.9.1.1": {
+                "name": "sysORIndex",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "1",
+                "description": "The auxiliary variable used for identifying instances of the columnar objects in the sysORTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.1.9.1.2": {
+                "name": "sysORID",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "2",
+                "description": "An authoritative identification of a capabilities statement with respect to various MIB modules supported by the local SNMP application acting as a command responder.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.1.9.1.3": {
+                "name": "sysORDescr",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "A textual description of the capabilities identified by the corresponding instance of sysORID.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.1.9.1.4": {
+                "name": "sysORUpTime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "4",
+                "description": "The value of sysUpTime at the time this conceptual row was last instantiated.",
+                "status": "Current"
+            }
+        }
+    ]
+}

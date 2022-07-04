@@ -1,0 +1,60 @@
+{
+    "name": "ipAddrTable",
+    "type": "table",
+    "mib": "RFC1213-MIB",
+    "oid": ".1.3.6.1.2.1.4.20",
+    "parent": "ip",
+    "description": "The table of addressing information relevant to this entity's IP addresses.",
+    "objects": [{
+            ".1.3.6.1.2.1.4.20.1.1": {
+                "name": "ipAdEntAddr",
+                "datatype": "IPADDR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IP address to which this entry's addressing information pertains.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.20.1.2": {
+                "name": "ipAdEntIfIndex",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The index value which uniquely identifies the interface to which this entry is applicable. The interface identified by a particular value of this index is the same interface as identified by the same value of ifIndex.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.20.1.3": {
+                "name": "ipAdEntNetMask",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The subnet mask associated with the IP address of this entry. The value of the mask is an IP address with all the network bits set to 1 and all the hosts bits set to 0.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.20.1.4": {
+                "name": "ipAdEntBcastAddr",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The value of the least-significant bit in the IP broadcast address used for sending datagrams on the (logical) interface associated with the IP address of this entry. For example, when the Internet standard all-ones broadcast address is used, the value will be 1. This value applies to both the subnet and network broadcasts addresses used by the entity on this (logical) interface.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.20.1.5": {
+                "name": "ipAdEntReasmMaxSize",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The size of the largest IP datagram which this entity can re-assemble from incoming IP fragmented datagrams received on this interface.",
+                "status": "Mandatory",
+                "range": "0..65535"
+            }
+        }
+    ]
+}

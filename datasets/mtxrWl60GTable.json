@@ -1,0 +1,151 @@
+{
+    "name": "mtxrWl60GTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.1.8",
+    "parent": "mtxrWireless",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.1": {
+                "name": "mtxrWl60GIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.2": {
+                "name": "mtxrWl60GMode",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "apBridge"
+                    },
+                    {
+                        "1": "stationBridge"
+                    },
+                    {
+                        "2": "sniff"
+                    },
+                    {
+                        "3": "bridge"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.3": {
+                "name": "mtxrWl60GSsid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.4": {
+                "name": "mtxrWl60GConnected",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.5": {
+                "name": "mtxrWl60GRemote",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.6": {
+                "name": "mtxrWl60GFreq",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "Mhz",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.7": {
+                "name": "mtxrWl60GMcs",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.8": {
+                "name": "mtxrWl60GSignal",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.9": {
+                "name": "mtxrWl60GTxSector",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.11": {
+                "name": "mtxrWl60GTxSectorInfo",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "11",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.12": {
+                "name": "mtxrWl60GRssi",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.8.1.13": {
+                "name": "mtxrWl60GPhyRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current"
+            }
+        }
+    ]
+}

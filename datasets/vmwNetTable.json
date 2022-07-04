@@ -1,0 +1,141 @@
+{
+    "name": "vmwNetTable",
+    "type": "table",
+    "mib": "VMWARE-OBSOLETE-MIB",
+    "oid": ".1.3.6.1.4.1.6876.3.4",
+    "parent": "vmwResources",
+    "description": "Network adapter statistics.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.3.4.1.1": {
+                "name": "vmwNetIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "Index for net table.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.2": {
+                "name": "vmwNetName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "String describing the network adapter. Format: vmnic*",
+                "status": "Obsolete",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.3": {
+                "name": "vmwNetVMID",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "ID assigned to running vm by the vmkernel.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.4": {
+                "name": "vmwNetIfAddr",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "MAC address of vm's virtual NIC.",
+                "status": "Obsolete",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.5": {
+                "name": "vmwNetShares",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "5",
+                "description": "Share of net bandwidth allocated to this vm.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.6": {
+                "name": "vmwNetPktsTx",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "Number of pkts transmitted on this NIC since network module was loaded. Deprecated in favour of pktsHCTx.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.7": {
+                "name": "vmwNetKbTx",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "7",
+                "description": "Kilobytes sent from this NIC since network module was loaded. Deprecated in favour of kbHCTx.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.8": {
+                "name": "vmwNetPktsRx",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "8",
+                "description": "Number of pkts received on this NIC since network module was loaded. Deprecated in favour of pktsHCRx.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.9": {
+                "name": "vmwNetKbRx",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "9",
+                "description": "Kilobytes received on this NIC since network module was loaded. Deprecated in favour of kbHCRx.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.10": {
+                "name": "vmwNetHCPktsTx",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "10",
+                "description": "Number of pkts transmitted on this NIC since network module was loaded.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.11": {
+                "name": "vmwNetHCKbTx",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "11",
+                "description": "Kilobytes sent from this NIC since network module was loaded.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.12": {
+                "name": "vmwNetHCPktsRx",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "12",
+                "description": "Number of pkts received on this NIC since network module was loaded.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.4.1.13": {
+                "name": "vmwNetHCKbRx",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "13",
+                "description": "Kilobytes received on this NIC since network module was loaded.",
+                "status": "Obsolete"
+            }
+        }
+    ]
+}

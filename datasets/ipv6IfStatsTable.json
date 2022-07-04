@@ -1,0 +1,219 @@
+{
+    "name": "ipv6IfStatsTable",
+    "type": "table",
+    "mib": "IPV6-MIB",
+    "oid": ".1.3.6.1.2.1.55.1.6",
+    "parent": "ipv6MIBObjects",
+    "description": "IPv6 interface traffic statistics.",
+    "objects": [{
+            ".1.3.6.1.2.1.55.1.5.1.1": {
+                "name": "ipv6IfIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique non-zero value identifying the particular IPv6 interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.1": {
+                "name": "ipv6IfStatsInReceives",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "1",
+                "description": "The total number of input datagrams received by the interface, including those received in error.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.2": {
+                "name": "ipv6IfStatsInHdrErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The number of input datagrams discarded due to errors in their IPv6 headers, including version number mismatch, other format errors, hop count exceeded, errors discovered in processing their IPv6 options, etc.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.3": {
+                "name": "ipv6IfStatsInTooBigErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of input datagrams that could not be forwarded because their size exceeded the link MTU of outgoing interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.4": {
+                "name": "ipv6IfStatsInNoRoutes",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The number of input datagrams discarded because no route could be found to transmit them to their destination.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.5": {
+                "name": "ipv6IfStatsInAddrErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The number of input datagrams discarded because the IPv6 address in their IPv6 header's destination field was not a valid address to be received at this entity. This count includes invalid addresses (e.g., ::0) and unsupported addresses (e.g., addresses with unallocated prefixes). For entities which are not IPv6 routers and therefore do not forward datagrams, this counter includes datagrams discarded because the destination address was not a local address.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.6": {
+                "name": "ipv6IfStatsInUnknownProtos",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "The number of locally-addressed datagrams received successfully but discarded because of an unknown or unsupported protocol. This counter is incremented at the interface to which these datagrams were addressed which might not be necessarily the input interface for some of the datagrams.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.7": {
+                "name": "ipv6IfStatsInTruncatedPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "7",
+                "description": "The number of input datagrams discarded because datagram frame didn't carry enough data.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.8": {
+                "name": "ipv6IfStatsInDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "8",
+                "description": "The number of input IPv6 datagrams for which no problems were encountered to prevent their continued processing, but which were discarded (e.g., for lack of buffer space). Note that this counter does not include any datagrams discarded while awaiting re-assembly.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.9": {
+                "name": "ipv6IfStatsInDelivers",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "9",
+                "description": "The total number of datagrams successfully delivered to IPv6 user-protocols (including ICMP). This counter is incremented at the interface to which these datagrams were addressed which might not be necessarily the input interface for some of the datagrams.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.10": {
+                "name": "ipv6IfStatsOutForwDatagrams",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The number of output datagrams which this entity received and forwarded to their final destinations. In entities which do not act as IPv6 routers, this counter will include only those packets which were Source-Routed via this entity, and the Source-Route processing was successful. Note that for a successfully forwarded datagram the counter of the outgoing interface is incremented.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.11": {
+                "name": "ipv6IfStatsOutRequests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "11",
+                "description": "The total number of IPv6 datagrams which local IPv6 user-protocols (including ICMP) supplied to IPv6 in requests for transmission. Note that this counter does not include any datagrams counted in ipv6IfStatsOutForwDatagrams.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.12": {
+                "name": "ipv6IfStatsOutDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "12",
+                "description": "The number of output IPv6 datagrams for which no problem was encountered to prevent their transmission to their destination, but which were discarded (e.g., for lack of buffer space). Note that this counter would include datagrams counted in ipv6IfStatsOutForwDatagrams if any such packets met this (discretionary) discard criterion.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.13": {
+                "name": "ipv6IfStatsOutFragOKs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "13",
+                "description": "The number of IPv6 datagrams that have been successfully fragmented at this output interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.14": {
+                "name": "ipv6IfStatsOutFragFails",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "14",
+                "description": "The number of IPv6 datagrams that have been discarded because they needed to be fragmented at this output interface but could not be.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.15": {
+                "name": "ipv6IfStatsOutFragCreates",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "15",
+                "description": "The number of output datagram fragments that have been generated as a result of fragmentation at this output interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.16": {
+                "name": "ipv6IfStatsReasmReqds",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "16",
+                "description": "The number of IPv6 fragments received which needed to be reassembled at this interface. Note that this counter is incremented at the interface to which these fragments were addressed which might not be necessarily the input interface for some of the fragments.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.17": {
+                "name": "ipv6IfStatsReasmOKs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "17",
+                "description": "The number of IPv6 datagrams successfully reassembled. Note that this counter is incremented at the interface to which these datagrams were addressed which might not be necessarily the input interface for some of the fragments.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.18": {
+                "name": "ipv6IfStatsReasmFails",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "18",
+                "description": "The number of failures detected by the IPv6 re- assembly algorithm (for whatever reason: timed out, errors, etc.). Note that this is not necessarily a count of discarded IPv6 fragments since some algorithms (notably the algorithm in RFC 815) can lose track of the number of fragments by combining them as they are received. This counter is incremented at the interface to which these fragments were addressed which might not be necessarily the input interface for some of the fragments.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.19": {
+                "name": "ipv6IfStatsInMcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "19",
+                "description": "The number of multicast packets received by the interface",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.6.1.20": {
+                "name": "ipv6IfStatsOutMcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "20",
+                "description": "The number of multicast packets transmitted by the interface",
+                "status": "Current"
+            }
+        }
+    ]
+}

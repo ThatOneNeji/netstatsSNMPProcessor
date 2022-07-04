@@ -1,0 +1,232 @@
+{
+    "name": "ifXTable",
+    "type": "table",
+    "mib": "IF-MIB",
+    "oid": ".1.3.6.1.2.1.31.1.1",
+    "parent": "ifMIBObjects",
+    "description": "A list of interface entries. The number of entries is given by the value of ifNumber. This table contains additional objects for the interface table.",
+    "objects": [{
+            ".1.3.6.1.2.1.2.2.1.1": {
+                "name": "ifIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique value, greater than zero, for each interface. It is recommended that values are assigned contiguously starting from 1. The value for each interface sub-layer must remain constant at least from one re-initialization of the entity's network management system to the next re- initialization.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.1": {
+                "name": "ifName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "1",
+                "description": "The textual name of the interface. The value of this object should be the name of the interface as assigned by the local device and should be suitable for use in commands entered at the device's `console'. This might be a text name, such as `le0' or a simple port number, such as `1', depending on the interface naming syntax of the device. If several entries in the ifTable together represent a single interface as named by the device, then each will have the same value of ifName. Note that for an agent which responds to SNMP queries concerning an interface on some other (proxied) device, then the value of ifName for such an interface is the proxied device's local name for it. If there is no local name, or this object is otherwise not applicable, then this object contains a zero-length string.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.2": {
+                "name": "ifInMulticastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a multicast address at this sub-layer. For a MAC layer protocol, this includes both Group and Functional addresses. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.3": {
+                "name": "ifInBroadcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a broadcast address at this sub-layer. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.4": {
+                "name": "ifOutMulticastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast address at this sub-layer, including those that were discarded or not sent. For a MAC layer protocol, this includes both Group and Functional addresses. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.5": {
+                "name": "ifOutBroadcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.6": {
+                "name": "ifHCInOctets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "6",
+                "description": "The total number of octets received on the interface, including framing characters. This object is a 64-bit version of ifInOctets. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.7": {
+                "name": "ifHCInUcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "7",
+                "description": "The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were not addressed to a multicast or broadcast address at this sub-layer. This object is a 64-bit version of ifInUcastPkts. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.8": {
+                "name": "ifHCInMulticastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "8",
+                "description": "The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a multicast address at this sub-layer. For a MAC layer protocol, this includes both Group and Functional addresses. This object is a 64-bit version of ifInMulticastPkts. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.9": {
+                "name": "ifHCInBroadcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "9",
+                "description": "The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a broadcast address at this sub-layer. This object is a 64-bit version of ifInBroadcastPkts. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.10": {
+                "name": "ifHCOutOctets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "10",
+                "description": "The total number of octets transmitted out of the interface, including framing characters. This object is a 64-bit version of ifOutOctets. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.11": {
+                "name": "ifHCOutUcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "11",
+                "description": "The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent. This object is a 64-bit version of ifOutUcastPkts. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.12": {
+                "name": "ifHCOutMulticastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "12",
+                "description": "The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast address at this sub-layer, including those that were discarded or not sent. For a MAC layer protocol, this includes both Group and Functional addresses. This object is a 64-bit version of ifOutMulticastPkts. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.13": {
+                "name": "ifHCOutBroadcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "13",
+                "description": "The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a broadcast address at this sub-layer, including those that were discarded or not sent. This object is a 64-bit version of ifOutBroadcastPkts. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.14": {
+                "name": "ifLinkUpDownTrapEnable",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "14",
+                "description": "Indicates whether linkUp/linkDown traps should be generated for this interface. By default, this object should have the value enabled(1) for interfaces which do not operate on 'top' of any other interface (as defined in the ifStackTable), and disabled(2) otherwise.",
+                "status": "Current",
+                "types": [{
+                        "1": "enabled"
+                    },
+                    {
+                        "2": "disabled"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.15": {
+                "name": "ifHighSpeed",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "15",
+                "description": "An estimate of the interface's current bandwidth in units of 1,000,000 bits per second. If this object reports a value of `n' then the speed of the interface is somewhere in the range of `n-500,000' to `n+499,999'. For interfaces which do not vary in bandwidth or for those where no accurate estimation can be made, this object should contain the nominal bandwidth. For a sub-layer which has no concept of bandwidth, this object should be zero.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.16": {
+                "name": "ifPromiscuousMode",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "16",
+                "description": "This object has a value of false(2) if this interface only accepts packets/frames that are addressed to this station. This object has a value of true(1) when the station accepts all packets/frames transmitted on the media. The value true(1) is only legal on certain types of media. If legal, setting this object to a value of true(1) may require the interface to be reset before becoming effective. The value of ifPromiscuousMode does not affect the reception of broadcast and multicast packets/frames by the interface.",
+                "status": "Current",
+                "types": [{
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.17": {
+                "name": "ifConnectorPresent",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "17",
+                "description": "This object has the value 'true(1)' if the interface sublayer has a physical connector and the value 'false(2)' otherwise.",
+                "status": "Current",
+                "types": [{
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.18": {
+                "name": "ifAlias",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "18",
+                "description": "This object is an 'alias' name for the interface as specified by a network manager, and provides a non-volatile 'handle' for the interface. On the first instantiation of an interface, the value of ifAlias associated with that interface is the zero-length string. As and when a value is written into an instance of ifAlias through a network management set operation, then the agent must retain the supplied value in the ifAlias instance associated with the same interface for as long as that interface remains instantiated, including across all re- initializations/reboots of the network management system, including those which result in a change of the interface's ifIndex value. An example of the value which a network manager might store in this object for a WAN interface is the (Telco's) circuit number/identifier of the interface. Some agents may support write-access only for interfaces having particular values of ifType. An agent which supports write access to this object is required to keep the value in non-volatile storage, but it may limit the length of new values depending on how much storage is already occupied by the current values for other interfaces.",
+                "status": "Current",
+                "range": "0..64"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.31.1.1.1.19": {
+                "name": "ifCounterDiscontinuityTime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "19",
+                "description": "The value of sysUpTime on the most recent occasion at which any one or more of this interface's counters suffered a discontinuity. The relevant counters are the specific instances associated with this interface of any Counter32 or Counter64 object contained in the ifTable or ifXTable. If no such discontinuities have occurred since the last re- initialization of the local management subsystem, then this object contains a zero value.",
+                "status": "Current"
+            }
+        }
+    ]
+}

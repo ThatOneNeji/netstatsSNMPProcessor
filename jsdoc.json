@@ -1,0 +1,33 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": "./parsers",
+        "includePattern": ".js$",
+        "excludePatterns": "(^|\\/|\\\\)"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "cleverLinks": false,
+        "systemName": "Netstats SNMP File Processor",
+        "monospaceLinks": false,
+        "dateFormat": "YYYY/MM/DD",
+        "navType": "inline",
+        "theme": "cyborg",
+        "linenums": true,
+        "footer": "",
+        "inverseNav": false,
+        "highlightTutorialCode": true,
+        "outputSourceFiles": true,
+        "hideGenerator": true
+    },
+    "opts": {
+        "template": "./node_modules/ink-docstrap/template",
+        "encoding": "utf8",
+        "destination": "./documentation/",
+        "recurse": true
+    }
+}

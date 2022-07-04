@@ -1,0 +1,90 @@
+{
+    "name": "vmwHBATable",
+    "type": "table",
+    "mib": "VMWARE-OBSOLETE-MIB",
+    "oid": ".1.3.6.1.4.1.6876.3.3",
+    "parent": "vmwResources",
+    "description": "Disk adapter and target information table.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.3.3.1.1": {
+                "name": "vmwHbaIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "Index for HBA table @todo fix this!.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.3.1.2": {
+                "name": "vmwHbaName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "String describing the disk. Format: <devname#>:<tgt>:<lun> ",
+                "status": "Obsolete",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.3.1.3": {
+                "name": "vmwHbaVMID",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "ID assigned to running vm by the vmkernel.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.3.1.4": {
+                "name": "vmwDiskShares",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "4",
+                "description": "Share of disk bandwidth allocated to this vm.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.3.1.5": {
+                "name": "vmwNumReads",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "Number of reads to this disk since disk module was loaded.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.3.1.6": {
+                "name": "vmwKbRead",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "Kilobytes read from this disk since disk module was loaded.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.3.1.7": {
+                "name": "vmwNumWrites",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "7",
+                "description": "Number of writes to this disk since disk module was loaded.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.3.1.8": {
+                "name": "vmwKbWritten",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "8",
+                "description": "Kilobytes written to this disk since disk module was loaded.",
+                "status": "Obsolete"
+            }
+        }
+    ]
+}

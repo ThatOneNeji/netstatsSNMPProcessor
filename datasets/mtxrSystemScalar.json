@@ -1,0 +1,95 @@
+{
+    "name": "mtxrSystem",
+    "type": "scalar",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.7",
+    "parent": "mtXRouterOs",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.7.1": {
+                "name": "mtxrSystemReboot",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "1",
+                "description": "set non zero to reboot",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.7.2": {
+                "name": "mtxrUSBPowerReset",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "description": "switches off usb power for specified amout of seconds",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.7.3": {
+                "name": "mtxrSerialNumber",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "RouterBOARD serial number",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.7.4": {
+                "name": "mtxrFirmwareVersion",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Current firmware version",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.7.5": {
+                "name": "mtxrNote",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "note",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.7.6": {
+                "name": "mtxrBuildTime",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "build time",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.7.7": {
+                "name": "mtxrFirmwareUpgradeVersion",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "7",
+                "description": "Upgrade firmware version",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.7.8": {
+                "name": "mtxrBoardName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "board name",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

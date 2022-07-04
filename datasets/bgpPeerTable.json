@@ -1,0 +1,285 @@
+{
+    "name": "bgpPeerTable",
+    "type": "table",
+    "mib": "BGP4-MIB",
+    "oid": ".1.3.6.1.2.1.15.3",
+    "parent": "bgp",
+    "description": "BGP peer table. This table contains, one entry per BGP peer, information about the connections with BGP peers.",
+    "objects": [{
+            ".1.3.6.1.2.1.15.3.1.7": {
+                "name": "bgpPeerRemoteAddr",
+                "datatype": "IPADDR",
+                "columntype": "index",
+                "order": "7",
+                "description": "The remote IP address of this entry's BGP peer.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.1": {
+                "name": "bgpPeerIdentifier",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "1",
+                "description": "The BGP Identifier of this entry's BGP peer. This entry MUST be 0.0.0.0 unless the bgpPeerState is in the openconfirm or the established state.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.2": {
+                "name": "bgpPeerState",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The BGP peer connection state.",
+                "status": "Current",
+                "types": [{
+                        "1": "idle"
+                    },
+                    {
+                        "2": "connect"
+                    },
+                    {
+                        "3": "active"
+                    },
+                    {
+                        "4": "opensent"
+                    },
+                    {
+                        "5": "openconfirm"
+                    },
+                    {
+                        "6": "established"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.3": {
+                "name": "bgpPeerAdminStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The desired state of the BGP connection. A transition from 'stop' to 'start' will cause the BGP Manual Start Event to be generated. A transition from 'start' to 'stop' will cause the BGP Manual Stop Event to be generated. This parameter can be used to restart BGP peer connections. Care should be used in providing write access to this object without adequate authentication.",
+                "status": "Current",
+                "types": [{
+                        "1": "stop"
+                    },
+                    {
+                        "2": "start"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.4": {
+                "name": "bgpPeerNegotiatedVersion",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "The negotiated version of BGP running between the two peers. This entry MUST be zero (0) unless the bgpPeerState is in the openconfirm or the established state. Note that legal values for this object are between 0 and 255.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.5": {
+                "name": "bgpPeerLocalAddr",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "5",
+                "description": "The local IP address of this entry's BGP connection.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.6": {
+                "name": "bgpPeerLocalPort",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "The local port for the TCP connection between the BGP peers.",
+                "status": "Current",
+                "range": "0..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.8": {
+                "name": "bgpPeerRemotePort",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "The remote port for the TCP connection between the BGP peers. Note that the objects bgpPeerLocalAddr, bgpPeerLocalPort, bgpPeerRemoteAddr, and bgpPeerRemotePort provide the appropriate reference to the standard MIB TCP connection table.",
+                "status": "Current",
+                "range": "0..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.9": {
+                "name": "bgpPeerRemoteAs",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "The remote autonomous system number received in the BGP OPEN message.",
+                "status": "Current",
+                "range": "0..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.10": {
+                "name": "bgpPeerInUpdates",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The number of BGP UPDATE messages received on this connection.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.11": {
+                "name": "bgpPeerOutUpdates",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "11",
+                "description": "The number of BGP UPDATE messages transmitted on this connection.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.12": {
+                "name": "bgpPeerInTotalMessages",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "12",
+                "description": "The total number of messages received from the remote peer on this connection.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.13": {
+                "name": "bgpPeerOutTotalMessages",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "13",
+                "description": "The total number of messages transmitted to the remote peer on this connection.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.14": {
+                "name": "bgpPeerLastError",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "14",
+                "description": "The last error code and subcode seen by this peer on this connection. If no error has occurred, this field is zero. Otherwise, the first byte of this two byte OCTET STRING contains the error code, and the second byte contains the subcode.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.15": {
+                "name": "bgpPeerFsmEstablishedTransitions",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "15",
+                "description": "The total number of times the BGP FSM transitioned into the established state for this peer.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.16": {
+                "name": "bgpPeerFsmEstablishedTime",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "16",
+                "description": "This timer indicates how long (in seconds) this peer has been in the established state or how long since this peer was last in the established state. It is set to zero when a new peer is configured or when the router is booted.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.17": {
+                "name": "bgpPeerConnectRetryInterval",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "17",
+                "description": "Time interval (in seconds) for the ConnectRetry timer. The suggested value for this timer is 120 seconds.",
+                "status": "Current",
+                "range": "1..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.18": {
+                "name": "bgpPeerHoldTime",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "18",
+                "description": "Time interval (in seconds) for the Hold Timer established with the peer. The value of this object is calculated by this BGP speaker, using the smaller of the values in bgpPeerHoldTimeConfigured and the Hold Time received in the OPEN message. This value must be at least three seconds if it is not zero (0). If the Hold Timer has not been established with the peer this object MUST have a value of zero (0). If the bgpPeerHoldTimeConfigured object has a value of (0), then this object MUST have a value of (0).",
+                "status": "Current",
+                "range": "3..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.19": {
+                "name": "bgpPeerKeepAlive",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "19",
+                "description": "Time interval (in seconds) for the KeepAlive timer established with the peer. The value of this object is calculated by this BGP speaker such that, when compared with bgpPeerHoldTime, it has the same proportion that bgpPeerKeepAliveConfigured has, compared with bgpPeerHoldTimeConfigured. If the KeepAlive timer has not been established with the peer, this object MUST have a value of zero (0). If the of bgpPeerKeepAliveConfigured object has a value of (0), then this object MUST have a value of (0).",
+                "status": "Current",
+                "range": "1..21845"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.20": {
+                "name": "bgpPeerHoldTimeConfigured",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "20",
+                "description": "Time interval (in seconds) for the Hold Time configured for this BGP speaker with this peer. This value is placed in an OPEN message sent to this peer by this BGP speaker, and is compared with the Hold Time field in an OPEN message received from the peer when determining the Hold Time (bgpPeerHoldTime) with the peer. This value must not be less than three seconds if it is not zero (0). If it is zero (0), the Hold Time is NOT to be established with the peer. The suggested value for this timer is 90 seconds.",
+                "status": "Current",
+                "range": "3..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.21": {
+                "name": "bgpPeerKeepAliveConfigured",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "21",
+                "description": "Time interval (in seconds) for the KeepAlive timer configured for this BGP speaker with this peer. The value of this object will only determine the KEEPALIVE messages' frequency relative to the value specified in bgpPeerHoldTimeConfigured; the actual time interval for the KEEPALIVE messages is indicated by bgpPeerKeepAlive. A reasonable maximum value for this timer would be one third of that of bgpPeerHoldTimeConfigured. If the value of this object is zero (0), no periodical KEEPALIVE messages are sent to the peer after the BGP connection has been established. The suggested value for this timer is 30 seconds.",
+                "status": "Current",
+                "range": "1..21845"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.22": {
+                "name": "bgpPeerMinASOriginationInterval",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "22",
+                "description": "Time interval (in seconds) for the MinASOriginationInterval timer. The suggested value for this timer is 15 seconds.",
+                "status": "Current",
+                "range": "1..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.23": {
+                "name": "bgpPeerMinRouteAdvertisementInterval",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "23",
+                "description": "Time interval (in seconds) for the MinRouteAdvertisementInterval timer. The suggested value for this timer is 30 seconds for EBGP connections and 5 seconds for IBGP connections.",
+                "status": "Current",
+                "range": "1..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.3.1.24": {
+                "name": "bgpPeerInUpdateElapsedTime",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "24",
+                "description": "Elapsed time (in seconds) since the last BGP UPDATE message was received from the peer. Each time bgpPeerInUpdates is incremented, the value of this object is set to zero (0).",
+                "status": "Current"
+            }
+        }
+    ]
+}

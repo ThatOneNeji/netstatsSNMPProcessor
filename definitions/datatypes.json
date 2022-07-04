@@ -1,0 +1,87 @@
+{
+    "objectid": {
+        "sql_type": "varchar(255)",
+        "default": "NOT NULL",
+        "behaviour": "index"
+    },
+    "octetstr": {
+        "sql_type": "varchar(255)",
+        "default": "DEFAULT NULL",
+        "behaviour": "string"
+    },
+    "ticks": {
+        "sql_type": "varchar(255)",
+        "default": "DEFAULT NULL",
+        "behaviour": "string",
+        "min": 0,
+        "max": 4294967296
+    },
+    "ipaddr": {
+        "sql_type": "varchar(32)",
+        "default": "DEFAULT NULL",
+        "behaviour": "string"
+    },
+    "counter": {
+        "sql_type": "int unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "counter",
+        "min": 0,
+        "max": 4294967295
+    },
+    "counter32": {
+        "sql_type": "int unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "counter",
+        "min": 0,
+        "max": 4294967295
+    },
+    "counter64": {
+        "sql_type": "bigint unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "counter",
+        "min": 0,
+        "max": 18446744073709551615
+    },
+    "integer": {
+        "sql_type": "int unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": -2147483648,
+        "max": 2147483647
+    },
+    "integer32": {
+        "sql_type": "int unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 4294967295
+    },
+    "integer64": {
+        "sql_type": "bigint unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 1
+    },
+    "gauge": {
+        "sql_type": "int unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 4294967295
+    },
+    "gauge32": {
+        "sql_type": "int unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 4294967295
+    },
+    "gauge64": {
+        "sql_type": "bigint unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 18446744073709551615
+    }
+}

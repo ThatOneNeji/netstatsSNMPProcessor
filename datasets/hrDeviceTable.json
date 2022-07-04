@@ -1,0 +1,86 @@
+{
+    "name": "hrDeviceTable",
+    "type": "table",
+    "mib": "HOST-RESOURCES-MIB",
+    "oid": ".1.3.6.1.2.1.25.3.2",
+    "parent": "hrDevice",
+    "description": "The (conceptual) table of devices contained by the host.",
+    "objects": [{
+            ".1.3.6.1.2.1.25.3.2.1.1": {
+                "name": "hrDeviceIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique value for each device contained by the host. The value for each device must remain constant at least from one re-initialization of the agent to the next re-initialization.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.2.1.2": {
+                "name": "hrDeviceType",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "2",
+                "description": "An indication of the type of device. If this value is `hrDeviceProcessor { hrDeviceTypes 3 }' then an entry exists in the hrProcessorTable which corresponds to this device. If this value is `hrDeviceNetwork { hrDeviceTypes 4 }', then an entry exists in the hrNetworkTable which corresponds to this device. If this value is `hrDevicePrinter { hrDeviceTypes 5 }', then an entry exists in the hrPrinterTable which corresponds to this device. If this value is `hrDeviceDiskStorage { hrDeviceTypes 6 }', then an entry exists in the hrDiskStorageTable which corresponds to this device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.2.1.3": {
+                "name": "hrDeviceDescr",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "A textual description of this device, including the device's manufacturer and revision, and optionally, its serial number.",
+                "status": "Current",
+                "range": "0..64"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.2.1.4": {
+                "name": "hrDeviceID",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "4",
+                "description": "The product ID for this device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.2.1.5": {
+                "name": "hrDeviceStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The current operational state of the device described by this row of the table. A value unknown(1) indicates that the current state of the device is unknown. running(2) indicates that the device is up and running and that no unusual error conditions are known. The warning(3) state indicates that agent has been informed of an unusual error condition by the operational software (e.g., a disk device driver) but that the device is still 'operational'. An example would be a high number of soft errors on a disk. A value of testing(4), indicates that the device is not available for use because it is in the testing state. The state of down(5) is used only when the agent has been informed that the device is not available for any use.",
+                "status": "Current",
+                "types": [{
+                        "1": "unknown"
+                    },
+                    {
+                        "2": "running"
+                    },
+                    {
+                        "3": "warning"
+                    },
+                    {
+                        "4": "testing"
+                    },
+                    {
+                        "5": "down"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.2.1.6": {
+                "name": "hrDeviceErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "The number of errors detected on this device. It should be noted that as this object has a SYNTAX of Counter32, that it does not have a defined initial value. However, it is recommended that this object be initialized to zero, even though management stations must not depend on such an initialization.",
+                "status": "Current"
+            }
+        }
+    ]
+}

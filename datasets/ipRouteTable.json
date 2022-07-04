@@ -1,0 +1,195 @@
+{
+    "name": "ipRouteTable",
+    "type": "table",
+    "mib": "RFC1213-MIB",
+    "oid": ".1.3.6.1.2.1.4.21",
+    "parent": "ip",
+    "description": "This entity's IP Routing table.",
+    "objects": [{
+            ".1.3.6.1.2.1.4.21.1.1": {
+                "name": "ipRouteDest",
+                "datatype": "IPADDR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The destination IP address of this route. An entry with a value of 0.0.0.0 is considered a default route. Multiple routes to a single destination can appear in the table, but access to such multiple entries is dependent on the table- access mechanisms defined by the network management protocol in use.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.2": {
+                "name": "ipRouteIfIndex",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The index value which uniquely identifies the local interface through which the next hop of this route should be reached. The interface identified by a particular value of this index is the same interface as identified by the same value of ifIndex.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.3": {
+                "name": "ipRouteMetric1",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The primary routing metric for this route. The semantics of this metric are determined by the routing-protocol specified in the route's ipRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.4": {
+                "name": "ipRouteMetric2",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing-protocol specified in the route's ipRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.5": {
+                "name": "ipRouteMetric3",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing-protocol specified in the route's ipRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.6": {
+                "name": "ipRouteMetric4",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing-protocol specified in the route's ipRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.7": {
+                "name": "ipRouteNextHop",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "7",
+                "description": "The IP address of the next hop of this route. (In the case of a route bound to an interface which is realized via a broadcast media, the value of this field is the agent's IP address on that interface.)",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.8": {
+                "name": "ipRouteType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "8",
+                "description": "The type of route. Note that the values direct(3) and indirect(4) refer to the notion of direct and indirect routing in the IP architecture. Setting this object to the value invalid(2) has the effect of invalidating the corresponding entry in the ipRouteTable object. That is, it effectively dissasociates the destination identified with said entry from the route identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipRouteType object.",
+                "status": "Mandatory",
+                "types": [{
+                        "1": "other"
+                    },
+                    {
+                        "2": "invalid"
+                    },
+                    {
+                        "3": "direct"
+                    },
+                    {
+                        "4": "indirect"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.9": {
+                "name": "ipRouteProto",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "9",
+                "description": "The routing mechanism via which this route was learned. Inclusion of values for gateway routing protocols is not intended to imply that hosts should support those protocols.",
+                "status": "Mandatory",
+                "types": [{
+                        "1": "other"
+                    },
+                    {
+                        "2": "local"
+                    },
+                    {
+                        "3": "netmgmt"
+                    },
+                    {
+                        "4": "icmp"
+                    },
+                    {
+                        "5": "egp"
+                    },
+                    {
+                        "6": "ggp"
+                    },
+                    {
+                        "7": "hello"
+                    },
+                    {
+                        "8": "rip"
+                    },
+                    {
+                        "9": "is_is"
+                    },
+                    {
+                        "10": "es_is"
+                    },
+                    {
+                        "11": "ciscoIgrp"
+                    },
+                    {
+                        "12": "bbnSpfIgp"
+                    },
+                    {
+                        "13": "ospf"
+                    },
+                    {
+                        "14": "bgp"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.10": {
+                "name": "ipRouteAge",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The number of seconds since this route was last updated or otherwise determined to be correct. Note that no semantics of `too old' can be implied except through knowledge of the routing protocol by which the route was learned.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.11": {
+                "name": "ipRouteMask",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "11",
+                "description": "Indicate the mask to be logical-ANDed with the destination address before being compared to the value in the ipRouteDest field. For those systems that do not support arbitrary subnet masks, an agent constructs the value of the ipRouteMask by determining whether the value of the correspondent ipRouteDest field belong to a class-A, B, or C network, and then using one of: mask network 255.0.0.0 class-A 255.255.0.0 class-B 255.255.255.0 class-C If the value of the ipRouteDest is 0.0.0.0 (a default route), then the mask value is also 0.0.0.0. It should be noted that all IP routing subsystems implicitly use this mechanism.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.12": {
+                "name": "ipRouteMetric5",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "12",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing-protocol specified in the route's ipRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Mandatory"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.21.1.13": {
+                "name": "ipRouteInfo",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "13",
+                "description": "A reference to MIB definitions specific to the particular routing protocol which is responsible for this route, as determined by the value specified in the route's ipRouteProto value. If this information is not present, its value should be set to the OBJECT IDENTIFIER { 0 0 }, which is a syntatically valid object identifier, and any conformant implementation of ASN.1 and BER must be able to generate and recognize this value.",
+                "status": "Mandatory"
+            }
+        }
+    ]
+}

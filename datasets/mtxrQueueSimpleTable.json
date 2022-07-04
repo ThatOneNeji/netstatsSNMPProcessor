@@ -1,0 +1,161 @@
+{
+    "name": "mtxrQueueSimpleTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.2.1",
+    "parent": "mtxrQueues",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.1": {
+                "name": "mtxrQueueSimpleIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.2": {
+                "name": "mtxrQueueSimpleName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.3": {
+                "name": "mtxrQueueSimpleSrcAddr",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "3",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.4": {
+                "name": "mtxrQueueSimpleSrcMask",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.5": {
+                "name": "mtxrQueueSimpleDstAddr",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.6": {
+                "name": "mtxrQueueSimpleDstMask",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.7": {
+                "name": "mtxrQueueSimpleIface",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "interface index",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.8": {
+                "name": "mtxrQueueSimpleBytesIn",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.9": {
+                "name": "mtxrQueueSimpleBytesOut",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.10": {
+                "name": "mtxrQueueSimplePacketsIn",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.11": {
+                "name": "mtxrQueueSimplePacketsOut",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "11",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.12": {
+                "name": "mtxrQueueSimplePCQQueuesIn",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.13": {
+                "name": "mtxrQueueSimplePCQQueuesOut",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.14": {
+                "name": "mtxrQueueSimpleDroppedIn",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "14",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.1.1.15": {
+                "name": "mtxrQueueSimpleDroppedOut",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "15",
+                "description": "",
+                "status": "Current"
+            }
+        }
+    ]
+}

@@ -1,0 +1,215 @@
+{
+    "name": "mtxrHealth",
+    "type": "scalar",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.3",
+    "parent": "mtXRouterOs",
+    "description": "description",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.3.1": {
+                "name": "mtxrHlCoreVoltage",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "1",
+                "status": "Current",
+                "description": "core voltage",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.2": {
+                "name": "mtxrHlThreeDotThreeVoltage",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "status": "Current",
+                "description": "3.3V voltage",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.3": {
+                "name": "mtxrHlFiveVoltage",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "status": "Current",
+                "description": "5V voltage",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.4": {
+                "name": "mtxrHlTwelveVoltage",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "status": "Current",
+                "description": "12V voltage",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.5": {
+                "name": "mtxrHlSensorTemperature",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "status": "Current",
+                "description": "temperature at sensor chip",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.6": {
+                "name": "mtxrHlCpuTemperature",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "status": "Current",
+                "description": "temperature near cpu",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.7": {
+                "name": "mtxrHlBoardTemperature",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "status": "Current",
+                "description": "",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.8": {
+                "name": "mtxrHlVoltage",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "status": "Current",
+                "description": "",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.9": {
+                "name": "mtxrHlActiveFan",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "status": "Current",
+                "description": "",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.10": {
+                "name": "mtxrHlTemperature",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "status": "Current",
+                "description": "",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.11": {
+                "name": "mtxrHlProcessorTemperature",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "11",
+                "status": "Current",
+                "description": "",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.12": {
+                "name": "mtxrHlPower",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "12",
+                "status": "Current",
+                "description": "Watts",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.13": {
+                "name": "mtxrHlCurrent",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "13",
+                "status": "Current",
+                "description": "mA"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.14": {
+                "name": "mtxrHlProcessorFrequency",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "14",
+                "status": "Current",
+                "description": "Mhz"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.15": {
+                "name": "mtxrHlPowerSupplyState",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "15",
+                "status": "Current",
+                "description": "PSU state ok",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.16": {
+                "name": "mtxrHlBackupPowerSupplyState",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "16",
+                "status": "Current",
+                "description": "backup PSU state ok",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.17": {
+                "name": "mtxrHlFanSpeed1",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "17",
+                "status": "Current",
+                "description": "rpm"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.18": {
+                "name": "mtxrHlFanSpeed2",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "18",
+                "status": "Current",
+                "description": "rpm"
+            }
+        }
+    ]
+}

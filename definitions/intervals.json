@@ -1,0 +1,151 @@
+{
+    "raw": {
+        "datatypes": [{
+            "counters": [{
+                    "name": "diff",
+                    "function": "if(a.{{field_name}} < b.{{field_name}}, a.{{field_name}}, a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_diff"
+                },
+                {
+                    "name": "calc",
+                    "function": "Round((if(a.{{field_name}} < b.{{field_name}}, a.{{field_name}}, a.{{field_name}} - b.{{field_name}})) / 300, 0) AS {{field_name}}_calc"
+                }
+            ],
+            "gauge": [{
+                    "name": "current",
+                    "function": "{{field_name}}"
+                },
+                {
+                    "name": "avg",
+                    "function": "avg({{field_name}})"
+                },
+                {
+                    "name": "min",
+                    "function": "min({{field_name}})"
+                },
+                {
+                    "name": "max",
+                    "function": "max({{field_name}})"
+                }
+            ]
+        }],
+        "dates": [{
+                "next": "min5",
+                "nowdate": "new.RDate",
+                "prevdate": "new.RDate - INTERVAL 5 MINUTE",
+                "nowidate": "(UNIX_TIMESTAMP(new.RDate) + 7200) * 1000"
+            },
+            {
+                "next": "min60",
+                "nowdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')",
+                "prevdate": "DATE_FORMAT(new.rdate + INTERVAL 1 HOUR, '%Y-%m-%d %H:00:00')",
+                "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')) + 7200) * 1000"
+            },
+            {
+                "next": "day",
+                "nowdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')",
+                "prevdate": "DATE_FORMAT(new.rdate + INTERVAL 1 DAY, '%Y-%m-%d 00:00:00')",
+                "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) + 7200) * 1000"
+            }
+        ],
+        "source": "raw"
+    },
+    "5min": {
+        "datatypes": [{
+            "counters": [{
+                    "name": "diff",
+                    "function": "if(a.{{field_name}} < b.{{field_name}}, a.{{field_name}}, a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_diff"
+                },
+                {
+                    "name": "calc",
+                    "function": "Round((if(a.{{field_name}} < b.{{field_name}}, a.{{field_name}}, a.{{field_name}} - b.{{field_name}})) / 300, 0) AS {{field_name}}_calc"
+                }
+            ],
+            "gauge": [{
+                    "name": "current",
+                    "function": "{{field_name}}"
+                },
+                {
+                    "name": "avg",
+                    "function": "avg({{field_name}})"
+                },
+                {
+                    "name": "min",
+                    "function": "min({{field_name}})"
+                },
+                {
+                    "name": "max",
+                    "function": "max({{field_name}})"
+                }
+            ]
+        }],
+        "dates": [{
+                "next": "min60",
+                "nowdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')",
+                "prevdate": "DATE_FORMAT(new.rdate + INTERVAL 1 HOUR, '%Y-%m-%d %H:00:00')",
+                "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')) + 7200) * 1000"
+            },
+            {
+                "next": "day",
+                "nowdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')",
+                "prevdate": "DATE_FORMAT(new.rdate + INTERVAL 1 DAY, '%Y-%m-%d 00:00:00')",
+                "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) + 7200) * 1000"
+            }
+        ],
+        "source": "raw"
+    },
+    "60min": {
+        "datatypes": [{
+            "counters": [{
+                "name": "calc",
+                "function": "sum({{field_name}}_calc) AS {{field_name}}_calc"
+            }],
+            "gauge": [{
+                    "name": "current",
+                    "function": "round(avg(a.{{field_name}}), 2) AS {{field_name}}_avg"
+                },
+                {
+                    "name": "min",
+                    "function": "min({{field_name}}) AS {{field_name}}_min"
+                },
+                {
+                    "name": "max",
+                    "function": "max({{field_name}}) AS {{field_name}}_max"
+                }
+            ]
+        }],
+        "dates": [{
+            "nowdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')",
+            "prevdate": "DATE_FORMAT(new.rdate + INTERVAL 1 HOUR, '%Y-%m-%d %H:00:00')",
+            "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')) + 7200) * 1000"
+        }],
+        "source": "5min"
+    },
+    "day": {
+        "datatypes": [{
+            "counters": [{
+                "name": "calc",
+                "function": "sum({{field_name}}_calc) AS {{field_name}}_calc"
+            }],
+            "gauge": [{
+                    "name": "current",
+                    "function": "round(avg(a.{{field_name}}), 2) AS {{field_name}}_avg"
+                },
+                {
+                    "name": "min",
+                    "function": "min({{field_name}}) AS {{field_name}}_min"
+                },
+                {
+                    "name": "max",
+                    "function": "max({{field_name}}) AS {{field_name}}_max"
+                }
+            ]
+        }],
+        "dates": [{
+            "next": "week",
+            "nowdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')",
+            "prevdate": "DATE_FORMAT(new.rdate + INTERVAL 1 DAY, '%Y-%m-%d 00:00:00')",
+            "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) + 7200) * 1000"
+        }],
+        "source": "60min"
+    }
+}

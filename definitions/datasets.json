@@ -1,0 +1,757 @@
+{
+    "diskIOTable": {
+        "name": "diskIO",
+        "prefix": "T49",
+        "comment": "Table of IO devices and how much data they have read/written.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [
+            "05"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "dot1dBasePortTable": {
+        "name": "dot1dBasePort",
+        "prefix": "T01",
+        "comment": "A table that contains generic information about every port that is associated with this bridge. Transparent, source-route, and srt ports are included.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "dot1dStpPortTable": {
+        "name": "dot1dStpPort",
+        "prefix": "T02",
+        "comment": "A table that contains port-specific information for the Spanning Tree Protocol.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "dot1dTpFdbTable": {
+        "name": "dot1dTpFdb",
+        "prefix": "T03",
+        "comment": "A table that contains information about unicast entries for which the bridge has forwarding and/or filtering information. This information is used by the transparent bridging function in determining how to propagate a received frame.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "dot1dTpPortTable": {
+        "name": "dot1dTpPort",
+        "prefix": "T27",
+        "comment": "A table that contains information about every port that is associated with this transparent bridge.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "dot1qPortVlanTable": {
+        "name": "dot1qPortVlan",
+        "prefix": "T04",
+        "comment": "A table containing per-port control and status information for VLAN configuration in the device.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrDeviceTable": {
+        "name": "hrDevice",
+        "prefix": "T05",
+        "comment": "The (conceptual) table of devices contained by the host.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrProcessorTable": {
+        "name": "hrProcessor",
+        "prefix": "T22",
+        "comment": "The (conceptual) table of processors contained by the host.",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrStorageTable": {
+        "name": "hrStorage",
+        "prefix": "T21",
+        "comment": "The (conceptual) table of logical storage areas on the host.",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrSystemScalar": {
+        "name": "hrSystem",
+        "prefix": "T06",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ifTable": {
+        "name": "if",
+        "prefix": "T19",
+        "comment": "A list of interface entries. The number of entries is given by the value of ifNumber.",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd",
+            "wk",
+            "mo"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ifXTable": {
+        "name": "ifx",
+        "prefix": "T18",
+        "comment": "A list of interface entries. The number of entries is given by the value of ifNumber. This table contains additional objects for the interface table.",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd",
+            "wk",
+            "mo"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipAddrTable": {
+        "name": "ipaddr",
+        "prefix": "T28",
+        "comment": "The table of addressing information relevant to this entity's IP addresses.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipNetToMediaTable": {
+        "name": "ipnettomedia",
+        "prefix": "T30",
+        "comment": "The IP Address Translation table used for mapping from IP addresses to physical addresses.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipRouteTable": {
+        "name": "iproute",
+        "prefix": "T31",
+        "comment": "This entity's IP Routing table.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipCidrRouteTable": {
+        "name": "ipCidrRoute",
+        "prefix": "T07",
+        "comment": "This entity's IP Routing table. This table has been deprecated in favor of the IP version neutral inetCidrRouteTable.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipForwardTable": {
+        "name": "ipForward",
+        "prefix": "T08",
+        "comment": "This entity's IP Routing table.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipv6AddrTable": {
+        "name": "ipv6Addr",
+        "prefix": "T50",
+        "comment": "IPv6 stuff",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipv6IfTable": {
+        "name": "ipv6If",
+        "prefix": "T51",
+        "comment": "IPv6 stuff.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "lmFanSensorsTable": {
+        "name": "lmFanSensors",
+        "prefix": "T45",
+        "comment": "Table of fan sensors and their values.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "lmMiscSensorsTable": {
+        "name": "lmMiscSensors",
+        "prefix": "T46",
+        "comment": "Table of miscellaneous sensor devices and their values.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "lmTempSensorsTable": {
+        "name": "lmTempSensors",
+        "prefix": "T47",
+        "comment": "Table of temperature sensors and their values.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "lmVoltSensorsTable": {
+        "name": "lmVoltSensors",
+        "prefix": "T48",
+        "comment": "Table of voltage sensors and their values.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrDnStatTable": {
+        "name": "mtxrDnStat",
+        "prefix": "T34",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrGaugeTable": {
+        "name": "mtxrGauge",
+        "prefix": "T26",
+        "comment": "Gauges of Mikrotik device",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrGpsScalar": {
+        "name": "mtxrGps",
+        "prefix": "T44",
+        "comment": "GPS of Mikrotik device",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrHealthScalar": {
+        "name": "mtxrHealth",
+        "prefix": "T24",
+        "comment": "Health of Mikrotik device",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrHotspotActiveUsersTable": {
+        "name": "mtxrHotspotActiveUsers",
+        "prefix": "T35",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrIkeSATable": {
+        "name": "mtxrIkeSA",
+        "prefix": "T29",
+        "comment": "IKE SA table",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrInterfaceStatsTable": {
+        "name": "mtxrInterfaceStats",
+        "prefix": "T20",
+        "comment": "Extended interface statistics. Some interfaces may have only parts of this table with unavailable values set to zero.",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrLicense": {
+        "name": "mtxrLicense",
+        "prefix": "T09",
+        "comment": "License information of Mikrotik device",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrLTEModemTable": {
+        "name": "mtxrLTEModem",
+        "prefix": "T10",
+        "comment": "LTE information of Mikrotik device",
+        "notes": "",
+        "intervals": [
+            "05"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrNeighborTable": {
+        "name": "mtxrNeighbor",
+        "prefix": "T11",
+        "comment": "CDP information of Mikrotik device",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrOpticalTable": {
+        "name": "mtxrOptical",
+        "prefix": "T12",
+        "comment": "SFP and GPON information",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": true
+    },
+    "mtxrPartitionTable": {
+        "name": "mtxrPartition",
+        "prefix": "T36",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrPOETable": {
+        "name": "mtxrPOE",
+        "prefix": "T32",
+        "comment": "Power Over Ethernet",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrQueueSimpleTable": {
+        "name": "mtxrQueueSimple",
+        "prefix": "T37",
+        "comment": "Simple queue tree statistics.",
+        "notes": "",
+        "intervals": [
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrQueueTreeTable": {
+        "name": "mtxrQueueTree",
+        "prefix": "T13",
+        "comment": "Queue tree statistics.",
+        "notes": "",
+        "intervals": [
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrScriptRunTable": {
+        "name": "mtxrScriptRun",
+        "prefix": "T38",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrScriptTable": {
+        "name": "mtxrScript",
+        "prefix": "T39",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrSystemScalar": {
+        "name": "mtxrSystem",
+        "prefix": "T23",
+        "comment": "System statistics of Mikrotik device",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWl60GStaTable": {
+        "name": "mtxrWl60GSta",
+        "prefix": "T40",
+        "comment": "",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWl60GTable": {
+        "name": "mtxrWl60G",
+        "prefix": "T41",
+        "comment": "",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWlApTable": {
+        "name": "mtxrWlAp",
+        "prefix": "T14",
+        "comment": "Wireless access point statistics of Mikrotik device",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWlCMRemoteTable": {
+        "name": "mtxrWlCMRemote",
+        "prefix": "T42",
+        "comment": "",
+        "notes": "CAPS-MAN statistics of Mikrotik device",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWlCMRtabTable": {
+        "name": "mtxrWlCMRtab",
+        "prefix": "T43",
+        "comment": "CAPS-MAN statistics of Mikrotik device",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWlCMTable": {
+        "name": "mtxrWlCM",
+        "prefix": "T15",
+        "comment": "CAPS-MAN statistics of Mikrotik device",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWlRtabTable": {
+        "name": "mtxrWlRtab",
+        "prefix": "T16",
+        "comment": "Wireless registration table. It is indexed by remote mac-address and local interface index",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWlStatTable": {
+        "name": "mtxrWlStat",
+        "prefix": "T17",
+        "comment": "Wireless station mode interface",
+        "notes": "",
+        "intervals": [
+            "05",
+            "60",
+            "dd"
+        ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "systemScalar": {
+        "name": "system",
+        "prefix": "T25",
+        "comment": "Wireless station mode interface",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "sysORTable": {
+        "name": "sysOR",
+        "prefix": "T33",
+        "comment": "The (conceptual) table listing the capabilities of the local SNMP application acting as a command responder with respect to various MIB modules",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwVmTable": {
+        "name": "vmwVm",
+        "prefix": "T52",
+        "comment": "A table containing information on virtual machines that have been configured on the system.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwSystemScalar": {
+        "name": "vmwSystem",
+        "prefix": "T53",
+        "comment": "Parent of all managed objects relating to system software identification.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    }
+}

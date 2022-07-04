@@ -1,0 +1,111 @@
+{
+    "name": "mtxrWlStatTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.1.1",
+    "parent": "mtxrWireless",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.1": {
+                "name": "mtxrWlStatIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.2": {
+                "name": "mtxrWlStatTxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "2",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.3": {
+                "name": "mtxrWlStatRxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "3",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.4": {
+                "name": "mtxrWlStatStrength",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "dBm",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.5": {
+                "name": "mtxrWlStatSsid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.6": {
+                "name": "mtxrWlStatBssid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.7": {
+                "name": "mtxrWlStatFreq",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "megahertz",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.8": {
+                "name": "mtxrWlStatBand",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.9": {
+                "name": "mtxrWlStatTxCCQ",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.1.1.10": {
+                "name": "mtxrWlStatRxCCQ",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "",
+                "status": "Current"
+            }
+        }
+    ]
+}

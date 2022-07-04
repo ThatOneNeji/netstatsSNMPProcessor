@@ -1,0 +1,690 @@
+{
+    "name": "mtxrInterfaceStatsTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.14.1",
+    "parent": "mtxrInterfaceStats",
+    "description": "Extended interface statistics. Some interfaces may have only parts of this table with unavailable values set to zero.",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.1": {
+                "name": "mtxrInterfaceStatsIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.2": {
+                "name": "mtxrInterfaceStatsName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.11": {
+                "name": "mtxrInterfaceStatsDriverRxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "11",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.12": {
+                "name": "mtxrInterfaceStatsDriverRxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.13": {
+                "name": "mtxrInterfaceStatsDriverTxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.14": {
+                "name": "mtxrInterfaceStatsDriverTxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "14",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.15": {
+                "name": "mtxrInterfaceStatsTxRx64",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "15",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.16": {
+                "name": "mtxrInterfaceStatsTxRx65To127",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "16",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.17": {
+                "name": "mtxrInterfaceStatsTxRx128To255",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "17",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.18": {
+                "name": "mtxrInterfaceStatsTxRx256To511",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "18",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.19": {
+                "name": "mtxrInterfaceStatsTxRx512To1023",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "19",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.20": {
+                "name": "mtxrInterfaceStatsTxRx1024To1518",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "20",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.21": {
+                "name": "mtxrInterfaceStatsTxRx1519ToMax",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "21",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.31": {
+                "name": "mtxrInterfaceStatsRxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "31",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.32": {
+                "name": "mtxrInterfaceStatsRxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "32",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.33": {
+                "name": "mtxrInterfaceStatsRxTooShort",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "33",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.34": {
+                "name": "mtxrInterfaceStatsRx64",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "34",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.35": {
+                "name": "mtxrInterfaceStatsRx65To127",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "35",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.36": {
+                "name": "mtxrInterfaceStatsRx128To255",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "36",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.37": {
+                "name": "mtxrInterfaceStatsRx256To511",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "37",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.38": {
+                "name": "mtxrInterfaceStatsRx512To1023",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "38",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.39": {
+                "name": "mtxrInterfaceStatsRx1024To1518",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "39",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.40": {
+                "name": "mtxrInterfaceStatsRx1519ToMax",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "40",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.41": {
+                "name": "mtxrInterfaceStatsRxTooLong",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "41",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.42": {
+                "name": "mtxrInterfaceStatsRxBroadcast",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "42",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.43": {
+                "name": "mtxrInterfaceStatsRxPause",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "43",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.44": {
+                "name": "mtxrInterfaceStatsRxMulticast",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "44",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.45": {
+                "name": "mtxrInterfaceStatsRxFCSError",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "45",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.46": {
+                "name": "mtxrInterfaceStatsRxAlignError",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "46",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.47": {
+                "name": "mtxrInterfaceStatsRxFragment",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "47",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.48": {
+                "name": "mtxrInterfaceStatsRxOverflow",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "48",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.49": {
+                "name": "mtxrInterfaceStatsRxControl",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "49",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.50": {
+                "name": "mtxrInterfaceStatsRxUnknownOp",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "50",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.51": {
+                "name": "mtxrInterfaceStatsRxLengthError",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "51",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.52": {
+                "name": "mtxrInterfaceStatsRxCodeError",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "52",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.53": {
+                "name": "mtxrInterfaceStatsRxCarrierError",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "53",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.54": {
+                "name": "mtxrInterfaceStatsRxJabber",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "54",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.55": {
+                "name": "mtxrInterfaceStatsRxDrop",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "55",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.61": {
+                "name": "mtxrInterfaceStatsTxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "61",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.62": {
+                "name": "mtxrInterfaceStatsTxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "62",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.63": {
+                "name": "mtxrInterfaceStatsTxTooShort",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "63",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.64": {
+                "name": "mtxrInterfaceStatsTx64",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "64",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.65": {
+                "name": "mtxrInterfaceStatsTx65To127",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "65",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.66": {
+                "name": "mtxrInterfaceStatsTx128To255",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "66",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.67": {
+                "name": "mtxrInterfaceStatsTx256To511",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "67",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.68": {
+                "name": "mtxrInterfaceStatsTx512To1023",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "68",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.69": {
+                "name": "mtxrInterfaceStatsTx1024To1518",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "69",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.70": {
+                "name": "mtxrInterfaceStatsTx1519ToMax",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "70",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.71": {
+                "name": "mtxrInterfaceStatsTxTooLong",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "71",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.72": {
+                "name": "mtxrInterfaceStatsTxBroadcast",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "72",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.73": {
+                "name": "mtxrInterfaceStatsTxPause",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "73",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.74": {
+                "name": "mtxrInterfaceStatsTxMulticast",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "74",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.75": {
+                "name": "mtxrInterfaceStatsTxUnderrun",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "75",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.76": {
+                "name": "mtxrInterfaceStatsTxCollision",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "76",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.77": {
+                "name": "mtxrInterfaceStatsTxExcessiveCollision",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "77",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.78": {
+                "name": "mtxrInterfaceStatsTxMultipleCollision",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "78",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.79": {
+                "name": "mtxrInterfaceStatsTxSingleCollision",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "79",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.80": {
+                "name": "mtxrInterfaceStatsTxExcessiveDeferred",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "80",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.81": {
+                "name": "mtxrInterfaceStatsTxDeferred",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "81",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.82": {
+                "name": "mtxrInterfaceStatsTxLateCollision",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "82",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.83": {
+                "name": "mtxrInterfaceStatsTxTotalCollision",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "83",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.84": {
+                "name": "mtxrInterfaceStatsTxPauseHonored",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "84",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.85": {
+                "name": "mtxrInterfaceStatsTxDrop",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "85",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.86": {
+                "name": "mtxrInterfaceStatsTxJabber",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "86",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.87": {
+                "name": "mtxrInterfaceStatsTxFCSError",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "87",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.88": {
+                "name": "mtxrInterfaceStatsTxControl",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "88",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.89": {
+                "name": "mtxrInterfaceStatsTxFragment",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "89",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.90": {
+                "name": "mtxrInterfaceStatsLinkDowns",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "90",
+                "description": "",
+                "status": "Current"
+            }
+        }
+    ]
+}

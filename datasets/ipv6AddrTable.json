@@ -1,0 +1,93 @@
+{
+    "name": "ipv6AddrTable",
+    "type": "table",
+    "mib": "IPV6-MIB",
+    "oid": ".1.3.6.1.2.1.55.1.8",
+    "parent": "ipv6MIBObjects",
+    "description": "The table of addressing information relevant to this node's interface addresses.",
+    "objects": [{
+            ".1.3.6.1.2.1.55.1.8.1.1": {
+                "name": "ipv6AddrAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IPv6 address to which this entry's addressing information pertains.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.8.1.2": {
+                "name": "ipv6AddrPfxLength",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The length of the prefix (in bits) associated with the IPv6 address of this entry.",
+                "status": "Current",
+                "range": "0..128"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.8.1.3": {
+                "name": "ipv6AddrType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The type of address. Note that 'stateless(1)' refers to an address that was statelessly autoconfigured; 'stateful(2)' refers to a address which was acquired by via a stateful protocol (e.g. DHCPv6, manual configuration).",
+                "status": "Current",
+                "types": [{
+                        "1": "stateless"
+                    },
+                    {
+                        "2": "stateful"
+                    },
+                    {
+                        "3": "unknown"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.8.1.4": {
+                "name": "ipv6AddrAnycastFlag",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "This object has the value 'true(1)', if this address is an anycast address and the value 'false(2)' otherwise.",
+                "status": "Current",
+                "types": [{
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.8.1.5": {
+                "name": "ipv6AddrStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "Address status. The preferred(1) state indicates that this is a valid address that can appear as the destination or source address of a packet. The deprecated(2) state indicates that this is a valid but deprecated address that should no longer be used as a source address in new communications, but packets addressed to such an address are processed as expected. The invalid(3) state indicates that this is not valid address which should not appear as the destination or source address of a packet. The inaccessible(4) state indicates that the address is not accessible because the interface to which this address is assigned is not operational.",
+                "status": "Current",
+                "types": [{
+                        "1": "preferred"
+                    },
+                    {
+                        "2": "deprecated"
+                    },
+                    {
+                        "3": "invalid"
+                    },
+                    {
+                        "4": "inaccessible"
+                    },
+                    {
+                        "5": "unknown"
+                    }
+                ]
+            }
+        }
+    ]
+}

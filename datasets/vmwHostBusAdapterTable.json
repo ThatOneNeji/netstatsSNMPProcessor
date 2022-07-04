@@ -1,0 +1,100 @@
+{
+    "name": "vmwHostBusAdapterTable",
+    "type": "table",
+    "mib": "VMWARE-RESOURCES-MIB",
+    "oid": ".1.3.6.1.4.1.6876.3.5.2",
+    "parent": "vmwStorage",
+    "description": "Inventory of Host Bus Adatpers found in this system. CLI: esxcfg-scsidevs -a VIM Parent Container: https://esx.example.com/mob/?moid=storageSystem VIM property: hostBusAdapter MOB: https://esx.example.com/mob/?moid=storageSystem&doPath=storageDeviceInfo",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.3.5.2.1.1": {
+                "name": "vmwHostBusAdapterIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "An arbitrary index assigned to this adapter.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.5.2.1.2": {
+                "name": "vmwHbaDeviceName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The system device name for this host bus adapter.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.5.2.1.3": {
+                "name": "vmwHbaBusNumber",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "The host bus number. For unsuported HBA's reports -1.",
+                "status": "Current",
+                "range": "0..1023"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.5.2.1.4": {
+                "name": "vmwHbaStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The operational status of the adapter.",
+                "status": "Current",
+                "types": [{
+                        "1": "unknown"
+                    },
+                    {
+                        "2": "normal"
+                    },
+                    {
+                        "3": "marginal"
+                    },
+                    {
+                        "4": "critical"
+                    },
+                    {
+                        "5": "failed"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.5.2.1.5": {
+                "name": "vmwHbaModelName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "The model name of the host bus adapter.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.5.2.1.6": {
+                "name": "vmwHbaDriverName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "The name of the driver.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.3.5.2.1.7": {
+                "name": "vmwHbaPci",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "7",
+                "description": "The Peripheral Connect Interface (PCI) ID of the device.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

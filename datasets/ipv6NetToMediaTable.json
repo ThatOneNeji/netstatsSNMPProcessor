@@ -1,0 +1,118 @@
+{
+    "name": "ipv6NetToMediaTable",
+    "type": "table",
+    "mib": "IPV6-MIB",
+    "oid": ".1.3.6.1.2.1.55.1.12",
+    "parent": "ipv6MIBObjects",
+    "description": "The IPv6 Address Translation table used for mapping from IPv6 addresses to physical addresses. The IPv6 address translation table contain the Ipv6Address to `physical' address equivalencies. Some interfaces do not use translation tables for determining address equivalencies; if all interfaces are of this type, then the Address Translation table is empty, i.e., has zero entries.",
+    "objects": [{
+            ".1.3.6.1.2.1.55.1.5.1.1": {
+                "name": "ipv6IfIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique non-zero value identifying the particular IPv6 interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.12.1.1": {
+                "name": "ipv6NetToMediaNetAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IPv6 Address corresponding to the media-dependent `physical' address.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.12.1.2": {
+                "name": "ipv6NetToMediaPhysAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The media-dependent `physical' address.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.12.1.3": {
+                "name": "ipv6NetToMediaType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The type of the mapping. The 'dynamic(2)' type indicates that the IPv6 address to physical addresses mapping has been dynamically resolved using the IPv6 Neighbor Discovery protocol. The static(3)' types indicates that the mapping has been statically configured. The local(4) indicates that the mapping is provided for an entity's own interface address.",
+                "status": "Current",
+                "types": [{
+                        "1": "other"
+                    },
+                    {
+                        "2": "dynamic"
+                    },
+                    {
+                        "3": "static"
+                    },
+                    {
+                        "4": "local"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.12.1.4": {
+                "name": "ipv6IfNetToMediaState",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The Neighbor Unreachability Detection [8] state for the interface when the address mapping in this entry is used.",
+                "status": "Current",
+                "types": [{
+                        "1": "reachable"
+                    },
+                    {
+                        "2": "stale"
+                    },
+                    {
+                        "3": "delay"
+                    },
+                    {
+                        "4": "probe"
+                    },
+                    {
+                        "5": "invalid"
+                    },
+                    {
+                        "6": "unknown"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.12.1.5": {
+                "name": "ipv6IfNetToMediaLastUpdated",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "5",
+                "description": "The value of sysUpTime at the time this entry was last updated. If this entry was updated prior to the last re-initialization of the local network management subsystem, then this object contains a zero value.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.55.1.12.1.6": {
+                "name": "ipv6NetToMediaValid",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "Setting this object to the value 'false(2)' has the effect of invalidating the corresponding entry in the ipv6NetToMediaTable. That is, it effectively disassociates the interface identified with said entry from the mapping identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipv6NetToMediaValid object.",
+                "status": "Current",
+                "types": [{
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        }
+    ]
+}

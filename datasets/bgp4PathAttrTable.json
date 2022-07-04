@@ -1,0 +1,179 @@
+{
+    "name": "bgp4PathAttrTable",
+    "type": "table",
+    "mib": "BGP4-MIB",
+    "oid": ".1.3.6.1.2.1.15.6",
+    "parent": "bgp",
+    "description": "The BGP-4 Received Path Attribute Table contains information about paths to destination networks, received from all BGP4 peers.",
+    "objects": [{
+            ".1.3.6.1.2.1.15.6.1.3": {
+                "name": "bgp4PathAttrIpAddrPrefix",
+                "datatype": "IPADDR",
+                "columntype": "index",
+                "order": "3",
+                "description": "An IP address prefix in the Network Layer Reachability Information field. This object is an IP address containing the prefix with length specified by bgp4PathAttrIpAddrPrefixLen. Any bits beyond the length specified by bgp4PathAttrIpAddrPrefixLen are zeroed.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.2": {
+                "name": "bgp4PathAttrIpAddrPrefixLen",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "Length in bits of the IP address prefix in the Network Layer Reachability Information field.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.1": {
+                "name": "bgp4PathAttrPeer",
+                "datatype": "IPADDR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IP address of the peer where the path information was learned.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.4": {
+                "name": "bgp4PathAttrOrigin",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The ultimate origin of the path information.",
+                "status": "Current",
+                "types": [{
+                        "1": "igp"
+                    },
+                    {
+                        "2": "egp"
+                    },
+                    {
+                        "3": "incomplete"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.5": {
+                "name": "bgp4PathAttrASPathSegment",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "The sequence of AS path segments. Each AS path segment is represented by a triple <type, length, value>. The type is a 1-octet field that has two possible values: 1 AS_SET: unordered set of ASes that a route in the UPDATE message has traversed 2 AS_SEQUENCE: ordered set of ASes that a route in the UPDATE message has traversed. The length is a 1-octet field containing the number of ASes in the value field. The value field contains one or more AS numbers. Each AS is represented in the octet string as a pair of octets according to the following algorithm: first-byte-of-pair = ASNumber / 256; second-byte-of-pair = ASNumber & 255; Known Issues: o BGP Confederations will result in a type of either 3 or 4. o An AS Path may be longer than 255 octets. This may result in this object containing a truncated AS Path.",
+                "status": "Current",
+                "range": "2..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.6": {
+                "name": "bgp4PathAttrNextHop",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "6",
+                "description": "The address of the border router that should be used for the destination network. This address is the NEXT_HOP address received in the UPDATE packet.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.7": {
+                "name": "bgp4PathAttrMultiExitDisc",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "This metric is used to discriminate between multiple exit points to an adjacent autonomous system. A value of -1 indicates the absence of this attribute. Known Issues: o The BGP-4 specification uses an unsigned 32 bit number. Thus, this object cannot represent the full range of the protocol.",
+                "status": "Current",
+                "range": "-1..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.8": {
+                "name": "bgp4PathAttrLocalPref",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "The originating BGP4 speaker's degree of preference for an advertised route. A value of -1 indicates the absence of this attribute. Known Issues: o The BGP-4 specification uses an unsigned 32 bit number and thus this object cannot represent the full range of the protocol.",
+                "status": "Current",
+                "range": "-1..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.9": {
+                "name": "bgp4PathAttrAtomicAggregate",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "9",
+                "description": "If the ATOMIC_AGGREGATE attribute is present in the Path Attributes then this object MUST have a value of 'lessSpecificRouteNotSelected'. If the ATOMIC_AGGREGATE attribute is missing in the Path Attributes then this object MUST have a value of 'lessSpecificRouteSelected'. Note that ATOMIC_AGGREGATE is now a primarily informational attribute.",
+                "status": "Current",
+                "types": [{
+                        "1": "lessSpecificRouteNotSelected"
+                    },
+                    {
+                        "2": "lessSpecificRouteSelected"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.10": {
+                "name": "bgp4PathAttrAggregatorAS",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "The AS number of the last BGP4 speaker that performed route aggregation. A value of zero (0) indicates the absence of this attribute. Note that propagation of AS of zero is illegal in the Internet.",
+                "status": "Current",
+                "range": "0..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.11": {
+                "name": "bgp4PathAttrAggregatorAddr",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "11",
+                "description": "The IP address of the last BGP4 speaker that performed route aggregation. A value of 0.0.0.0 indicates the absence of this attribute.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.12": {
+                "name": "bgp4PathAttrCalcLocalPref",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "12",
+                "description": "The degree of preference calculated by the receiving BGP4 speaker for an advertised route. A value of -1 indicates the absence of this attribute. Known Issues: o The BGP-4 specification uses an unsigned 32 bit number and thus this object cannot represent the full range of the protocol.",
+                "status": "Current",
+                "range": "-1..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.13": {
+                "name": "bgp4PathAttrBest",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "13",
+                "description": "An indication of whether this route was chosen as the best BGP4 route for this destination.",
+                "status": "Current",
+                "types": [{
+                        "1": "false"
+                    },
+                    {
+                        "2": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.6.1.14": {
+                "name": "bgp4PathAttrUnknown",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "14",
+                "description": "One or more path attributes not understood by this BGP4 speaker. Path attributes are recorded in the Update Path attribute format of type, length, value. Size zero (0) indicates the absence of such attributes. Octets beyond the maximum size, if any, are not recorded by this object. Known Issues: o Attributes understood by this speaker, but not represented in this MIB, are unavailable to the agent.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

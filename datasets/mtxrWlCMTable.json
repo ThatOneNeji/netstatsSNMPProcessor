@@ -1,0 +1,61 @@
+{
+    "name": "mtxrWlCMTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.1.7",
+    "parent": "mtxrWireless",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.1.7.1.1": {
+                "name": "mtxrWlCMIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.7.1.2": {
+                "name": "mtxrWlCMRegClientCount",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.7.1.3": {
+                "name": "mtxrWlCMAuthClientCount",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.7.1.4": {
+                "name": "mtxrWlCMState",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.7.1.5": {
+                "name": "mtxrWlCMChannel",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "for master only",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

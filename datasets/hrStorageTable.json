@@ -1,0 +1,83 @@
+{
+    "name": "hrStorageTable",
+    "type": "table",
+    "mib": "HOST-RESOURCES-MIB",
+    "oid": ".1.3.6.1.2.1.25.2.3",
+    "parent": "hrStorage",
+    "description": "The (conceptual) table of logical storage areas on the host. An entry shall be placed in the storage table for each logical area of storage that is allocated and has fixed resource limits. The amount of storage represented in an entity is the amount actually usable by the requesting entity, and excludes loss due to formatting or file system reference information. These entries are associated with logical storage areas, as might be seen by an application, rather than physical storage entities which are typically seen by an operating system. Storage such as tapes and floppies without file systems on them are typically not allocated in chunks by the operating system to requesting applications, and therefore shouldn't appear in this table. Examples of valid storage for this table include disk partitions, file systems, ram (for some architectures this is further segmented into regular memory, extended memory, and so on), backing store for virtual memory (`swap space'). This table is intended to be a useful diagnostic for `out of memory' and `out of buffers' types of failures. In addition, it can be a useful performance monitoring tool for tracking memory, disk, or buffer usage.",
+    "objects": [{
+            ".1.3.6.1.2.1.25.2.3.1.1": {
+                "name": "hrStorageIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique value for each logical storage area contained by the host.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.2.3.1.2": {
+                "name": "hrStorageType",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "2",
+                "description": "The type of storage represented by this entry.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.2.3.1.3": {
+                "name": "hrStorageDescr",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "A description of the type and instance of the storage described by this entry.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.2.3.1.4": {
+                "name": "hrStorageAllocationUnits",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "The size, in bytes, of the data objects allocated from this pool. If this entry is monitoring sectors, blocks, buffers, or packets, for example, this number will commonly be greater than one. Otherwise this number will typically be one.",
+                "status": "Current",
+                "range": "1..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.2.3.1.5": {
+                "name": "hrStorageSize",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "The size of the storage represented by this entry, in units of hrStorageAllocationUnits. This object is writable to allow remote configuration of the size of the storage area in those cases where such an operation makes sense and is possible on the underlying system. For example, the amount of main memory allocated to a buffer pool might be modified or the amount of disk space allocated to virtual memory might be modified.",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.2.3.1.6": {
+                "name": "hrStorageUsed",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "The amount of the storage represented by this entry that is allocated, in units of hrStorageAllocationUnits.",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.2.3.1.7": {
+                "name": "hrStorageAllocationFailures",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "7",
+                "description": "The number of requests for storage represented by this entry that could not be honored due to not enough storage. It should be noted that as this object has a SYNTAX of Counter32, that it does not have a defined initial value. However, it is recommended that this object be initialized to zero, even though management stations must not depend on such an initialization.",
+                "status": "Current"
+            }
+        }
+    ]
+}

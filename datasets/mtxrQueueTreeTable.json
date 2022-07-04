@@ -1,0 +1,102 @@
+{
+    "name": "mtxrQueueTreeTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.2.2",
+    "parent": "mtxrQueues",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.1": {
+                "name": "mtxrQueueTreeIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.2": {
+                "name": "mtxrQueueTreeName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.3": {
+                "name": "mtxrQueueTreeFlow",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "flowmark",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.4": {
+                "name": "mtxrQueueTreeParentIndex",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "index of parent tree queue or parent interface",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.5": {
+                "name": "mtxrQueueTreeBytes",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.6": {
+                "name": "mtxrQueueTreePackets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.7": {
+                "name": "mtxrQueueTreeHCBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "7",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.8": {
+                "name": "mtxrQueueTreePCQQueues",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.2.2.1.9": {
+                "name": "mtxrQueueTreeDropped",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "name": "mtxrDnStatTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.10.1",
+    "parent": "mtxrNstremeDual",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.10.1.1.1": {
+                "name": "mtxrDnStatIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.10.1.1.2": {
+                "name": "mtxrDnStatTxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "2",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.10.1.1.3": {
+                "name": "mtxrDnStatRxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "3",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.10.1.1.4": {
+                "name": "mtxrDnStatTxStrength",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "dBm",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.10.1.1.5": {
+                "name": "mtxrDnStatRxStrength",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "dBm",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.10.1.1.6": {
+                "name": "mtxrDnConnected",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "0 - not connected, connected otherwise",
+                "status": "Current"
+            }
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "name": "mtxrWlApTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.1.3",
+    "parent": "mtxrWireless",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.1": {
+                "name": "mtxrWlApIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.2": {
+                "name": "mtxrWlApTxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "2",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.3": {
+                "name": "mtxrWlApRxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "3",
+                "description": "bits per second",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.4": {
+                "name": "mtxrWlApSsid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.5": {
+                "name": "mtxrWlApBssid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.6": {
+                "name": "mtxrWlApClientCount",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.7": {
+                "name": "mtxrWlApFreq",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "megahertz",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.8": {
+                "name": "mtxrWlApBand",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.9": {
+                "name": "mtxrWlApNoiseFloor",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.10": {
+                "name": "mtxrWlApOverallTxCCQ",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.1.3.1.11": {
+                "name": "mtxrWlApAuthClientCount",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "11",
+                "description": "",
+                "status": "Current"
+            }
+        }
+    ]
+}

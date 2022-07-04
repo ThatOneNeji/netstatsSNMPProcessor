@@ -1,0 +1,64 @@
+{
+    "name": "vmwSystem",
+    "type": "scalar",
+    "mib": "VMWARE-ROOT-MIB",
+    "oid": ".1.3.6.1.4.1.6876.1",
+    "parent": "vmware",
+    "description": "Parent of all managed objects relating to system software identification.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.1.1": {
+                "name": "vmwProdName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "1",
+                "description": "This product's name. VIM Property: AboutInfo.name https://esx.example.com/mob/?moid=ServiceInstance&doPath=content%2eabout",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.1.2": {
+                "name": "vmwProdVersion",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The product's version release identifier. Format is Major.Minor.Update VIM Property: AboutInfo.version https://esx.example.com/mob/?moid=ServiceInstance&doPath=content%2eabout",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.1.4": {
+                "name": "vmwProdBuild",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "This identifier represents the most specific identifier. VIM Property: AboutInfo.build https://esx.example.com/mob/?moid=ServiceInstance&doPath=content%2eabout",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.1.5": {
+                "name": "vmwProdUpdate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "This identifier represents the update level applied to this system. VIM Property: Advanced Options key: Misc.HostAgentUpdateLevel https://esx.example.com/mob/?moid=ha%2dadv%2doptions",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.1.6": {
+                "name": "vmwProdPatch",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "This identifier represents the patch level applied to this system. VIM Property: None. CLI: esxcli system version get",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

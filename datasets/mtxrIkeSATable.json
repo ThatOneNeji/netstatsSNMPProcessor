@@ -1,0 +1,329 @@
+{
+    "name": "mtxrIkeSATable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.20.2",
+    "parent": "mtxrIPSec",
+    "description": "IKE SA table",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.1": {
+                "name": "mtxrIkeSAIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.2": {
+                "name": "mtxrIkeSAInitiatorCookie",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "initiator SPI",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.3": {
+                "name": "mtxrIkeSAResponderCookie",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "responder SPI",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.4": {
+                "name": "mtxrIkeSAResponder",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "IKE side",
+                "status": "Current",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.5": {
+                "name": "mtxrIkeSANatt",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "NAT is detected",
+                "status": "Current",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.6": {
+                "name": "mtxrIkeSAVersion",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "6",
+                "description": "protocol version",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.7": {
+                "name": "mtxrIkeSAState",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "7",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "1": "exchange"
+                    },
+                    {
+                        "2": "established"
+                    },
+                    {
+                        "3": "expired"
+                    },
+                    {
+                        "4": "eap"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.8": {
+                "name": "mtxrIkeSAUptime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "8",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.9": {
+                "name": "mtxrIkeSASeen",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "9",
+                "description": "time elapsed since last valid IKE packet",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.10": {
+                "name": "mtxrIkeSAIdentity",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "10",
+                "description": "peer identity",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.11": {
+                "name": "mtxrIkeSAPh2Count",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "11",
+                "description": "total ph2 SA pairs",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.12": {
+                "name": "mtxrIkeSALocalAddressType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "unknown"
+                    },
+                    {
+                        "1": "ipv4"
+                    },
+                    {
+                        "2": "ipv6"
+                    },
+                    {
+                        "3": "ipv4z"
+                    },
+                    {
+                        "4": "ipv6z"
+                    },
+                    {
+                        "16": "dns"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.13": {
+                "name": "mtxrIkeSALocalAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.14": {
+                "name": "mtxrIkeSALocalPort",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "14",
+                "description": "",
+                "status": "Current",
+                "range": "0..65535"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.15": {
+                "name": "mtxrIkeSAPeerAddressType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "15",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "unknown"
+                    },
+                    {
+                        "1": "ipv4"
+                    },
+                    {
+                        "2": "ipv6"
+                    },
+                    {
+                        "3": "ipv4z"
+                    },
+                    {
+                        "4": "ipv6z"
+                    },
+                    {
+                        "16": "dns"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.16": {
+                "name": "mtxrIkeSAPeerAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "16",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.17": {
+                "name": "mtxrIkeSAPeerPort",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "17",
+                "description": "",
+                "status": "Current",
+                "range": "0..65535"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.18": {
+                "name": "mtxrIkeSADynamicAddressType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "18",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "unknown"
+                    },
+                    {
+                        "1": "ipv4"
+                    },
+                    {
+                        "2": "ipv6"
+                    },
+                    {
+                        "3": "ipv4z"
+                    },
+                    {
+                        "4": "ipv6z"
+                    },
+                    {
+                        "16": "dns"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.19": {
+                "name": "mtxrIkeSADynamicAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "19",
+                "description": "dynamic address allocated by mode config",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.20": {
+                "name": "mtxrIkeSATxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "20",
+                "description": "ph2 SA tx bytes",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.21": {
+                "name": "mtxrIkeSARxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "21",
+                "description": "ph2 SA rx bytes",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.22": {
+                "name": "mtxrIkeSATxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "22",
+                "description": "ph2 SA tx packets",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.20.2.1.23": {
+                "name": "mtxrIkeSARxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "23",
+                "description": "ph2 SA rx packets",
+                "status": "Current"
+            }
+        }
+    ]
+}

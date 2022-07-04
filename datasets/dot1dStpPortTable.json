@@ -1,0 +1,148 @@
+{
+    "name": "dot1dStpPortTable",
+    "type": "table",
+    "mib": "BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.2.15",
+    "parent": "dot1dStp",
+    "description": "A table that contains port-specific information for the Spanning Tree Protocol.",
+    "objects": [{
+            ".1.3.6.1.2.1.17.2.15.1.1": {
+                "name": "dot1dStpPort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains Spanning Tree Protocol management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.2": {
+                "name": "dot1dStpPortPriority",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "description": "The value of the priority field that is contained in the first (in network byte order) octet of the (2 octet long) Port ID. The other octet of the Port ID is given by the value of dot1dStpPort. On bridges supporting IEEE 802.1t or IEEE 802.1w, permissible values are 0-240, in steps of 16.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.3": {
+                "name": "dot1dStpPortState",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The port's current state, as defined by application of the Spanning Tree Protocol. This state controls what action a port takes on reception of a frame. If the bridge has detected a port that is malfunctioning, it will place that port into the broken(6) state. For ports that are disabled (see dot1dStpPortEnable), this object will have a value of disabled(1).",
+                "status": "Current",
+                "types": [{
+                        "1": "disabled"
+                    },
+                    {
+                        "2": "blocking"
+                    },
+                    {
+                        "3": "listening"
+                    },
+                    {
+                        "4": "learning"
+                    },
+                    {
+                        "5": "forwarding"
+                    },
+                    {
+                        "6": "broken"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.4": {
+                "name": "dot1dStpPortEnable",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The enabled/disabled status of the port.",
+                "status": "Current",
+                "types": [{
+                        "1": "enabled"
+                    },
+                    {
+                        "2": "disabled"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.5": {
+                "name": "dot1dStpPortPathCost",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "The contribution of this port to the path cost of paths towards the spanning tree root which include this port. 802.1D-1998 recommends that the default value of this parameter be in inverse proportion to the speed of the attached LAN. New implementations should support dot1dStpPortPathCost32. If the port path costs exceeds the maximum value of this object then this object should report the maximum value, namely 65535. Applications should try to read the dot1dStpPortPathCost32 object if this object reports the maximum value.",
+                "status": "Current",
+                "range": "1..65535"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.6": {
+                "name": "dot1dStpPortDesignatedRoot",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "The unique Bridge Identifier of the Bridge recorded as the Root in the Configuration BPDUs transmitted by the Designated Bridge for the segment to which the port is attached.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.7": {
+                "name": "dot1dStpPortDesignatedCost",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "The path cost of the Designated Port of the segment connected to this port. This value is compared to the Root Path Cost field in received bridge PDUs.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.8": {
+                "name": "dot1dStpPortDesignatedBridge",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "The Bridge Identifier of the bridge that this port considers to be the Designated Bridge for this port's segment.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.9": {
+                "name": "dot1dStpPortDesignatedPort",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "description": "The Port Identifier of the port on the Designated Bridge for this port's segment.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.10": {
+                "name": "dot1dStpPortForwardTransitions",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The number of times this port has transitioned from the Learning state to the Forwarding state.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.2.15.1.11": {
+                "name": "dot1dStpPortPathCost32",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "11",
+                "description": "The contribution of this port to the path cost of paths towards the spanning tree root which include this port. 802.1D-1998 recommends that the default value of this parameter be in inverse proportion to the speed of the attached LAN. This object replaces dot1dStpPortPathCost to support IEEE 802.1t.",
+                "status": "Current",
+                "range": "1..200000000"
+            }
+        }
+    ]
+}

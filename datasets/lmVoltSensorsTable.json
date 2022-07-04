@@ -1,0 +1,40 @@
+{
+    "name": "lmVoltSensorsTable",
+    "type": "table",
+    "mib": "LM-SENSORS-MIB",
+    "oid": ".1.3.6.1.4.1.2021.13.16.4",
+    "parent": "lmSensors",
+    "description": "Table of voltage sensors and their values.",
+    "objects": [{
+            ".1.3.6.1.4.1.2021.13.16.4.1.1": {
+                "name": "lmVoltSensorsIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "Reference index for each observed device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.16.4.1.2": {
+                "name": "lmVoltSensorsDevice",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The name of the device we are reading.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.13.16.4.1.3": {
+                "name": "lmVoltSensorsValue",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "3",
+                "description": "The voltage in mV.",
+                "status": "Current"
+            }
+        }
+    ]
+}

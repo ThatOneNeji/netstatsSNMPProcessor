@@ -1,0 +1,129 @@
+{
+    "base": {
+        "prefix": "dev_tbl_base_snmp",
+        "suffix": "raw",
+        "fields": [{
+                "name": "rdate",
+                "properties": "datetime NOT NULL",
+                "comment": "Row DateTime",
+                "type": "index",
+                "position": "prefix"
+            },
+            {
+                "name": "host",
+                "properties": "varchar(255) NOT NULL",
+                "comment": "Hostname",
+                "type": "index",
+                "position": "prefix"
+            },
+            {
+                "name": "ldate",
+                "properties": "datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+                "comment": "DateTime when row was added/changed",
+                "type": "index",
+                "position": "suffix"
+            },
+            {
+                "name": "processed",
+                "properties": "varchar(1) DEFAULT 'n'",
+                "comment": "This field indicates if the row has been processed",
+                "type": "index",
+                "position": "suffix"
+            }
+        ],
+        "missing_index_fields": [{
+            "name": "id",
+            "properties": "varchar(255) NOT NULL",
+            "comment": "ID field",
+            "position": "prefix"
+        }],
+        "indexes": [{
+                "primary": [
+                    "rdate",
+                    "host"
+                ],
+                "comment": "Primary index"
+            },
+            {
+                "updates": [
+                    "ldate",
+                    "processed"
+                ],
+                "comment": "Update trigger index"
+            }
+        ],
+        "triggers": [
+            "update"
+        ]
+    },
+    "summary": {
+        "prefix": "tbl_summary_snmp",
+        "fields": [{
+                "name": "rdate",
+                "properties": "datetime NOT NULL",
+                "comment": "Row DateTime",
+                "type": "index",
+                "position": "prefix"
+            },
+            {
+                "name": "host",
+                "properties": "varchar(255) NOT NULL",
+                "comment": "Hostname",
+                "type": "index",
+                "position": "prefix"
+            },
+            {
+                "name": "idate",
+                "properties": "varchar(20) NOT NULL",
+                "comment": "DateTime in EPOCH format",
+                "type": "ignore",
+                "position": "prefix"
+            },
+            {
+                "name": "ldate",
+                "properties": "datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+                "comment": "DateTime when row was added/changed",
+                "type": "index",
+                "position": "suffix"
+            },
+            {
+                "name": "processed",
+                "properties": "varchar(1) DEFAULT 'n'",
+                "comment": "This field indicates if the row has been processed",
+                "type": "index",
+                "position": "suffix"
+            },
+            {
+                "name": "samples",
+                "properties": "INT NOT NULL DEFAULT '1'",
+                "comment": "comment7",
+                "type": "ignore",
+                "position": "suffix"
+            }
+        ],
+        "missing_indexes": [{
+            "name": "id",
+            "properties": "varchar(255) NOT NULL",
+            "position": "prefix"
+        }],
+        "indexes": [{
+                "primary": [
+                    "rdate",
+                    "host"
+                ],
+                "comment": "Primary index"
+            },
+            {
+                "updates": [
+                    "ldate",
+                    "processed"
+                ],
+                "comment": "Update trigger index"
+            }
+        ],
+        "triggers": [
+            "insert",
+            "update"
+        ]
+    }
+}

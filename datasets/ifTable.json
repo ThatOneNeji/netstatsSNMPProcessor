@@ -1,0 +1,1025 @@
+{
+    "name": "ifTable",
+    "type": "table",
+    "mib": "IF-MIB",
+    "oid": ".1.3.6.1.2.1.2.2",
+    "parent": "interfaces",
+    "description": "A list of interface entries. The number of entries is given by the value of ifNumber.",
+    "objects": [{
+            ".1.3.6.1.2.1.2.2.1.1": {
+                "name": "ifIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique value, greater than zero, for each interface. It is recommended that values are assigned contiguously starting from 1. The value for each interface sub-layer must remain constant at least from one re-initialization of the entity's network management system to the next re- initialization.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.2": {
+                "name": "ifDescr",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "A textual string containing information about the interface. This string should include the name of the manufacturer, the product name and the version of the interface hardware/software.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.3": {
+                "name": "ifType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The type of interface. Additional values for ifType are assigned by the Internet Assigned Numbers Authority (IANA), through updating the syntax of the IANAifType textual convention.",
+                "status": "Current",
+                "types": [{
+                        "1": "other"
+                    },
+                    {
+                        "2": "regular1822"
+                    },
+                    {
+                        "3": "hdh1822"
+                    },
+                    {
+                        "4": "ddnX25"
+                    },
+                    {
+                        "5": "rfc877x25"
+                    },
+                    {
+                        "6": "ethernetCsmacd"
+                    },
+                    {
+                        "7": "iso88023Csmacd"
+                    },
+                    {
+                        "8": "iso88024TokenBus"
+                    },
+                    {
+                        "9": "iso88025TokenRing"
+                    },
+                    {
+                        "10": "iso88026Man"
+                    },
+                    {
+                        "11": "starLan"
+                    },
+                    {
+                        "12": "proteon10Mbit"
+                    },
+                    {
+                        "13": "proteon80Mbit"
+                    },
+                    {
+                        "14": "hyperchannel"
+                    },
+                    {
+                        "15": "fddi"
+                    },
+                    {
+                        "16": "lapb"
+                    },
+                    {
+                        "17": "sdlc"
+                    },
+                    {
+                        "18": "ds1"
+                    },
+                    {
+                        "19": "e1"
+                    },
+                    {
+                        "20": "basicISDN"
+                    },
+                    {
+                        "21": "primaryISDN"
+                    },
+                    {
+                        "22": "propPointToPointSerial"
+                    },
+                    {
+                        "23": "ppp"
+                    },
+                    {
+                        "24": "softwareLoopback"
+                    },
+                    {
+                        "25": "eon"
+                    },
+                    {
+                        "26": "ethernet3Mbit"
+                    },
+                    {
+                        "27": "nsip"
+                    },
+                    {
+                        "28": "slip"
+                    },
+                    {
+                        "29": "ultra"
+                    },
+                    {
+                        "30": "ds3"
+                    },
+                    {
+                        "31": "sip"
+                    },
+                    {
+                        "32": "frameRelay"
+                    },
+                    {
+                        "33": "rs232"
+                    },
+                    {
+                        "34": "para"
+                    },
+                    {
+                        "35": "arcnet"
+                    },
+                    {
+                        "36": "arcnetPlus"
+                    },
+                    {
+                        "37": "atm"
+                    },
+                    {
+                        "38": "miox25"
+                    },
+                    {
+                        "39": "sonet"
+                    },
+                    {
+                        "40": "x25ple"
+                    },
+                    {
+                        "41": "iso88022llc"
+                    },
+                    {
+                        "42": "localTalk"
+                    },
+                    {
+                        "43": "smdsDxi"
+                    },
+                    {
+                        "44": "frameRelayService"
+                    },
+                    {
+                        "45": "v35"
+                    },
+                    {
+                        "46": "hssi"
+                    },
+                    {
+                        "47": "hippi"
+                    },
+                    {
+                        "48": "modem"
+                    },
+                    {
+                        "49": "aal5"
+                    },
+                    {
+                        "50": "sonetPath"
+                    },
+                    {
+                        "51": "sonetVT"
+                    },
+                    {
+                        "52": "smdsIcip"
+                    },
+                    {
+                        "53": "propVirtual"
+                    },
+                    {
+                        "54": "propMultiplexor"
+                    },
+                    {
+                        "55": "ieee80212"
+                    },
+                    {
+                        "56": "fibreChannel"
+                    },
+                    {
+                        "57": "hippiInterface"
+                    },
+                    {
+                        "58": "frameRelayInterconnect"
+                    },
+                    {
+                        "59": "aflane8023"
+                    },
+                    {
+                        "60": "aflane8025"
+                    },
+                    {
+                        "61": "cctEmul"
+                    },
+                    {
+                        "62": "fastEther"
+                    },
+                    {
+                        "63": "isdn"
+                    },
+                    {
+                        "64": "v11"
+                    },
+                    {
+                        "65": "v36"
+                    },
+                    {
+                        "66": "g703at64k"
+                    },
+                    {
+                        "67": "g703at2mb"
+                    },
+                    {
+                        "68": "qllc"
+                    },
+                    {
+                        "69": "fastEtherFX"
+                    },
+                    {
+                        "70": "channel"
+                    },
+                    {
+                        "71": "ieee80211"
+                    },
+                    {
+                        "72": "ibm370parChan"
+                    },
+                    {
+                        "73": "escon"
+                    },
+                    {
+                        "74": "dlsw"
+                    },
+                    {
+                        "75": "isdns"
+                    },
+                    {
+                        "76": "isdnu"
+                    },
+                    {
+                        "77": "lapd"
+                    },
+                    {
+                        "78": "ipSwitch"
+                    },
+                    {
+                        "79": "rsrb"
+                    },
+                    {
+                        "80": "atmLogical"
+                    },
+                    {
+                        "81": "ds0"
+                    },
+                    {
+                        "82": "ds0Bundle"
+                    },
+                    {
+                        "83": "bsc"
+                    },
+                    {
+                        "84": "async"
+                    },
+                    {
+                        "85": "cnr"
+                    },
+                    {
+                        "86": "iso88025Dtr"
+                    },
+                    {
+                        "87": "eplrs"
+                    },
+                    {
+                        "88": "arap"
+                    },
+                    {
+                        "89": "propCnls"
+                    },
+                    {
+                        "90": "hostPad"
+                    },
+                    {
+                        "91": "termPad"
+                    },
+                    {
+                        "92": "frameRelayMPI"
+                    },
+                    {
+                        "93": "x213"
+                    },
+                    {
+                        "94": "adsl"
+                    },
+                    {
+                        "95": "radsl"
+                    },
+                    {
+                        "96": "sdsl"
+                    },
+                    {
+                        "97": "vdsl"
+                    },
+                    {
+                        "98": "iso88025CRFPInt"
+                    },
+                    {
+                        "99": "myrinet"
+                    },
+                    {
+                        "100": "voiceEM"
+                    },
+                    {
+                        "101": "voiceFXO"
+                    },
+                    {
+                        "102": "voiceFXS"
+                    },
+                    {
+                        "103": "voiceEncap"
+                    },
+                    {
+                        "104": "voiceOverIp"
+                    },
+                    {
+                        "105": "atmDxi"
+                    },
+                    {
+                        "106": "atmFuni"
+                    },
+                    {
+                        "107": "atmIma"
+                    },
+                    {
+                        "108": "pppMultilinkBundle"
+                    },
+                    {
+                        "109": "ipOverCdlc"
+                    },
+                    {
+                        "110": "ipOverClaw"
+                    },
+                    {
+                        "111": "stackToStack"
+                    },
+                    {
+                        "112": "virtualIpAddress"
+                    },
+                    {
+                        "113": "mpc"
+                    },
+                    {
+                        "114": "ipOverAtm"
+                    },
+                    {
+                        "115": "iso88025Fiber"
+                    },
+                    {
+                        "116": "tdlc"
+                    },
+                    {
+                        "117": "gigabitEthernet"
+                    },
+                    {
+                        "118": "hdlc"
+                    },
+                    {
+                        "119": "lapf"
+                    },
+                    {
+                        "120": "v37"
+                    },
+                    {
+                        "121": "x25mlp"
+                    },
+                    {
+                        "122": "x25huntGroup"
+                    },
+                    {
+                        "123": "transpHdlc"
+                    },
+                    {
+                        "124": "interleave"
+                    },
+                    {
+                        "125": "fast"
+                    },
+                    {
+                        "126": "ip"
+                    },
+                    {
+                        "127": "docsCableMaclayer"
+                    },
+                    {
+                        "128": "docsCableDownstream"
+                    },
+                    {
+                        "129": "docsCableUpstream"
+                    },
+                    {
+                        "130": "a12MppSwitch"
+                    },
+                    {
+                        "131": "tunnel"
+                    },
+                    {
+                        "132": "coffee"
+                    },
+                    {
+                        "133": "ces"
+                    },
+                    {
+                        "134": "atmSubInterface"
+                    },
+                    {
+                        "135": "l2vlan"
+                    },
+                    {
+                        "136": "l3ipvlan"
+                    },
+                    {
+                        "137": "l3ipxvlan"
+                    },
+                    {
+                        "138": "digitalPowerline"
+                    },
+                    {
+                        "139": "mediaMailOverIp"
+                    },
+                    {
+                        "140": "dtm"
+                    },
+                    {
+                        "141": "dcn"
+                    },
+                    {
+                        "142": "ipForward"
+                    },
+                    {
+                        "143": "msdsl"
+                    },
+                    {
+                        "144": "ieee1394"
+                    },
+                    {
+                        "145": "if_gsn"
+                    },
+                    {
+                        "146": "dvbRccMacLayer"
+                    },
+                    {
+                        "147": "dvbRccDownstream"
+                    },
+                    {
+                        "148": "dvbRccUpstream"
+                    },
+                    {
+                        "149": "atmVirtual"
+                    },
+                    {
+                        "150": "mplsTunnel"
+                    },
+                    {
+                        "151": "srp"
+                    },
+                    {
+                        "152": "voiceOverAtm"
+                    },
+                    {
+                        "153": "voiceOverFrameRelay"
+                    },
+                    {
+                        "154": "idsl"
+                    },
+                    {
+                        "155": "compositeLink"
+                    },
+                    {
+                        "156": "ss7SigLink"
+                    },
+                    {
+                        "157": "propWirelessP2P"
+                    },
+                    {
+                        "158": "frForward"
+                    },
+                    {
+                        "159": "rfc1483"
+                    },
+                    {
+                        "160": "usb"
+                    },
+                    {
+                        "161": "ieee8023adLag"
+                    },
+                    {
+                        "162": "bgppolicyaccounting"
+                    },
+                    {
+                        "163": "frf16MfrBundle"
+                    },
+                    {
+                        "164": "h323Gatekeeper"
+                    },
+                    {
+                        "165": "h323Proxy"
+                    },
+                    {
+                        "166": "mpls"
+                    },
+                    {
+                        "167": "mfSigLink"
+                    },
+                    {
+                        "168": "hdsl2"
+                    },
+                    {
+                        "169": "shdsl"
+                    },
+                    {
+                        "170": "ds1FDL"
+                    },
+                    {
+                        "171": "pos"
+                    },
+                    {
+                        "172": "dvbAsiIn"
+                    },
+                    {
+                        "173": "dvbAsiOut"
+                    },
+                    {
+                        "174": "plc"
+                    },
+                    {
+                        "175": "nfas"
+                    },
+                    {
+                        "176": "tr008"
+                    },
+                    {
+                        "177": "gr303RDT"
+                    },
+                    {
+                        "178": "gr303IDT"
+                    },
+                    {
+                        "179": "isup"
+                    },
+                    {
+                        "180": "propDocsWirelessMaclayer"
+                    },
+                    {
+                        "181": "propDocsWirelessDownstream"
+                    },
+                    {
+                        "182": "propDocsWirelessUpstream"
+                    },
+                    {
+                        "183": "hiperlan2"
+                    },
+                    {
+                        "184": "propBWAp2Mp"
+                    },
+                    {
+                        "185": "sonetOverheadChannel"
+                    },
+                    {
+                        "186": "digitalWrapperOverheadChannel"
+                    },
+                    {
+                        "187": "aal2"
+                    },
+                    {
+                        "188": "radioMAC"
+                    },
+                    {
+                        "189": "atmRadio"
+                    },
+                    {
+                        "190": "imt"
+                    },
+                    {
+                        "191": "mvl"
+                    },
+                    {
+                        "192": "reachDSL"
+                    },
+                    {
+                        "193": "frDlciEndPt"
+                    },
+                    {
+                        "194": "atmVciEndPt"
+                    },
+                    {
+                        "195": "opticalChannel"
+                    },
+                    {
+                        "196": "opticalTransport"
+                    },
+                    {
+                        "197": "propAtm"
+                    },
+                    {
+                        "198": "voiceOverCable"
+                    },
+                    {
+                        "199": "infiniband"
+                    },
+                    {
+                        "200": "teLink"
+                    },
+                    {
+                        "201": "q2931"
+                    },
+                    {
+                        "202": "virtualTg"
+                    },
+                    {
+                        "203": "sipTg"
+                    },
+                    {
+                        "204": "sipSig"
+                    },
+                    {
+                        "205": "docsCableUpstreamChannel"
+                    },
+                    {
+                        "206": "econet"
+                    },
+                    {
+                        "207": "pon155"
+                    },
+                    {
+                        "208": "pon622"
+                    },
+                    {
+                        "209": "bridge"
+                    },
+                    {
+                        "210": "linegroup"
+                    },
+                    {
+                        "211": "voiceEMFGD"
+                    },
+                    {
+                        "212": "voiceFGDEANA"
+                    },
+                    {
+                        "213": "voiceDID"
+                    },
+                    {
+                        "214": "mpegTransport"
+                    },
+                    {
+                        "215": "sixToFour"
+                    },
+                    {
+                        "216": "gtp"
+                    },
+                    {
+                        "217": "pdnEtherLoop1"
+                    },
+                    {
+                        "218": "pdnEtherLoop2"
+                    },
+                    {
+                        "219": "opticalChannelGroup"
+                    },
+                    {
+                        "220": "homepna"
+                    },
+                    {
+                        "221": "gfp"
+                    },
+                    {
+                        "222": "ciscoISLvlan"
+                    },
+                    {
+                        "223": "actelisMetaLOOP"
+                    },
+                    {
+                        "224": "fcipLink"
+                    },
+                    {
+                        "225": "rpr"
+                    },
+                    {
+                        "226": "qam"
+                    },
+                    {
+                        "227": "lmp"
+                    },
+                    {
+                        "228": "cblVectaStar"
+                    },
+                    {
+                        "229": "docsCableMCmtsDownstream"
+                    },
+                    {
+                        "230": "adsl2"
+                    },
+                    {
+                        "231": "macSecControlledIF"
+                    },
+                    {
+                        "232": "macSecUncontrolledIF"
+                    },
+                    {
+                        "233": "aviciOpticalEther"
+                    },
+                    {
+                        "234": "atmbond"
+                    },
+                    {
+                        "235": "voiceFGDOS"
+                    },
+                    {
+                        "236": "mocaVersion1"
+                    },
+                    {
+                        "237": "ieee80216WMAN"
+                    },
+                    {
+                        "238": "adsl2plus"
+                    },
+                    {
+                        "239": "dvbRcsMacLayer"
+                    },
+                    {
+                        "240": "dvbTdm"
+                    },
+                    {
+                        "241": "dvbRcsTdma"
+                    },
+                    {
+                        "242": "x86Laps"
+                    },
+                    {
+                        "243": "wwanPP"
+                    },
+                    {
+                        "244": "wwanPP2"
+                    },
+                    {
+                        "245": "voiceEBS"
+                    },
+                    {
+                        "246": "ifPwType"
+                    },
+                    {
+                        "247": "ilan"
+                    },
+                    {
+                        "248": "pip"
+                    },
+                    {
+                        "249": "aluELP"
+                    },
+                    {
+                        "250": "gpon"
+                    },
+                    {
+                        "251": "vdsl2"
+                    },
+                    {
+                        "252": "capwapDot11Profile"
+                    },
+                    {
+                        "253": "capwapDot11Bss"
+                    },
+                    {
+                        "254": "capwapWtpVirtualRadio"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.4": {
+                "name": "ifMtu",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "The size of the largest packet which can be sent/received on the interface, specified in octets. For interfaces that are used for transmitting network datagrams, this is the size of the largest network datagram that can be sent on the interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.5": {
+                "name": "ifSpeed",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "5",
+                "description": "An estimate of the interface's current bandwidth in bits per second. For interfaces which do not vary in bandwidth or for those where no accurate estimation can be made, this object should contain the nominal bandwidth. If the bandwidth of the interface is greater than the maximum value reportable by this object then this object should report its maximum value (4,294,967,295) and ifHighSpeed must be used to report the interace's speed. For a sub-layer which has no concept of bandwidth, this object should be zero.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.6": {
+                "name": "ifPhysAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "The interface's address at its protocol sub-layer. For example, for an 802.x interface, this object normally contains a MAC address. The interface's media-specific MIB must define the bit and byte ordering and the format of the value of this object. For interfaces which do not have such an address (e.g., a serial line), this object should contain an octet string of zero length.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.7": {
+                "name": "ifAdminStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "7",
+                "description": "The desired state of the interface. The testing(3) state indicates that no operational packets can be passed. When a managed system initializes, all interfaces start with ifAdminStatus in the down(2) state. As a result of either explicit management action or per configuration information retained by the managed system, ifAdminStatus is then changed to either the up(1) or testing(3) states (or remains in the down(2) state).",
+                "status": "Current",
+                "types": [{
+                        "1": "up"
+                    },
+                    {
+                        "2": "down"
+                    },
+                    {
+                        "3": "testing"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.8": {
+                "name": "ifOperStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "8",
+                "description": "The current operational state of the interface. The testing(3) state indicates that no operational packets can be passed. If ifAdminStatus is down(2) then ifOperStatus should be down(2). If ifAdminStatus is changed to up(1) then ifOperStatus should change to up(1) if the interface is ready to transmit and receive network traffic; it should change to dormant(5) if the interface is waiting for external actions (such as a serial line waiting for an incoming connection); it should remain in the down(2) state if and only if there is a fault that prevents it from going to the up(1) state; it should remain in the notPresent(6) state if the interface has missing (typically, hardware) components.",
+                "status": "Current",
+                "types": [{
+                        "1": "up"
+                    },
+                    {
+                        "2": "down"
+                    },
+                    {
+                        "3": "testing"
+                    },
+                    {
+                        "4": "unknown"
+                    },
+                    {
+                        "5": "dormant"
+                    },
+                    {
+                        "6": "notPresent"
+                    },
+                    {
+                        "7": "lowerLayerDown"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.9": {
+                "name": "ifLastChange",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "9",
+                "description": "The value of sysUpTime at the time the interface entered its current operational state. If the current state was entered prior to the last re-initialization of the local network management subsystem, then this object contains a zero value.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.10": {
+                "name": "ifInOctets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The total number of octets received on the interface, including framing characters. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.11": {
+                "name": "ifInUcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "11",
+                "description": "The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were not addressed to a multicast or broadcast address at this sub-layer. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.12": {
+                "name": "ifInNUcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "12",
+                "description": "The number of packets, delivered by this sub-layer to a higher (sub-)layer, which were addressed to a multicast or broadcast address at this sub-layer. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime. This object is deprecated in favour of ifInMulticastPkts and ifInBroadcastPkts.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.13": {
+                "name": "ifInDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "13",
+                "description": "The number of inbound packets which were chosen to be discarded even though no errors had been detected to prevent their being deliverable to a higher-layer protocol. One possible reason for discarding such a packet could be to free up buffer space. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.14": {
+                "name": "ifInErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "14",
+                "description": "For packet-oriented interfaces, the number of inbound packets that contained errors preventing them from being deliverable to a higher-layer protocol. For character- oriented or fixed-length interfaces, the number of inbound transmission units that contained errors preventing them from being deliverable to a higher-layer protocol. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.15": {
+                "name": "ifInUnknownProtos",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "15",
+                "description": "For packet-oriented interfaces, the number of packets received via the interface which were discarded because of an unknown or unsupported protocol. For character-oriented or fixed-length interfaces that support protocol multiplexing the number of transmission units received via the interface which were discarded because of an unknown or unsupported protocol. For any interface that does not support protocol multiplexing, this counter will always be 0. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.16": {
+                "name": "ifOutOctets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "16",
+                "description": "The total number of octets transmitted out of the interface, including framing characters. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.17": {
+                "name": "ifOutUcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "17",
+                "description": "The total number of packets that higher-level protocols requested be transmitted, and which were not addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.18": {
+                "name": "ifOutNUcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "18",
+                "description": "The total number of packets that higher-level protocols requested be transmitted, and which were addressed to a multicast or broadcast address at this sub-layer, including those that were discarded or not sent. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime. This object is deprecated in favour of ifOutMulticastPkts and ifOutBroadcastPkts.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.19": {
+                "name": "ifOutDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "19",
+                "description": "The number of outbound packets which were chosen to be discarded even though no errors had been detected to prevent their being transmitted. One possible reason for discarding such a packet could be to free up buffer space. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.20": {
+                "name": "ifOutErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "20",
+                "description": "For packet-oriented interfaces, the number of outbound packets that could not be transmitted because of errors. For character-oriented or fixed-length interfaces, the number of outbound transmission units that could not be transmitted because of errors. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ifCounterDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.21": {
+                "name": "ifOutQLen",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "21",
+                "description": "The length of the output packet queue (in packets).",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.2.2.1.22": {
+                "name": "ifSpecific",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "22",
+                "description": "A reference to MIB definitions specific to the particular media being used to realize the interface. It is recommended that this value point to an instance of a MIB object in the media-specific MIB, i.e., that this object have the semantics associated with the InstancePointer textual convention defined in RFC 2579. In fact, it is recommended that the media-specific MIB specify what value ifSpecific should/can take for values of ifType. If no MIB definitions specific to the particular media are available, the value should be set to the OBJECT IDENTIFIER { 0 0 }.",
+                "status": "Deprecated"
+            }
+        }
+    ]
+}

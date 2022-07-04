@@ -1,0 +1,85 @@
+{
+    "name": "mtxrPartitionTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.17.1",
+    "parent": "mtxrPartition",
+    "description": "system partitions",
+    "objects": [{
+            ".1.3.6.1.4.1.14988.1.1.17.1.1.1": {
+                "name": "mtxrPartitionIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.17.1.1.2": {
+                "name": "mtxrPartitionName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.17.1.1.3": {
+                "name": "mtxrPartitionSize",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "MB",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.17.1.1.4": {
+                "name": "mtxrPartitionVersion",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.17.1.1.5": {
+                "name": "mtxrPartitionActive",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.17.1.1.6": {
+                "name": "mtxrPartitionRunning",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current",
+                "types": [{
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        }
+    ]
+}

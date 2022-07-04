@@ -1,0 +1,62 @@
+{
+    "messagebrokers": [{
+            "host": "rabbitmq_1",
+            "user": "snmp_parser",
+            "password": "snmp_parser",
+            "port": 5672,
+            "vhost": "prod",
+            "active": true
+        },
+        {
+            "host": "rabbitmq_2",
+            "user": "snmp_parser",
+            "password": "snmp_parser",
+            "port": 5672,
+            "vhost": "prod",
+            "active": false
+        }
+    ],
+    "queues": {
+        "consumeBaseName": "server_name/filemanager/SNMP",
+        "publishBaseName": "server_name/mysql/data"
+    },
+    "logger": {
+        "appenders": {
+            "out": {
+                "type": "console"
+            },
+            "task": {
+                "type": "file",
+                "filename": "logs/server.log",
+                "maxLogSize": 1048576,
+                "backups": 20
+            }
+        },
+        "categories": {
+            "default": {
+                "appenders": [
+                    "out",
+                    "task"
+                ],
+                "level": "debug"
+            },
+            "task": {
+                "appenders": [
+                    "task"
+                ],
+                "level": "error"
+            }
+        }
+    },
+    "logging": {
+        "level": "debug",
+        "areas": [
+            "parser",
+            "messagebroker",
+            "messageclient",
+            "fs",
+            "sql"
+        ],
+        "owner": "snmp_parser"
+    }
+}

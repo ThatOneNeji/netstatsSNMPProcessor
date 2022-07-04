@@ -1,0 +1,80 @@
+{
+    "name": "bgpRcvdPathAttrTable",
+    "type": "table",
+    "mib": "BGP4-MIB",
+    "oid": ".1.3.6.1.2.1.15.5",
+    "parent": "bgp",
+    "description": "The BGP Received Path Attribute Table contains information about paths to destination networks, received from all peers running BGP version 3 or less.",
+    "objects": [{
+            ".1.3.6.1.2.1.15.5.1.2": {
+                "name": "bgpPathAttrDestNetwork",
+                "datatype": "IPADDR",
+                "columntype": "index",
+                "order": "2",
+                "description": "The address of the destination network.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.5.1.1": {
+                "name": "bgpPathAttrPeer",
+                "datatype": "IPADDR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IP address of the peer where the path information was learned.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.5.1.3": {
+                "name": "bgpPathAttrOrigin",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The ultimate origin of the path information.",
+                "status": "Obsolete",
+                "types": [{
+                        "1": "igp"
+                    },
+                    {
+                        "2": "egp"
+                    },
+                    {
+                        "3": "incomplete"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.5.1.4": {
+                "name": "bgpPathAttrASPath",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The set of ASes that must be traversed to reach the network. This object is probably best represented as SEQUENCE OF INTEGER. For SMI compatibility, though, it is represented as OCTET STRING. Each AS is represented as a pair of octets according to the following algorithm: first-byte-of-pair = ASNumber / 256; second-byte-of-pair = ASNumber & 255;",
+                "status": "Obsolete",
+                "range": "2..255"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.5.1.5": {
+                "name": "bgpPathAttrNextHop",
+                "datatype": "IPADDR",
+                "columntype": "column",
+                "order": "5",
+                "description": "The address of the border router that should be used for the destination network.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.15.5.1.6": {
+                "name": "bgpPathAttrInterASMetric",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "The optional inter-AS metric. If this attribute has not been provided for this route, the value for this object is 0.",
+                "status": "Obsolete"
+            }
+        }
+    ]
+}
