@@ -1,0 +1,59 @@
+{
+    "name": "icmpStatsTable",
+    "type": "table",
+    "mib": "IP-MIB",
+    "oid": ".1.3.6.1.2.1.5.29",
+    "parent": "icmp",
+    "description": "The table of generic system-wide ICMP counters.",
+    "objects": [{
+            ".1.3.6.1.2.1.5.29.1.1": {
+                "name": "icmpStatsIPVersion",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IP version of the statistics.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.5.29.1.2": {
+                "name": "icmpStatsInMsgs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The total number of ICMP messages that the entity received. Note that this counter includes all those counted by icmpStatsInErrors.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.5.29.1.3": {
+                "name": "icmpStatsInErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of ICMP messages that the entity received but determined as having ICMP-specific errors (bad ICMP checksums, bad length, etc.).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.5.29.1.4": {
+                "name": "icmpStatsOutMsgs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The total number of ICMP messages that the entity attempted to send. Note that this counter includes all those counted by icmpStatsOutErrors.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.5.29.1.5": {
+                "name": "icmpStatsOutErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The number of ICMP messages that this entity did not send due to problems discovered within ICMP, such as a lack of buffers. This value should not include errors discovered outside the ICMP layer, such as the inability of IP to route the resultant datagram. In some implementations, there may be no types of error that contribute to this counter's value.",
+                "status": "Current"
+            }
+        }
+    ]
+}

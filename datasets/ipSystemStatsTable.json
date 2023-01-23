@@ -1,0 +1,469 @@
+{
+    "name": "ipSystemStatsTable",
+    "type": "table",
+    "mib": "IP-MIB",
+    "oid": ".1.3.6.1.2.1.4.31.1",
+    "parent": "ipTrafficStats",
+    "description": "The table containing system wide, IP version specific traffic statistics. This table and the ipIfStatsTable contain similar objects whose difference is in their granularity. Where this table contains system wide traffic statistics, the ipIfStatsTable contains the same statistics but counted on a per-interface basis.",
+    "objects": [{
+            ".1.3.6.1.2.1.4.31.1.1.1": {
+                "name": "ipSystemStatsIPVersion",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IP version of this row.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.3": {
+                "name": "ipSystemStatsInReceives",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The total number of input IP datagrams received, including those received in error. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.4": {
+                "name": "ipSystemStatsHCInReceives",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "4",
+                "description": "The total number of input IP datagrams received, including those received in error. This object counts the same datagrams as ipSystemStatsInReceives, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.5": {
+                "name": "ipSystemStatsInOctets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The total number of octets received in input IP datagrams, including those received in error. Octets from datagrams counted in ipSystemStatsInReceives MUST be counted here. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.6": {
+                "name": "ipSystemStatsHCInOctets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "6",
+                "description": "The total number of octets received in input IP datagrams, including those received in error. This object counts the same octets as ipSystemStatsInOctets, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.7": {
+                "name": "ipSystemStatsInHdrErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "7",
+                "description": "The number of input IP datagrams discarded due to errors in their IP headers, including version number mismatch, other format errors, hop count exceeded, errors discovered in processing their IP options, etc. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.8": {
+                "name": "ipSystemStatsInNoRoutes",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "8",
+                "description": "The number of input IP datagrams discarded because no route could be found to transmit them to their destination. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.9": {
+                "name": "ipSystemStatsInAddrErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "9",
+                "description": "The number of input IP datagrams discarded because the IP address in their IP header's destination field was not a valid address to be received at this entity. This count includes invalid addresses (e.g., ::0). For entities that are not IP routers and therefore do not forward datagrams, this counter includes datagrams discarded because the destination address was not a local address. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.10": {
+                "name": "ipSystemStatsInUnknownProtos",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The number of locally-addressed IP datagrams received successfully but discarded because of an unknown or unsupported protocol. When tracking interface statistics, the counter of the interface to which these datagrams were addressed is incremented. This interface might not be the same as the input interface for some of the datagrams. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.11": {
+                "name": "ipSystemStatsInTruncatedPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "11",
+                "description": "The number of input IP datagrams discarded because the datagram frame didn't carry enough data. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.12": {
+                "name": "ipSystemStatsInForwDatagrams",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "12",
+                "description": "The number of input datagrams for which this entity was not their final IP destination and for which this entity attempted to find a route to forward them to that final destination. In entities that do not act as IP routers, this counter will include only those datagrams that were Source-Routed via this entity, and the Source-Route processing was successful. When tracking interface statistics, the counter of the incoming interface is incremented for each datagram. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.13": {
+                "name": "ipSystemStatsHCInForwDatagrams",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "13",
+                "description": "The number of input datagrams for which this entity was not their final IP destination and for which this entity attempted to find a route to forward them to that final destination. This object counts the same packets as ipSystemStatsInForwDatagrams, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.14": {
+                "name": "ipSystemStatsReasmReqds",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "14",
+                "description": "The number of IP fragments received that needed to be reassembled at this interface. When tracking interface statistics, the counter of the interface to which these fragments were addressed is incremented. This interface might not be the same as the input interface for some of the fragments. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.15": {
+                "name": "ipSystemStatsReasmOKs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "15",
+                "description": "The number of IP datagrams successfully reassembled. When tracking interface statistics, the counter of the interface to which these datagrams were addressed is incremented. This interface might not be the same as the input interface for some of the datagrams. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.16": {
+                "name": "ipSystemStatsReasmFails",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "16",
+                "description": "The number of failures detected by the IP re-assembly algorithm (for whatever reason: timed out, errors, etc.). Note that this is not necessarily a count of discarded IP fragments since some algorithms (notably the algorithm in RFC 815) can lose track of the number of fragments by combining them as they are received. When tracking interface statistics, the counter of the interface to which these fragments were addressed is incremented. This interface might not be the same as the input interface for some of the fragments. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.17": {
+                "name": "ipSystemStatsInDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "17",
+                "description": "The number of input IP datagrams for which no problems were encountered to prevent their continued processing, but were discarded (e.g., for lack of buffer space). Note that this counter does not include any datagrams discarded while awaiting re-assembly. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.18": {
+                "name": "ipSystemStatsInDelivers",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "18",
+                "description": "The total number of datagrams successfully delivered to IP user-protocols (including ICMP). When tracking interface statistics, the counter of the interface to which these datagrams were addressed is incremented. This interface might not be the same as the input interface for some of the datagrams. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.19": {
+                "name": "ipSystemStatsHCInDelivers",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "19",
+                "description": "The total number of datagrams successfully delivered to IP user-protocols (including ICMP). This object counts the same packets as ipSystemStatsInDelivers, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.20": {
+                "name": "ipSystemStatsOutRequests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "20",
+                "description": "The total number of IP datagrams that local IP user- protocols (including ICMP) supplied to IP in requests for transmission. Note that this counter does not include any datagrams counted in ipSystemStatsOutForwDatagrams. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.21": {
+                "name": "ipSystemStatsHCOutRequests",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "21",
+                "description": "The total number of IP datagrams that local IP user- protocols (including ICMP) supplied to IP in requests for transmission. This object counts the same packets as ipSystemStatsOutRequests, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.22": {
+                "name": "ipSystemStatsOutNoRoutes",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "22",
+                "description": "The number of locally generated IP datagrams discarded because no route could be found to transmit them to their destination. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.23": {
+                "name": "ipSystemStatsOutForwDatagrams",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "23",
+                "description": "The number of datagrams for which this entity was not their final IP destination and for which it was successful in finding a path to their final destination. In entities that do not act as IP routers, this counter will include only those datagrams that were Source-Routed via this entity, and the Source-Route processing was successful. When tracking interface statistics, the counter of the outgoing interface is incremented for a successfully forwarded datagram. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.24": {
+                "name": "ipSystemStatsHCOutForwDatagrams",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "24",
+                "description": "The number of datagrams for which this entity was not their final IP destination and for which it was successful in finding a path to their final destination. This object counts the same packets as ipSystemStatsOutForwDatagrams, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.25": {
+                "name": "ipSystemStatsOutDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "25",
+                "description": "The number of output IP datagrams for which no problem was encountered to prevent their transmission to their destination, but were discarded (e.g., for lack of buffer space). Note that this counter would include datagrams counted in ipSystemStatsOutForwDatagrams if any such datagrams met this (discretionary) discard criterion. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.26": {
+                "name": "ipSystemStatsOutFragReqds",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "26",
+                "description": "The number of IP datagrams that would require fragmentation in order to be transmitted. When tracking interface statistics, the counter of the outgoing interface is incremented for a successfully fragmented datagram. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.27": {
+                "name": "ipSystemStatsOutFragOKs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "27",
+                "description": "The number of IP datagrams that have been successfully fragmented. When tracking interface statistics, the counter of the outgoing interface is incremented for a successfully fragmented datagram. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.28": {
+                "name": "ipSystemStatsOutFragFails",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "28",
+                "description": "The number of IP datagrams that have been discarded because they needed to be fragmented but could not be. This includes IPv4 packets that have the DF bit set and IPv6 packets that are being forwarded and exceed the outgoing link MTU. When tracking interface statistics, the counter of the outgoing interface is incremented for an unsuccessfully fragmented datagram. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.29": {
+                "name": "ipSystemStatsOutFragCreates",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "29",
+                "description": "The number of output datagram fragments that have been generated as a result of IP fragmentation. When tracking interface statistics, the counter of the outgoing interface is incremented for a successfully fragmented datagram. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.30": {
+                "name": "ipSystemStatsOutTransmits",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "30",
+                "description": "The total number of IP datagrams that this entity supplied to the lower layers for transmission. This includes datagrams generated locally and those forwarded by this entity. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.31": {
+                "name": "ipSystemStatsHCOutTransmits",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "31",
+                "description": "The total number of IP datagrams that this entity supplied to the lower layers for transmission. This object counts the same datagrams as ipSystemStatsOutTransmits, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.32": {
+                "name": "ipSystemStatsOutOctets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "32",
+                "description": "The total number of octets in IP datagrams delivered to the lower layers for transmission. Octets from datagrams counted in ipSystemStatsOutTransmits MUST be counted here. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.33": {
+                "name": "ipSystemStatsHCOutOctets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "33",
+                "description": "The total number of octets in IP datagrams delivered to the lower layers for transmission. This objects counts the same octets as ipSystemStatsOutOctets, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.34": {
+                "name": "ipSystemStatsInMcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "34",
+                "description": "The number of IP multicast datagrams received. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.35": {
+                "name": "ipSystemStatsHCInMcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "35",
+                "description": "The number of IP multicast datagrams received. This object counts the same datagrams as ipSystemStatsInMcastPkts but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.36": {
+                "name": "ipSystemStatsInMcastOctets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "36",
+                "description": "The total number of octets received in IP multicast datagrams. Octets from datagrams counted in ipSystemStatsInMcastPkts MUST be counted here. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.37": {
+                "name": "ipSystemStatsHCInMcastOctets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "37",
+                "description": "The total number of octets received in IP multicast datagrams. This object counts the same octets as ipSystemStatsInMcastOctets, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.38": {
+                "name": "ipSystemStatsOutMcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "38",
+                "description": "The number of IP multicast datagrams transmitted. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.39": {
+                "name": "ipSystemStatsHCOutMcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "39",
+                "description": "The number of IP multicast datagrams transmitted. This object counts the same datagrams as ipSystemStatsOutMcastPkts, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.40": {
+                "name": "ipSystemStatsOutMcastOctets",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "40",
+                "description": "The total number of octets transmitted in IP multicast datagrams. Octets from datagrams counted in ipSystemStatsOutMcastPkts MUST be counted here. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.41": {
+                "name": "ipSystemStatsHCOutMcastOctets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "41",
+                "description": "The total number of octets transmitted in IP multicast datagrams. This object counts the same octets as ipSystemStatsOutMcastOctets, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.42": {
+                "name": "ipSystemStatsInBcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "42",
+                "description": "The number of IP broadcast datagrams received. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.43": {
+                "name": "ipSystemStatsHCInBcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "43",
+                "description": "The number of IP broadcast datagrams received. This object counts the same datagrams as ipSystemStatsInBcastPkts but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.44": {
+                "name": "ipSystemStatsOutBcastPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "44",
+                "description": "The number of IP broadcast datagrams transmitted. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.45": {
+                "name": "ipSystemStatsHCOutBcastPkts",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "45",
+                "description": "The number of IP broadcast datagrams transmitted. This object counts the same datagrams as ipSystemStatsOutBcastPkts, but allows for larger values. Discontinuities in the value of this counter can occur at re-initialization of the management system, and at other times as indicated by the value of ipSystemStatsDiscontinuityTime.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.46": {
+                "name": "ipSystemStatsDiscontinuityTime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "46",
+                "description": "The value of sysUpTime on the most recent occasion at which any one or more of this entry's counters suffered a discontinuity. If no such discontinuities have occurred since the last re- initialization of the local management subsystem, then this object contains a zero value.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.31.1.1.47": {
+                "name": "ipSystemStatsRefreshRate",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "47",
+                "description": "The minimum reasonable polling interval for this entry. This object provides an indication of the minimum amount of time required to update the counters in this entry.",
+                "status": "Current"
+            }
+        }
+    ]
+}

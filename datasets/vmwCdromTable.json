@@ -1,0 +1,51 @@
+{
+    "name": "vmwCdromTable",
+    "type": "table",
+    "mib": "VMWARE-VMINFO-MIB",
+    "oid": ".1.3.6.1.4.1.6876.2.6",
+    "parent": "vmwVirtMachines",
+    "description": "Table of DVD or CDROM drives for all vms in vmwVmTable.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.2.6.1.1": {
+                "name": "vmwCdVmIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "This number corresponds to the vmwVmIdx the vmwVmTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.6.1.2": {
+                "name": "vmwCdromIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "Identifies the specific DVD or CDROM drive.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.6.1.3": {
+                "name": "vmwCdromName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "Reports the iso or device this virtual drive has been configured to use VIM Property: Virtual Device's with index of 3000-3999 (same as disks) MOB: https://esx.example.com/mob/?moid=vmwVmIdx&doPath=config%2ehardware then select property 'backing' to how this cdrom connects. If no backing was defined by operator, string will start with W: If unavailable, string will start with E:",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.6.1.4": {
+                "name": "vmwCdromConnected",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Reports true if the dvd/cdrom is connected to the virtual machine.",
+                "status": "Current",
+                "range": "4..7"
+            }
+        }
+    ]
+}

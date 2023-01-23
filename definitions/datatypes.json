@@ -1,7 +1,7 @@
 {
     "objectid": {
         "sql_type": "varchar(255)",
-        "default": "NOT NULL",
+        "default": "DEFAULT NULL",
         "behaviour": "index"
     },
     "octetstr": {
@@ -21,19 +21,38 @@
         "default": "DEFAULT NULL",
         "behaviour": "string"
     },
-    "counter": {
-        "sql_type": "int unsigned",
+    "enum": {
+        "sql_type": "varchar(32)",
+        "default": "DEFAULT NULL",
+        "behaviour": "string"
+    },
+    "counter222": {
+        "sql_type": "bigint unsigned",
         "default": "DEFAULT NULL",
         "behaviour": "counter",
         "min": 0,
         "max": 4294967295
     },
-    "counter32": {
-        "sql_type": "int unsigned",
+    "counter333": {
+        "sql_type": "bigint unsigned",
         "default": "DEFAULT NULL",
         "behaviour": "counter",
         "min": 0,
         "max": 4294967295
+    },
+    "counter": {
+        "sql_type": "bigint unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "counter",
+        "min": 0,
+        "max": 18446744073709551615
+    },
+    "counter32": {
+        "sql_type": "bigint unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "counter",
+        "min": 0,
+        "max": 18446744073709551615
     },
     "counter64": {
         "sql_type": "bigint unsigned",
@@ -43,18 +62,39 @@
         "max": 18446744073709551615
     },
     "integer": {
-        "sql_type": "int unsigned",
+        "sql_type": "int",
         "default": "DEFAULT NULL",
         "behaviour": "gauge",
         "min": -2147483648,
         "max": 2147483647
     },
-    "integer32": {
+    "unsigned32": {
         "sql_type": "int unsigned",
         "default": "DEFAULT NULL",
         "behaviour": "gauge",
         "min": 0,
         "max": 4294967295
+    },
+    "integer32a": {
+        "sql_type": "int",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 4294967295
+    },
+    "integer32ab": {
+        "sql_type": "int",
+        "default": "DEFAULT NULL",
+        "behaviour": "indicator",
+        "min": 0,
+        "max": 4294967295
+    },
+    "integer32": {
+        "sql_type": "int",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": -2147483648,
+        "max": 2147483647
     },
     "integer64": {
         "sql_type": "bigint unsigned",
@@ -81,6 +121,34 @@
         "sql_type": "bigint unsigned",
         "default": "DEFAULT NULL",
         "behaviour": "gauge",
+        "min": 0,
+        "max": 18446744073709551615
+    },
+    "GAUGEDIV100": {
+        "sql_type": "DECIMAL(8,2)",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 42949672.95
+    },
+    "GAUGEDIV1000": {
+        "sql_type": "DECIMAL(7,3)",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": 0,
+        "max": 4294967.295
+    },
+    "INTEGER32DIV1000": {
+        "sql_type": "DECIMAL(7,3)",
+        "default": "DEFAULT NULL",
+        "behaviour": "gauge",
+        "min": -2147483648,
+        "max": 2147483647
+    },
+    "counter_delta": {
+        "sql_type": "bigint unsigned",
+        "default": "DEFAULT NULL",
+        "behaviour": "counter_delta",
         "min": 0,
         "max": 18446744073709551615
     }

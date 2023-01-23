@@ -15,17 +15,18 @@ function ParseSnmp() {
      * @param {object} dataset dataset
      * @param {object} definitions definitions
      * @param {object} Logger Logger
+     * @param {object} oidoverrides
      * @return {object} value
      * @description description
      */
-    this.parseSNMP = function(data, queuename, dataset, definitions, Logger) {
-        return new Promise(function(resolve, reject) {
+    this.parseSNMP = function(data, queuename, dataset, definitions, Logger, oidoverrides) {
+        return new Promise(function(resolve, _reject) {
             switch (dataset.type) {
                 case 'table':
-                    data.parsed.sections.push(parsesnmptable.parseSNMPTable(data, dataset, definitions, Logger));
+                    data.parsed.sections.push(parsesnmptable.parseSNMPTable(data, dataset, definitions, Logger, oidoverrides));
                     break;
                 case 'scalar':
-                    data.parsed.sections.push(parsesnmpscalar.parseSNMPScalar(data, dataset, definitions, Logger));
+                    data.parsed.sections.push(parsesnmpscalar.parseSNMPScalar(data, dataset, definitions, Logger, oidoverrides));
                     break;
                 default:
                     console.error('Unknown type: ' + dataset.type);

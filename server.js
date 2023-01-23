@@ -7,8 +7,7 @@
 /**
  * @typedef {Object} loggingConfiguration
  * @property {string} appenders Appenders serialise log events to some form of output
- * @property {string} categories The category (or categories if you provide an array
- *     of values) that will be excluded from the appender.
+ * @property {string} categories The category (or categories if you provide an array of values) that will be excluded from the appender.
  * @description This defines the way the logger works
  */
 /**
@@ -62,11 +61,17 @@ const fs = require('fs');
 let Logging;
 
 const loadedDataSets = {};
+let overRideDataSets = {};
+const oidTypeOverRides = {};
 const definitions = {
     datasets: {},
     datatypes: {},
     intervals: {},
-    tables: {}
+    tables: {},
+    overrides: {
+        oid_lookups: {},
+        counters: {}
+    }
 };
 
 /**
@@ -92,6 +97,42 @@ function loadConfigurationFile() {
 }
 
 /**
+ *
+ * @description Loads the definitions from the various files
+ */
+function loadOverRides() {
+    Logging.system.info('Loading overrides');
+    try {
+        overRideDataSets = definitions.overrides.counters;
+        Object.keys(definitions.datasets).forEach(function(dataset) {
+            if (overRideDataSets[dataset]) {
+                Logging.system.debug('Override(s) found for dataset: ' + dataset);
+                const tmpOverRide = overRideDataSets[dataset];
+                if (Object.keys(tmpOverRide).length) {
+                    const selectedDataset = loadedDataSets[dataset].objects;
+                    Object.keys(tmpOverRide).forEach(function(override) {
+                        const tmpObjOR = tmpOverRide[override];
+                        Object.keys(tmpObjOR).forEach(function(obj) {
+                            Object.keys(selectedDataset).forEach(function(selectedDatasetObj) {
+                                if (tmpObjOR[obj].datatype) {
+                                    oidTypeOverRides[obj] = tmpObjOR[obj].datatype;
+                                }
+                                if (selectedDataset[selectedDatasetObj][obj]) {
+                                    const merged = {...selectedDataset[selectedDatasetObj][obj], ...tmpObjOR[obj] };
+                                    selectedDataset[selectedDatasetObj][obj] = merged;
+                                }
+                            });
+                        });
+                    });
+                }
+            }
+        });
+    } catch (err) {
+        bail(err);
+    }
+}
+
+/**
  * @function initialiseApplication
  * @description Starts up the application
  */
@@ -101,6 +142,7 @@ function initialiseApplication() {
     Logging.system.info('Starting');
     loadDataSets();
     loadDefinitions();
+    loadOverRides();
 }
 
 /**
@@ -150,6 +192,7 @@ function loadDefinitions() {
         }
     });
 }
+
 /**
  * Initialise the application
  */
@@ -189,6 +232,7 @@ messagebroker.init(messageBrokerOptions);
 
 Logging.system.info('Starting...');
 
+
 /**
  *
  * @param {*} msg
@@ -200,8 +244,14 @@ function receiveHandler(msg) {
     if (JSONPayload.filename) {
         Logging.messageclient.info('Now processing "' + JSONPayload.filename + '"');
         if (fs.existsSync(JSONPayload.fullpath)) {
+            const snmpFileStat = fs.statSync(JSONPayload.fullpath);
             if (snmpTypes[JSONPayload.header.type]) {
-                removeSNMPFile(JSONPayload.fullpath, readSNMPFile(JSONPayload));
+                if (snmpFileStat.size) {
+                    removeSNMPFile(JSONPayload.fullpath, readSNMPFile(JSONPayload));
+                } else {
+                    Logging.fs.debug('"' + JSONPayload.fullpath + '" is zero size');
+                    removeSNMPFile(JSONPayload.fullpath, true);
+                }
             } else {
                 Logging.parser.debug('No config loaded for type "' + JSONPayload.header.type + '"(' + JSONPayload.filename + ')');
                 removeSNMPFile(JSONPayload.fullpath);
@@ -256,7 +306,7 @@ function loadFile(fileName) {
  * @description description
  */
 function readSNMPFile(fdata) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, _reject) {
         fdata.parsed = {
             sections: [],
             header: {}
@@ -264,9 +314,9 @@ function readSNMPFile(fdata) {
         fdata.sql = [];
         fdata.rawdata = loadFile(fdata.fullpath);
         resolve(fdata);
-    }).then(function(result) {
+    }).then(function(_result) {
         Logging.parser.info('Routing to the "' + loadedDataSets[snmpTypes[fdata.header.type]].name + '" parser');
-        return parsersnmp.parseSNMP(fdata, appConfig.queues.publishBaseName, loadedDataSets[snmpTypes[fdata.header.type]], definitions, Logging.parser);
+        return parsersnmp.parseSNMP(fdata, appConfig.queues.publishBaseName, loadedDataSets[snmpTypes[fdata.header.type]], definitions, Logging.parser, oidTypeOverRides);
     }).then(function(result) {
         if (result.sql.length) {
             Logging.messageclient.info('Sending ' + result.sql.length + ' item(s) to the message broker');

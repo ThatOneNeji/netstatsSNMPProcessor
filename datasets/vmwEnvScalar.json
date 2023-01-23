@@ -1,0 +1,166 @@
+{
+    "name": "vmwEnv",
+    "type": "scalar",
+    "mib": "VMWARE-ENV-MIB",
+    "oid": ".1.3.6.1.4.1.6876.4.20",
+    "parent": "vmwProductSpecific",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.4.20.1": {
+                "name": "vmwEnvNumber",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "1",
+                "description": "Count of number of conceptual rows in vmwEnvTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.2": {
+                "name": "vmwEnvLastChange",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "2",
+                "description": "The value of sysUptime when a conceptual row was added or deleted from this table.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.30": {
+                "name": "vmwSELCapacity",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "30",
+                "description": "The amount of free space left in the IPMI SEL for new entries.",
+                "status": "Current",
+                "range": "0..100"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.100": {
+                "name": "vmwEnvSource",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "100",
+                "description": "Specifies which source being used to obtain hardware state. Sensors were from host agent process, indications were from CIMOM/cim provider, and ipmi is when snmpd reads SEL directly from IPMI to obtain hardware events ",
+                "status": "Current",
+                "types": [{
+                    "1": "unknown",
+                    "2": "sensors",
+                    "3": "indications",
+                    "4": "ipmi"
+                }]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.101": {
+                "name": "vmwEnvInIndications",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "101",
+                "description": "Number of HTTP POST msgs containing CIM Indications in XML as received by agent.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.102": {
+                "name": "vmwEnvLastIn",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "102",
+                "description": "sysUptime when agent last received an indication.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.103": {
+                "name": "vmwEnvOutNotifications",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "103",
+                "description": "Number of notifications (traps|informs) sent that originated as CIM indication.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.104": {
+                "name": "vmwEnvInErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "104",
+                "description": "Number of CIM Indications that agent did not complete receipt of.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.105": {
+                "name": "vmwEnvIndOidErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "105",
+                "description": "Number of CIM Indications having a MappingString qualifier for which the value was not a valid oid.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.106": {
+                "name": "vmwEnvCvtValueErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "106",
+                "description": "Number of CIM Indication properties having a MappingString qualifier for which the cim value for the given cim type could not be converted.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.107": {
+                "name": "vmwEnvCvtSyntaxErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "107",
+                "description": "Number of CIM Indication properties having a MappingString qualifier for which the cim type could not be converted to smi syntax.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.108": {
+                "name": "vmwEnvCvtOidErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "108",
+                "description": "Number of CIM Indication properties having a MappingString qualifier for which the the oid was not valid.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.109": {
+                "name": "vmwEnvGetClassErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "109",
+                "description": "Number of CIM GetClass operations over a given cim indication class and namespace could not be completed (timeout) or returned error.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.110": {
+                "name": "vmwEnvPropertySkips",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "110",
+                "description": "Number of CIM indications having properties which do not have MappingString qualifier in the class definition and were not converted, sent along with the notification.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.111": {
+                "name": "vmwEnvIndicationSkips",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "111",
+                "description": "Number of CIM indications recieved for which GetClass reported no MappingStrings qualifier and were not converted to a notification.",
+                "status": "Current"
+            }
+        }
+    ]
+}

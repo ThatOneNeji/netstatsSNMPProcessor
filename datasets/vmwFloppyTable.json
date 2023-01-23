@@ -1,0 +1,51 @@
+{
+    "name": "vmwFloppyTable",
+    "type": "table",
+    "mib": "VMWARE-VMINFO-MIB",
+    "oid": ".1.3.6.1.4.1.6876.2.5",
+    "parent": "vmwVirtMachines",
+    "description": "Table of floppy drives for all vms in vmwVmTable.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.2.5.1.1": {
+                "name": "vmwFdVmIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "This number corresponds to vmwVmIdx in vmwVmTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.5.1.2": {
+                "name": "vmwFdIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "Identifies one specific virtual floppy device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.5.1.3": {
+                "name": "vmwFdName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "File or Device that this device is connected to, example /dev/fd0. VIM Property: Virtual Device's with index of 8000-8999. MOB: https://esx.example.com/mob/?moid=vmwVmIdx&doPath=config%2ehardware If no backing was defined by operator, string will start with W: If unavailable, string will start with E:",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.5.1.4": {
+                "name": "vmwFdConnected",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Reports 'true' if the floppy drive virtual device is connected to the virtual machine.",
+                "status": "Current",
+                "range": "4..7"
+            }
+        }
+    ]
+}

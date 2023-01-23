@@ -1,0 +1,116 @@
+{
+    "name": "hrFSTable",
+    "type": "table",
+    "mib": "HOST-RESOURCES-MIB",
+    "oid": ".1.3.6.1.2.1.25.3.8",
+    "parent": "hrDevice",
+    "description": "The (conceptual) table of file systems local to this host or remotely mounted from a file server. File systems that are in only one user's environment on a multi-user system will not be included in this table.",
+    "objects": [{
+            ".1.3.6.1.2.1.25.3.8.1.1": {
+                "name": "hrFSIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "A unique value for each file system local to this host. The value for each file system must remain constant at least from one re-initialization of the agent to the next re-initialization.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.2": {
+                "name": "hrFSMountPoint",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The path name of the root of this file system.",
+                "status": "Current",
+                "range": "0..128"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.3": {
+                "name": "hrFSRemoteMountPoint",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "A description of the name and/or address of the server that this file system is mounted from. This may also include parameters such as the mount point on the remote file system. If this is not a remote file system, this string should have a length of zero.",
+                "status": "Current",
+                "range": "0..128"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.4": {
+                "name": "hrFSType",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "4",
+                "description": "The value of this object identifies the type of this file system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.5": {
+                "name": "hrFSAccess",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "An indication if this file system is logically configured by the operating system to be readable and writable or only readable. This does not represent any local access-control policy, except one that is applied to the file system as a whole.",
+                "status": "Current",
+                "types": [{
+                        "1": "readWrite"
+                    },
+                    {
+                        "2": "readOnly"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.6": {
+                "name": "hrFSBootable",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "A flag indicating whether this file system is bootable.",
+                "status": "Current",
+                "types": [{
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.7": {
+                "name": "hrFSStorageIndex",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "The index of the hrStorageEntry that represents information about this file system. If there is no such information available, then this value shall be zero. The relevant storage entry will be useful in tracking the percent usage of this file system and diagnosing errors that may occur when it runs out of space.",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.8": {
+                "name": "hrFSLastFullBackupDate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "The last date at which this complete file system was copied to another storage device for backup. This information is useful for ensuring that backups are being performed regularly. If this information is not known, then this variable shall have the value corresponding to January 1, year 0000, 00:00:00.0, which is encoded as (hex)'00 00 01 01 00 00 00 00'.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.25.3.8.1.9": {
+                "name": "hrFSLastPartialBackupDate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "description": "The last date at which a portion of this file system was copied to another storage device for backup. This information is useful for ensuring that backups are being performed regularly. If this information is not known, then this variable shall have the value corresponding to January 1, year 0000, 00:00:00.0, which is encoded as (hex)'00 00 01 01 00 00 00 00'.",
+                "status": "Current"
+            }
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+{
+    "name": "ipAddressPrefixTable",
+    "type": "table",
+    "mib": "IP-MIB",
+    "oid": ".1.3.6.1.2.1.4.32",
+    "parent": "ip",
+    "description": "This table allows the user to determine the source of an IP address or set of IP addresses, and allows other tables to share the information via pointer rather than by copying. For example, when the node configures both a unicast and anycast address for a prefix, the ipAddressPrefix objects for those addresses will point to a single row in this table. This table primarily provides support for IPv6 prefixes, and several of the objects are less meaningful for IPv4. The table continues to allow IPv4 addresses to allow future flexibility. In order to promote a common configuration, this document includes suggestions for default values for IPv4 prefixes. Each of these values may be overridden if an object is meaningful to the node. All prefixes used by this entity should be included in this table independent of how the entity learned the prefix. (This table isn't limited to prefixes learned from router advertisements.)",
+    "objects": [{
+            ".1.3.6.1.2.1.4.32.1.1": {
+                "name": "ipAddressPrefixIfIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The index value that uniquely identifies the interface on which this prefix is configured. The interface identified by a particular value of this index is the same interface as identified by the same value of the IF-MIB's ifIndex.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.2": {
+                "name": "ipAddressPrefixType",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "2",
+                "description": "The address type of ipAddressPrefix.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.3": {
+                "name": "ipAddressPrefixPrefix",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "3",
+                "description": "The address prefix. The address type of this object is specified in ipAddressPrefixType. The length of this object is the standard length for objects of that type (4 or 16 bytes). Any bits after ipAddressPrefixLength must be zero. Implementors need to be aware that, if the size of ipAddressPrefixPrefix exceeds 114 octets, then OIDS of instances of columns in this row will have more than 128 sub-identifiers and cannot be accessed using SNMPv1, SNMPv2c, or SNMPv3.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.4": {
+                "name": "ipAddressPrefixLength",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "4",
+                "description": "The prefix length associated with this prefix. The value 0 has no special meaning for this object. It simply refers to address '::/0'.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.5": {
+                "name": "ipAddressPrefixOrigin",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The origin of this prefix.",
+                "status": "Current",
+                "types": [{
+                        "1": "other"
+                    },
+                    {
+                        "2": "manual"
+                    },
+                    {
+                        "3": "wellknown"
+                    },
+                    {
+                        "4": "dhcp"
+                    },
+                    {
+                        "5": "routeradv"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.6": {
+                "name": "ipAddressPrefixOnLinkFlag",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "This object has the value 'true(1)', if this prefix can be used for on-link determination; otherwise, the value is 'false(2)'. The default for IPv4 prefixes is 'true(1)'.",
+                "status": "Current",
+                "types": [{
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.7": {
+                "name": "ipAddressPrefixAutonomousFlag",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "7",
+                "description": "Autonomous address configuration flag. When true(1), indicates that this prefix can be used for autonomous address configuration (i.e., can be used to form a local interface address). If false(2), it is not used to auto- configure a local interface address. The default for IPv4 prefixes is 'false(2)'.",
+                "status": "Current",
+                "types": [{
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.8": {
+                "name": "ipAddressPrefixAdvPreferredLifetime",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "8",
+                "description": "The remaining length of time, in seconds, that this prefix will continue to be preferred, i.e., time until deprecation. A value of 4,294,967,295 represents infinity. The address generated from a deprecated prefix should no longer be used as a source address in new communications, but packets received on such an interface are processed as expected. The default for IPv4 prefixes is 4,294,967,295 (infinity).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.32.1.9": {
+                "name": "ipAddressPrefixAdvValidLifetime",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "9",
+                "description": "The remaining length of time, in seconds, that this prefix will continue to be valid, i.e., time until invalidation. A value of 4,294,967,295 represents infinity. The address generated from an invalidated prefix should not appear as the destination or source address of a packet. The default for IPv4 prefixes is 4,294,967,295 (infinity).",
+                "status": "Current"
+            }
+        }
+    ]
+}

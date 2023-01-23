@@ -1,0 +1,312 @@
+{
+    "name": "snmp",
+    "type": "scalar",
+    "mib": "SNMPv2-MIB",
+    "oid": ".1.3.6.1.2.1.11",
+    "parent": "mib-2",
+    "description": "",
+    "objects": [{
+            ".1.3.6.1.2.1.11.1": {
+                "name": "snmpInPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "1",
+                "description": "The total number of messages delivered to the SNMP entity from the transport service.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.2": {
+                "name": "snmpOutPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The total number of SNMP Messages which were passed from the SNMP protocol entity to the transport service.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.3": {
+                "name": "snmpInBadVersions",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The total number of SNMP messages which were delivered to the SNMP entity and were for an unsupported SNMP version.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.4": {
+                "name": "snmpInBadCommunityNames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The total number of community-based SNMP messages (for example, SNMPv1) delivered to the SNMP entity which used an SNMP community name not known to said entity. Also, implementations which authenticate community-based SNMP messages using check(s) in addition to matching the community name (for example, by also checking whether the message originated from a transport address allowed to use a specified community name) MAY include in this value the number of messages which failed the additional check(s). It is strongly RECOMMENDED that the documentation for any security model which is used to authenticate community-based SNMP messages specify the precise conditions that contribute to this value.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.5": {
+                "name": "snmpInBadCommunityUses",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The total number of community-based SNMP messages (for example, SNMPv1) delivered to the SNMP entity which represented an SNMP operation that was not allowed for the SNMP community named in the message. The precise conditions under which this counter is incremented (if at all) depend on how the SNMP entity implements its access control mechanism and how its applications interact with that access control mechanism. It is strongly RECOMMENDED that the documentation for any access control mechanism which is used to control access to and visibility of MIB instrumentation specify the precise conditions that contribute to this value.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.6": {
+                "name": "snmpInASNParseErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "The total number of ASN.1 or BER errors encountered by the SNMP entity when decoding received SNMP messages.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.8": {
+                "name": "snmpInTooBigs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "8",
+                "description": "The total number of SNMP PDUs which were delivered to the SNMP protocol entity and for which the value of the error-status field was `tooBig'.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.9": {
+                "name": "snmpInNoSuchNames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "9",
+                "description": "The total number of SNMP PDUs which were delivered to the SNMP protocol entity and for which the value of the error-status field was `noSuchName'.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.10": {
+                "name": "snmpInBadValues",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "10",
+                "description": "The total number of SNMP PDUs which were delivered to the SNMP protocol entity and for which the value of the error-status field was `badValue'.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.11": {
+                "name": "snmpInReadOnlys",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "11",
+                "description": "The total number valid SNMP PDUs which were delivered to the SNMP protocol entity and for which the value of the error-status field was `readOnly'. It should be noted that it is a protocol error to generate an SNMP PDU which contains the value `readOnly' in the error-status field, as such this object is provided as a means of detecting incorrect implementations of the SNMP.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.12": {
+                "name": "snmpInGenErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "12",
+                "description": "The total number of SNMP PDUs which were delivered to the SNMP protocol entity and for which the value of the error-status field was `genErr'.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.13": {
+                "name": "snmpInTotalReqVars",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "13",
+                "description": "The total number of MIB objects which have been retrieved successfully by the SNMP protocol entity as the result of receiving valid SNMP Get-Request and Get-Next PDUs.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.14": {
+                "name": "snmpInTotalSetVars",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "14",
+                "description": "The total number of MIB objects which have been altered successfully by the SNMP protocol entity as the result of receiving valid SNMP Set-Request PDUs.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.15": {
+                "name": "snmpInGetRequests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "15",
+                "description": "The total number of SNMP Get-Request PDUs which have been accepted and processed by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.16": {
+                "name": "snmpInGetNexts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "16",
+                "description": "The total number of SNMP Get-Next PDUs which have been accepted and processed by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.17": {
+                "name": "snmpInSetRequests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "17",
+                "description": "The total number of SNMP Set-Request PDUs which have been accepted and processed by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.18": {
+                "name": "snmpInGetResponses",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "18",
+                "description": "The total number of SNMP Get-Response PDUs which have been accepted and processed by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.19": {
+                "name": "snmpInTraps",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "19",
+                "description": "The total number of SNMP Trap PDUs which have been accepted and processed by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.20": {
+                "name": "snmpOutTooBigs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "20",
+                "description": "The total number of SNMP PDUs which were generated by the SNMP protocol entity and for which the value of the error-status field was `tooBig.'",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.21": {
+                "name": "snmpOutNoSuchNames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "21",
+                "description": "The total number of SNMP PDUs which were generated by the SNMP protocol entity and for which the value of the error-status was `noSuchName'.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.22": {
+                "name": "snmpOutBadValues",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "22",
+                "description": "The total number of SNMP PDUs which were generated by the SNMP protocol entity and for which the value of the error-status field was `badValue'.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.24": {
+                "name": "snmpOutGenErrs",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "24",
+                "description": "The total number of SNMP PDUs which were generated by the SNMP protocol entity and for which the value of the error-status field was `genErr'.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.25": {
+                "name": "snmpOutGetRequests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "25",
+                "description": "The total number of SNMP Get-Request PDUs which have been generated by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.26": {
+                "name": "snmpOutGetNexts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "26",
+                "description": "The total number of SNMP Get-Next PDUs which have been generated by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.27": {
+                "name": "snmpOutSetRequests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "27",
+                "description": "The total number of SNMP Set-Request PDUs which have been generated by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.28": {
+                "name": "snmpOutGetResponses",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "28",
+                "description": "The total number of SNMP Get-Response PDUs which have been generated by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.29": {
+                "name": "snmpOutTraps",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "29",
+                "description": "The total number of SNMP Trap PDUs which have been generated by the SNMP protocol entity.",
+                "status": "Obsolete"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.30": {
+                "name": "snmpEnableAuthenTraps",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "30",
+                "description": "Indicates whether the SNMP entity is permitted to generate authenticationFailure traps. The value of this object overrides any configuration information; as such, it provides a means whereby all authenticationFailure traps may be disabled. Note that it is strongly recommended that this object be stored in non-volatile memory so that it remains constant across re-initializations of the network management system.",
+                "status": "Current",
+                "types": [{
+                    "2": "disabled"
+                }]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.31": {
+                "name": "snmpSilentDrops",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "31",
+                "description": "The total number of Confirmed Class PDUs (such as GetRequest-PDUs, GetNextRequest-PDUs, GetBulkRequest-PDUs, SetRequest-PDUs, and InformRequest-PDUs) delivered to the SNMP entity which were silently dropped because the size of a reply containing an alternate Response Class PDU (such as a Response-PDU) with an empty variable-bindings field was greater than either a local constraint or the maximum message size associated with the originator of the request.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.11.32": {
+                "name": "snmpProxyDrops",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "32",
+                "description": "The total number of Confirmed Class PDUs (such as GetRequest-PDUs, GetNextRequest-PDUs, GetBulkRequest-PDUs, SetRequest-PDUs, and InformRequest-PDUs) delivered to the SNMP entity which were silently dropped because the transmission of the (possibly translated) message to a proxy target failed in a manner (other than a time-out) such that no Response Class PDU (such as a Response-PDU) could be returned.",
+                "status": "Current"
+            }
+        }
+    ]
+}

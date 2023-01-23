@@ -1,0 +1,276 @@
+{
+    "name": "inetCidrRouteTable",
+    "type": "table",
+    "mib": "IP-FORWARD-MIB",
+    "oid": ".1.3.6.1.2.1.4.24.7",
+    "parent": "ipForward",
+    "description": "This entity's IP Routing table.",
+    "objects": [{
+            ".1.3.6.1.2.1.4.24.7.1.1": {
+                "name": "inetCidrRouteDestType",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "1",
+                "description": "The type of the inetCidrRouteDest address, as defined in the InetAddress MIB. Only those address types that may appear in an actual routing table are allowed as values of this object.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.2": {
+                "name": "inetCidrRouteDest",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "2",
+                "description": "The destination IP address of this route. The type of this address is determined by the value of the inetCidrRouteDestType object. The values for the index objects inetCidrRouteDest and inetCidrRoutePfxLen must be consistent. When the value of inetCidrRouteDest (excluding the zone index, if one is present) is x, then the bitwise logical-AND of x with the value of the mask formed from the corresponding index object inetCidrRoutePfxLen MUST be equal to x. If not, then the index pair is not consistent and an inconsistentName error must be returned on SET or CREATE requests.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.3": {
+                "name": "inetCidrRoutePfxLen",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "3",
+                "description": "Indicates the number of leading one bits that form the mask to be logical-ANDed with the destination address before being compared to the value in the inetCidrRouteDest field. The values for the index objects inetCidrRouteDest and inetCidrRoutePfxLen must be consistent. When the value of inetCidrRouteDest (excluding the zone index, if one is present) is x, then the bitwise logical-AND of x with the value of the mask formed from the corresponding index object inetCidrRoutePfxLen MUST be equal to x. If not, then the index pair is not consistent and an inconsistentName error must be returned on SET or CREATE requests.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.4": {
+                "name": "inetCidrRoutePolicy",
+                "datatype": "OBJECTID",
+                "columntype": "index",
+                "order": "4",
+                "description": "This object is an opaque object without any defined semantics. Its purpose is to serve as an additional index that may delineate between multiple entries to the same destination. The value { 0 0 } shall be used as the default value for this object.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.5": {
+                "name": "inetCidrRouteNextHopType",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "5",
+                "description": "The type of the inetCidrRouteNextHop address, as defined in the InetAddress MIB. Value should be set to unknown(0) for non-remote routes. Only those address types that may appear in an actual routing table are allowed as values of this object.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.6": {
+                "name": "inetCidrRouteNextHop",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "6",
+                "description": "On remote routes, the address of the next system en route. For non-remote routes, a zero length string. The type of this address is determined by the value of the inetCidrRouteNextHopType object.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.7": {
+                "name": "inetCidrRouteIfIndex",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "The ifIndex value that identifies the local interface through which the next hop of this route should be reached. A value of 0 is valid and represents the scenario where no interface is specified.",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.8": {
+                "name": "inetCidrRouteType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "8",
+                "description": "The type of route. Note that local(3) refers to a route for which the next hop is the final destination; remote(4) refers to a route for which the next hop is not the final destination. Routes that do not result in traffic forwarding or rejection should not be displayed, even if the implementation keeps them stored internally. reject(2) refers to a route that, if matched, discards the message as unreachable and returns a notification (e.g., ICMP error) to the message sender. This is used in some protocols as a means of correctly aggregating routes. blackhole(5) refers to a route that, if matched, discards the message silently.",
+                "status": "Current",
+                "types": [{
+                        "1": "other"
+                    },
+                    {
+                        "2": "reject"
+                    },
+                    {
+                        "3": "local"
+                    },
+                    {
+                        "4": "remote"
+                    },
+                    {
+                        "5": "blackhole"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.9": {
+                "name": "inetCidrRouteProto",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "9",
+                "description": "The routing mechanism via which this route was learned. Inclusion of values for gateway routing protocols is not intended to imply that hosts should support those protocols.",
+                "status": "Current",
+                "types": [{
+                        "1": "other"
+                    },
+                    {
+                        "2": "local"
+                    },
+                    {
+                        "3": "netmgmt"
+                    },
+                    {
+                        "4": "icmp"
+                    },
+                    {
+                        "5": "egp"
+                    },
+                    {
+                        "6": "ggp"
+                    },
+                    {
+                        "7": "hello"
+                    },
+                    {
+                        "8": "rip"
+                    },
+                    {
+                        "9": "isIs"
+                    },
+                    {
+                        "10": "esIs"
+                    },
+                    {
+                        "11": "ciscoIgrp"
+                    },
+                    {
+                        "12": "bbnSpfIgp"
+                    },
+                    {
+                        "13": "ospf"
+                    },
+                    {
+                        "14": "bgp"
+                    },
+                    {
+                        "15": "idpr"
+                    },
+                    {
+                        "16": "ciscoEigrp"
+                    },
+                    {
+                        "17": "dvmrp"
+                    },
+                    {
+                        "18": "rpl"
+                    },
+                    {
+                        "19": "dhcp"
+                    },
+                    {
+                        "20": "ttdp"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.10": {
+                "name": "inetCidrRouteAge",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "10",
+                "description": "The number of seconds since this route was last updated or otherwise determined to be correct. Note that no semantics of 'too old' can be implied, except through knowledge of the routing protocol by which the route was learned.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.11": {
+                "name": "inetCidrRouteNextHopAS",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "11",
+                "description": "The Autonomous System Number of the Next Hop. The semantics of this object are determined by the routing- protocol specified in the route's inetCidrRouteProto value. When this object is unknown or not relevant, its value should be set to zero.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.12": {
+                "name": "inetCidrRouteMetric1",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "12",
+                "description": "The primary routing metric for this route. The semantics of this metric are determined by the routing- protocol specified in the route's inetCidrRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.13": {
+                "name": "inetCidrRouteMetric2",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "13",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing- protocol specified in the route's inetCidrRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.14": {
+                "name": "inetCidrRouteMetric3",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "14",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing- protocol specified in the route's inetCidrRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.15": {
+                "name": "inetCidrRouteMetric4",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "15",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing- protocol specified in the route's inetCidrRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.16": {
+                "name": "inetCidrRouteMetric5",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "16",
+                "description": "An alternate routing metric for this route. The semantics of this metric are determined by the routing- protocol specified in the route's inetCidrRouteProto value. If this metric is not used, its value should be set to -1.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.4.24.7.1.17": {
+                "name": "inetCidrRouteStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "17",
+                "description": "The row status variable, used according to row installation and removal conventions. A row entry cannot be modified when the status is marked as active(1).",
+                "status": "Current",
+                "types": [{
+                        "1": "active"
+                    },
+                    {
+                        "2": "notInService"
+                    },
+                    {
+                        "3": "notReady"
+                    },
+                    {
+                        "4": "createAndGo"
+                    },
+                    {
+                        "5": "createAndWait"
+                    },
+                    {
+                        "6": "destroy"
+                    }
+                ]
+            }
+        }
+    ]
+}

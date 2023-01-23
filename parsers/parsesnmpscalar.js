@@ -10,12 +10,13 @@ function ParseSnmpScalar() {
      * @param {object} data data
      * @param {object} dataset dataset
      * @param {object} definitions definitions
-     * @param {object} Logger Logger
+     * @param {object} _Logger Logger
+     * @param {object} oidoverrides
      * @return {object} value
      * @description description
      */
-    this.parseSNMPScalar = function(data, dataset, definitions, Logger) {
-        const regexParse = '^(' + dataset.oid + '.)(?<oid>[0-9]+).(?<id>[0-9.]+) = (?<blank>""|(?<datatype>[A-Za-z0-9-]+): (?<value>"[a-zA-Z0-9-_.,:!()\/\\s\\S]+"|[a-zA-Z0-9-_.,:!()\/\\s\\S]+|""))';
+    this.parseSNMPScalar = function(data, dataset, definitions, _Logger, oidoverrides) {
+        const regexParse = '^(?<mainoid>' + dataset.oid + '.)(?<oid>[0-9]+).(?<id>[0-9.]+) = (?<blank>""|(?<datatype>[A-Za-z0-9-]+): (?<value>"[a-zA-Z0-9-_.,:!()\/\\s\\S]+"|[a-zA-Z0-9-_.,:!()\/\\s\\S]+|""))';
         const lines2 = data.rawdata.split('\n');
         const lines = [];
         lines2.forEach((line) => {
@@ -48,7 +49,7 @@ function ParseSnmpScalar() {
             timeend: '',
             timetaken: '',
             data: [],
-            headertablerequired: '',
+            headertablerequired: false,
             source: data.header.host,
             rdate: data.header.rdate
         };
@@ -81,12 +82,17 @@ function ParseSnmpScalar() {
                     }
                     res = {
                         raw: line,
+                        fulloid: reExec.groups.mainoid + reExec.groups.oid,
                         id: reExec.groups.id,
                         oid: reExec.groups.oid,
                         blank: reExec.groups.blank,
                         datatype: reExec.groups.datatype,
                         value: reExec.groups.value || ''
                     };
+
+                    if (oidoverrides[res.fulloid]) {
+                        res.datatype = oidoverrides[res.fulloid];
+                    }
 
                     const rrrr = snmpSections[returnData.baseoid + res.oid];
 
@@ -147,10 +153,7 @@ function ParseSnmpScalar() {
             });
         }
         returnData.parsed = cleanParsedGroups;
-        console.log('PMT1');
-        console.log(cleanParsedGroups);
-        console.log('PMT2');
-        if (returnData.debug) {
+        if (returnData.debug.length) {
             console.log(returnData.debug);
         }
         return returnData;

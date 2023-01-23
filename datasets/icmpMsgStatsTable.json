@@ -1,0 +1,49 @@
+{
+    "name": "icmpMsgStatsTable",
+    "type": "table",
+    "mib": "IP-MIB",
+    "oid": ".1.3.6.1.2.1.5.30",
+    "parent": "icmp",
+    "description": "The table of system-wide per-version, per-message type ICMP counters.",
+    "objects": [{
+            ".1.3.6.1.2.1.5.30.1.1": {
+                "name": "icmpMsgStatsIPVersion",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "1",
+                "description": "The IP version of the statistics.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.5.30.1.2": {
+                "name": "icmpMsgStatsType",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The ICMP type field of the message type being counted by this row. Note that ICMP message types are scoped by the address type in use.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.5.30.1.3": {
+                "name": "icmpMsgStatsInPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of input packets for this AF and type.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.5.30.1.4": {
+                "name": "icmpMsgStatsOutPkts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The number of output packets for this AF and type.",
+                "status": "Current"
+            }
+        }
+    ]
+}

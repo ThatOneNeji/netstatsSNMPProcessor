@@ -1,0 +1,198 @@
+{
+    "oid_lookups": {
+        ".1.3.6.1.2.1.25.2.1.1": "hrStorageOther",
+        ".1.3.6.1.2.1.25.2.1.2": "hrStorageRam",
+        ".1.3.6.1.2.1.25.2.1.3": "hrStorageVirtualMemory",
+        ".1.3.6.1.2.1.25.2.1.4": "hrStorageFixedDisk",
+        ".1.3.6.1.2.1.25.2.1.5": "hrStorageRemovableDisk",
+        ".1.3.6.1.2.1.25.2.1.6": "hrStorageFloppyDisk",
+        ".1.3.6.1.2.1.25.2.1.7": "hrStorageCompactDisc",
+        ".1.3.6.1.2.1.25.2.1.8": "hrStorageRamDisk",
+        ".1.3.6.1.2.1.25.2.1.9": "hrStorageFlashMemory",
+        ".1.3.6.1.2.1.25.2.1.10": "hrStorageNetworkDisk",
+        ".1.3.6.1.4.1.14988.1": "MIKROTIK-MIB::mikrotikExperimentalModule",
+        ".1.3.6.1.2.1.31": "IF-MIB::ifMIB",
+        ".1.3.6.1.2.1.1": "SNMPv2-MIB::system",
+        ".1.3.6.1.2.1.17": "BRIDGE-MIB::dot1dBridge",
+        ".1.3.6.1.2.1.4": "IP-MIB::ip",
+        ".1.3.6.1.2.1.25.3.9.1": "hrFSOther",
+        ".1.3.6.1.2.1.25.3.9.2": "hrFSUnknown",
+        ".1.3.6.1.2.1.25.3.9.3": "hrFSBerkeleyFFS",
+        ".1.3.6.1.2.1.25.3.9.4": "hrFSSys5FS",
+        ".1.3.6.1.2.1.25.3.9.5": "hrFSFat",
+        ".1.3.6.1.2.1.25.3.9.6": "hrFSHPFS",
+        ".1.3.6.1.2.1.25.3.9.7": "hrFSHFS",
+        ".1.3.6.1.2.1.25.3.9.8": "hrFSMFS",
+        ".1.3.6.1.2.1.25.3.9.9": "hrFSNTFS",
+        ".1.3.6.1.2.1.25.3.9.10": "hrFSVNode",
+        ".1.3.6.1.2.1.25.3.9.11": "hrFSJournaled",
+        ".1.3.6.1.2.1.25.3.9.12": "hrFSiso9660",
+        ".1.3.6.1.2.1.25.3.9.13": "hrFSRockRidge",
+        ".1.3.6.1.2.1.25.3.9.14": "hrFSNFS",
+        ".1.3.6.1.2.1.25.3.9.15": "hrFSNetware",
+        ".1.3.6.1.2.1.25.3.9.16": "hrFSAFS",
+        ".1.3.6.1.2.1.25.3.9.17": "hrFSDFS",
+        ".1.3.6.1.2.1.25.3.9.18": "hrFSAppleshare",
+        ".1.3.6.1.2.1.25.3.9.19": "hrFSRFS",
+        ".1.3.6.1.2.1.25.3.9.20": "hrFSDGCFS",
+        ".1.3.6.1.2.1.25.3.9.21": "hrFSBFS",
+        ".1.3.6.1.2.1.25.3.9.22": "hrFSFAT32",
+        ".1.3.6.1.2.1.25.3.9.23": "hrFSLinuxExt2",
+        ".1.3.6.1.6.3.1": "SNMPv2-MIB::snmpMIB",
+        ".1.3.6.1.2.1.4.24": "IP-FORWARD-MIB::ipForward",
+        ".1.3.6.1.2.1.7": "UDP-MIB::udp",
+        ".1.3.6.1.2.1.6": "TCP-MIB::tcp",
+        ".1.3.6.1.2.1.47": "ENTITY-MIB::entityMIB",
+        ".1.3.111.2.802.1.1.2": "IEEE8021-BRIDGE-MIB::ieee8021BridgeMib",
+        ".1.3.111.2.802.1.1.4": "IEEE8021-Q-BRIDGE-MIB::ieee8021QBridgeMib",
+        ".1.2.840.10006.300.43": "IEEE8023-LAG-MIB::lagMIB",
+        ".1.3.111.2.802.1.1.13": "LLDP-V2-MIB::lldpV2MIB",
+        ".1.3.6.1.2.1.25.7.1": "HOST-RESOURCES-MIB::hostResourcesMibModule",
+        ".1.3.6.1.4.1.6876.1.10": "VMWARE-SYSTEM-MIB::vmwSystemMIB",
+        ".1.3.6.1.4.1.6876.2.10": "VMWARE-VMINFO-MIB::vmwVmInfoMIB",
+        ".1.3.6.1.4.1.6876.3.10": "VMWARE-RESOURCES-MIB::vmwResourcesMIB",
+        ".1.3.6.1.4.1.6876.4.90.10": "VMWARE-CIMOM-MIB::vmwCIMOMMIB",
+        ".1.3.6.1.4.1.6876.4.20": "VMWARE-ENV-MIB::vmwEnv",
+        ".1.3.6.1.6.3.10.3.1.1": "SNMP-FRAMEWORK-MIB::snmpFrameworkMIBCompliance",
+        ".1.3.6.1.6.3.11.3.1.1": "SNMP-MPD-MIB::snmpMPDCompliance",
+        ".1.3.6.1.6.3.15.2.1.1": "SNMP-USER-BASED-SM-MIB::usmMIBCompliance",
+        ".1.3.6.1.6.3.16.2.2.1": "SNMP-VIEW-BASED-ACM-MIB::vacmBasicGroup",
+        ".1.3.6.1.2.1.49": "TCP-MIB::tcpMIB",
+        ".1.3.6.1.2.1.50": "UDP-MIB::udpMIB",
+        ".1.3.6.1.6.3.13.3.1.3": "SNMP-NOTIFICATION-MIB::snmpNotifyFullCompliance",
+        ".1.3.6.1.2.1.92": "NOTIFICATION-LOG-MIB::notificationLogMIB"
+    },
+    "counters": {
+        "hrProcessorTable": [{
+            ".1.3.6.1.2.1.25.3.3.1.1": {
+                "name": "hrProcessorFrwID",
+                "datatype": "OBJECTID",
+                "columntype": "index",
+                "order": "1",
+                "description": "The product ID of the firmware associated with the processor.",
+                "status": "Current"
+            }
+        }],
+        "mtxrOpticalTable22": [{
+                ".1.3.6.1.4.1.14988.1.1.19.1.1.5": {
+                    "name": "mtxrOpticalWavelength",
+                    "datatype": "GAUGEDIV100"
+                }
+            },
+            {
+                ".1.3.6.1.4.1.14988.1.1.19.1.1.7": {
+                    "name": "mtxrOpticalSupplyVoltage",
+                    "datatype": "GAUGEDIV1000"
+                }
+            },
+            {
+                ".1.3.6.1.4.1.14988.1.1.19.1.1.9": {
+                    "name": "mtxrOpticalTxPower",
+                    "datatype": "INTEGER32DIV1000",
+                    "range": "-2147483648..2147483647"
+                }
+            },
+            {
+                ".1.3.6.1.4.1.14988.1.1.19.1.1.10": {
+                    "name": "mtxrOpticalRxPower",
+                    "datatype": "INTEGER32DIV1000",
+                    "range": "-2147483648..2147483647"
+                }
+            }
+        ],
+        "ipRouteTable": [{
+            ".1.3.6.1.2.1.4.21.1.13": {
+                "datatype": "OCTETSTR"
+            }
+        }],
+        "dot1dTpFdbTable": [{
+            ".1.3.6.1.2.1.17.4.3.1.1": {
+                "datatype": "Hex-MAC"
+            }
+        }],
+        "ifTable": [{
+                ".1.3.6.1.2.1.2.2.1.6": {
+                    "datatype": "Hex-MAC"
+                }
+            },
+            {
+                ".1.3.6.1.2.1.2.2.1.13aa": {
+                    "name": "ifInDiscards",
+                    "datatype": "COUNTER_DELTA"
+                }
+            },
+            {
+                ".1.3.6.1.2.1.2.2.1.14aa": {
+                    "name": "ifInErrors",
+                    "datatype": "COUNTER_DELTA"
+                }
+            },
+            {
+                ".1.3.6.1.2.1.2.2.1.20aa": {
+                    "name": "ifOutErrors",
+                    "datatype": "COUNTER_DELTA"
+                }
+            }
+        ],
+        "hrSystemScalar": [{
+                ".1.3.6.1.2.1.25.1.4": {
+                    "name": "hrSystemInitialLoadParameters",
+                    "datatype": "COUNTER_DELTA"
+                }
+            },
+            {
+                ".1.3.6.1.2.1.25.1.2": {
+                    "datatype": "Hex-DATE"
+                }
+            }
+        ],
+        "mtxrNeighborTable": [{
+            ".1.3.6.1.4.1.14988.1.1.11.1.1.3": {
+                "name": "mtxrNeighborMacAddress",
+                "datatype": "Hex-MAC"
+            }
+        }],
+        "mtxrWlRtabTable": [{
+            ".1.3.6.1.4.1.14988.1.1.1.2.1.1": {
+                "name": "mtxrWlRtabAddr",
+                "datatype": "Hex-MAC"
+            }
+        }],
+        "ipNetToMediaTable": [{
+            ".1.3.6.1.2.1.4.22.1.2": {
+                "name": "ipNetToMediaPhysAddress",
+                "datatype": "Hex-MAC"
+            }
+        }],
+        "mtxrWlCMRtabTable": [{
+            ".1.3.6.1.4.1.14988.1.1.1.5.1.1": {
+                "name": "mtxrWlCMRtabAddr",
+                "datatype": "Hex-MAC"
+            }
+        }],
+        "lmTempSensorsTable": [{
+            ".1.3.6.1.4.1.2021.13.16.2.1.3": {
+                "name": "lmTempSensorsValue",
+                "datatype": "GDiv1000"
+            }
+        }],
+        "lmVoltSensorsTable": [{
+            ".1.3.6.1.4.1.2021.13.16.4.1.3": {
+                "name": "lmVoltSensorsValue",
+                "datatype": "GDiv1000"
+            }
+        }],
+        "ipv6AddrTable22": [{
+            ".1.3.6.1.2.1.55.1.8.1.1": {
+                "name": "ipv6AddrAddress",
+                "datatype": "GDiv1000"
+            }
+        }],
+        "ipv6IfTable": [{
+            ".1.3.6.1.2.1.55.1.5.1.8": {
+                "name": "ipv6IfPhysicalAddress",
+                "datatype": "Hex-MAC"
+            }
+        }]
+    }
+}

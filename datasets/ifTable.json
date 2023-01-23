@@ -34,7 +34,8 @@
                 "order": "3",
                 "description": "The type of interface. Additional values for ifType are assigned by the Internet Assigned Numbers Authority (IANA), through updating the syntax of the IANAifType textual convention.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -795,6 +796,138 @@
                     },
                     {
                         "254": "capwapWtpVirtualRadio"
+                    },
+                    {
+                        "255": "bits"
+                    },
+                    {
+                        "256": "docsCableUpstreamRfPort"
+                    },
+                    {
+                        "257": "cableDownstreamRfPort"
+                    },
+                    {
+                        "258": "vmwareVirtualNic"
+                    },
+                    {
+                        "259": "ieee802154"
+                    },
+                    {
+                        "260": "otnOdu"
+                    },
+                    {
+                        "261": "otnOtu"
+                    },
+                    {
+                        "262": "ifVfiType"
+                    },
+                    {
+                        "263": "g9981"
+                    },
+                    {
+                        "264": "g9982"
+                    },
+                    {
+                        "265": "g9983"
+                    },
+                    {
+                        "266": "aluEpon"
+                    },
+                    {
+                        "267": "aluEponOnu"
+                    },
+                    {
+                        "268": "aluEponPhysicalUni"
+                    },
+                    {
+                        "269": "aluEponLogicalLink"
+                    },
+                    {
+                        "270": "aluGponOnu"
+                    },
+                    {
+                        "271": "aluGponPhysicalUni"
+                    },
+                    {
+                        "272": "vmwareNicTeam"
+                    },
+                    {
+                        "277": "docsOfdmDownstream"
+                    },
+                    {
+                        "278": "docsOfdmaUpstream"
+                    },
+                    {
+                        "279": "gfast"
+                    },
+                    {
+                        "280": "sdci"
+                    },
+                    {
+                        "281": "xboxWireless"
+                    },
+                    {
+                        "282": "fastdsl"
+                    },
+                    {
+                        "283": "docsCableScte55d1FwdOob"
+                    },
+                    {
+                        "284": "docsCableScte55d1RetOob"
+                    },
+                    {
+                        "285": "docsCableScte55d2DsOob"
+                    },
+                    {
+                        "286": "docsCableScte55d2UsOob"
+                    },
+                    {
+                        "287": "docsCableNdf"
+                    },
+                    {
+                        "288": "docsCableNdr"
+                    },
+                    {
+                        "289": "ptm"
+                    },
+                    {
+                        "290": "ghn"
+                    },
+                    {
+                        "291": "otnOtsi"
+                    },
+                    {
+                        "292": "otnOtuc"
+                    },
+                    {
+                        "293": "otnOduc"
+                    },
+                    {
+                        "294": "otnOtsig"
+                    },
+                    {
+                        "295": "microwaveCarrierTermination"
+                    },
+                    {
+                        "296": "microwaveRadioLinkTerminal"
+                    },
+                    {
+                        "297": "ieee8021axDrni"
+                    },
+                    {
+                        "298": "ax25"
+                    },
+                    {
+                        "299": "ieee19061nanocom"
+                    },
+                    {
+                        "300": "cpri"
+                    },
+                    {
+                        "301": "omni"
+                    },
+                    {
+                        "302": "roe"
                     }
                 ]
             }

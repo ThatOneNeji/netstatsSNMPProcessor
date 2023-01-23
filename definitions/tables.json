@@ -1,11 +1,12 @@
 {
     "base": {
+        "prefix33": "tbl_base_snmp",
         "prefix": "dev_tbl_base_snmp",
         "suffix": "raw",
         "fields": [{
                 "name": "rdate",
                 "properties": "datetime NOT NULL",
-                "comment": "Row DateTime",
+                "comment": "Row date",
                 "type": "index",
                 "position": "prefix"
             },
@@ -19,7 +20,7 @@
             {
                 "name": "ldate",
                 "properties": "datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
-                "comment": "DateTime when row was added/changed",
+                "comment": "Index for the last_seen and processed columns",
                 "type": "index",
                 "position": "suffix"
             },
@@ -38,30 +39,23 @@
             "position": "prefix"
         }],
         "indexes": [{
-                "primary": [
-                    "rdate",
-                    "host"
-                ],
+                "primary": ["rdate", "host"],
                 "comment": "Primary index"
             },
             {
-                "updates": [
-                    "ldate",
-                    "processed"
-                ],
+                "updates": ["ldate", "processed"],
                 "comment": "Update trigger index"
             }
         ],
-        "triggers": [
-            "update"
-        ]
+        "triggers": ["update"]
     },
     "summary": {
-        "prefix": "tbl_summary_snmp",
+        "prefix33": "tbl_base_snmp",
+        "prefix": "dev_tbl_base_snmp",
         "fields": [{
                 "name": "rdate",
                 "properties": "datetime NOT NULL",
-                "comment": "Row DateTime",
+                "comment": "Row date",
                 "type": "index",
                 "position": "prefix"
             },
@@ -74,7 +68,7 @@
             },
             {
                 "name": "idate",
-                "properties": "varchar(20) NOT NULL",
+                "properties": "bigint NOT NULL",
                 "comment": "DateTime in EPOCH format",
                 "type": "ignore",
                 "position": "prefix"
@@ -96,7 +90,7 @@
             {
                 "name": "samples",
                 "properties": "INT NOT NULL DEFAULT '1'",
-                "comment": "comment7",
+                "comment": "The number of samples that built up the row",
                 "type": "ignore",
                 "position": "suffix"
             }
@@ -107,23 +101,14 @@
             "position": "prefix"
         }],
         "indexes": [{
-                "primary": [
-                    "rdate",
-                    "host"
-                ],
+                "primary": ["rdate", "host"],
                 "comment": "Primary index"
             },
             {
-                "updates": [
-                    "ldate",
-                    "processed"
-                ],
+                "updates": ["ldate", "processed"],
                 "comment": "Update trigger index"
             }
         ],
-        "triggers": [
-            "insert",
-            "update"
-        ]
+        "triggers": ["insert", "update"]
     }
 }

@@ -1,0 +1,51 @@
+{
+    "name": "vmwVmHbaTable",
+    "type": "table",
+    "mib": "VMWARE-VMINFO-MIB",
+    "oid": ".1.3.6.1.4.1.6876.2.2",
+    "parent": "vmwVirtMachines",
+    "description": "Table of host bus adapters (hba) for all vms in vmwVmTable.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.2.2.1.1": {
+                "name": "vmwHbaVmIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "This number corresponds to the vmwVmIdx in vmwVmTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.2.1.2": {
+                "name": "vmwVmHbaIdx",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "Uniquely identifies a given Host Bus adapter in this VM. May change across system reboots.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.2.1.3": {
+                "name": "vmwHbaNum",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The name of the hba as it appears in the VM Settings. VIM Property: Virtual Device index of 200-299. MOB: https://esx.example.com/mob/?moid=vmwVmIdx&doPath=config%2ehardware",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.2.2.1.4": {
+                "name": "vmwHbaVirtDev",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The oem host bus adapter hardware being emulated to the Guest OS. MOB: Not visible.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}
