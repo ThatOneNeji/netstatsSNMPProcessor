@@ -1,4 +1,17 @@
 {
+    "bgpPeerTable": {
+        "name": "bgpPeer",
+        "prefix": "T81",
+        "comment": "BGP peer table. This table contains, one entry per BGP peer, information about the connections with BGP peers.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": true
+    },
     "diskIOTable": {
         "name": "diskIO",
         "prefix": "T49",
@@ -144,13 +157,7 @@
         "prefix": "T19",
         "comment": "A list of interface entries. The number of entries is given by the value of ifNumber.",
         "notes": "",
-        "intervals": [
-            "05",
-            "60",
-            "dd",
-            "wk",
-            "mo"
-        ],
+        "intervals": [],
         "options": {
             "droptable": true,
             "lastseen": true,
@@ -164,11 +171,7 @@
         "comment": "A list of interface entries. The number of entries is given by the value of ifNumber. This table contains additional objects for the interface table.",
         "notes": "",
         "intervals": [
-            "05",
-            "60",
-            "dd",
-            "wk",
-            "mo"
+            "05"
         ],
         "options": {
             "droptable": true,
@@ -475,7 +478,7 @@
             "lastseen": true,
             "partition": true
         },
-        "enabled": true
+        "enabled": false
     },
     "mtxrPartitionTable": {
         "name": "mtxrPartition",
@@ -745,6 +748,357 @@
         "name": "vmwSystem",
         "prefix": "T53",
         "comment": "Parent of all managed objects relating to system software identification.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "entLogicalTable": {
+        "name": "entLogical",
+        "prefix": "T54",
+        "comment": "This table contains one row per logical entity. For agents that implement more than one naming scope, at least one entry must exist. Agents which instantiate all MIB objects within a single naming scope are not required to implement this table.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "entPhysicalTable": {
+        "name": "entPhysical",
+        "prefix": "T55",
+        "comment": "This table contains one row per physical entity. There is always at least one row for an 'overall' physical entity.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrDiskStorageTable": {
+        "name": "hrDiskStorage",
+        "prefix": "T56",
+        "comment": "The (conceptual) table of long-term storage devices contained by the host. In particular, disk devices accessed remotely over a network are not included here. Note that this table is potentially sparse: a (conceptual) entry exists only if the correspondent value of the hrDeviceType object is `hrDeviceDiskStorage'.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrFSTable": {
+        "name": "hrFS",
+        "prefix": "T57",
+        "comment": "The (conceptual) table of file systems local to this host or remotely mounted from a file server. File systems that are in only one user's environment on a multi-user system will not be included in this table.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrPartitionTable": {
+        "name": "hrPartition",
+        "prefix": "T58",
+        "comment": "The (conceptual) table of partitions for long-term storage devices contained by the host. In particular, partitions accessed remotely over a network are not included here.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrSWInstalledTable": {
+        "name": "hrSWInstalled",
+        "prefix": "T59",
+        "comment": "The (conceptual) table of software installed on this host.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrSWRunPerfTable": {
+        "name": "hrSWRunPerf",
+        "prefix": "T60",
+        "comment": "The (conceptual) table of running software performance metrics.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "hrSWRunTable": {
+        "name": "hrSWRun",
+        "prefix": "T61",
+        "comment": "he (conceptual) table of software running on the host.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "icmpMsgStatsTable": {
+        "name": "icmpMsgStats",
+        "prefix": "T62",
+        "comment": "The table of system-wide per-version, per-message type ICMP counters.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "icmpStatsTable": {
+        "name": "icmpStats",
+        "prefix": "T63",
+        "comment": "The table of generic system-wide ICMP counters.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ifStackTable": {
+        "name": "ifStack",
+        "prefix": "T64",
+        "comment": "The table containing information on the relationships between the multiple sub-layers of network interfaces. In particular, it contains information on which sub-layers run 'on top of' which other sub-layers, where each sub-layer corresponds to a conceptual row in the ifTable. For example, when the sub-layer with ifIndex value x runs over the sub-layer with ifIndex value y, then this table contains: ifStackStatus.x.y=active For each ifIndex value, I, which identifies an active interface, there are always at least two instantiated rows in this table associated with I. For one of these rows, I is the value of ifStackHigherLayer; for the other, I is the value of ifStackLowerLayer. (If I is not involved in multiplexing, then these are the only two rows associated with I.) For example, two rows exist even for an interface which has no others stacked on top or below it: ifStackStatus.0.x=active ifStackStatus.x.0=active ",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "inetCidrRouteTable": {
+        "name": "inetCidrRoute",
+        "prefix": "T65",
+        "comment": "This entity's IP Routing table.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipAddressPrefixTable": {
+        "name": "ipAddressPrefix",
+        "prefix": "T66",
+        "comment": "This table allows the user to determine the source of an IP address or set of IP addresses, and allows other tables to share the information via pointer rather than by copying. For example, when the node configures both a unicast and anycast address for a prefix, the ipAddressPrefix objects for those addresses will point to a single row in this table. This table primarily provides support for IPv6 prefixes, and several of the objects are less meaningful for IPv4. The table continues to allow IPv4 addresses to allow future flexibility. In order to promote a common configuration, this document includes suggestions for default values for IPv4 prefixes. Each of these values may be overridden if an object is meaningful to the node. All prefixes used by this entity should be included in this table independent of how the entity learned the prefix. (This table isn't limited to prefixes learned from router advertisements.)",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipAddressTable": {
+        "name": "ipAddress",
+        "prefix": "T67",
+        "comment": "This table contains addressing information relevant to the entity's interfaces. This table does not contain multicast address information. Tables for such information should be contained in multicast specific MIBs, such as RFC 3019. While this table is writable, the user will note that several objects, such as ipAddressOrigin, are not. The intention in allowing a user to write to this table is to allow them to add or remove any entry that isn't permanent. The user should be allowed to modify objects and entries when that would not cause inconsistencies within the table. Allowing write access to objects, such as ipAddressOrigin, could allow a user to insert an entry and then label it incorrectly. Note well: When including IPv6 link-local addresses in this table, the entry must use an InetAddressType of 'ipv6z' in order to differentiate between the possible interfaces.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipNetToPhysicalTable": {
+        "name": "ipNetToPhysical",
+        "prefix": "T68",
+        "comment": "The IP Address Translation table used for mapping from IP addresses to physical addresses. The Address Translation tables contain the IP address to 'physical' address equivalences. Some interfaces do not use translation tables for determining address equivalences (e.g., DDN-X.25 has an algorithmic method); if all interfaces are of this type, then the Address Translation table is empty, i.e., has zero entries. While many protocols may be used to populate this table, ARP and Neighbor Discovery are the most likely options.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "ipSystemStatsTable": {
+        "name": "ipSystemStats",
+        "prefix": "T69",
+        "comment": "The table containing system wide, IP version specific traffic statistics. This table and the ipIfStatsTable contain similar objects whose difference is in their granularity. Where this table contains system wide traffic statistics, the ipIfStatsTable contains the same statistics but counted on a per-interface basis.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "snmpScalar": {
+        "name": "snmp",
+        "prefix": "T70",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "tcpConnectionTable": {
+        "name": "tcpConnection",
+        "prefix": "T71",
+        "comment": "A table containing information about existing TCP connections. Note that unlike earlier TCP MIBs, there is a separate table for connections in the LISTEN state.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "tcpListenerTable": {
+        "name": "tcpListener",
+        "prefix": "T72",
+        "comment": "A table containing information about TCP listeners. A listening application can be represented in three possible ways: 1. An application that is willing to accept both IPv4 and IPv6 datagrams is represented by a tcpListenerLocalAddressType of unknown (0) and a tcpListenerLocalAddress of ''h (a zero-length octet-string). 2. An application that is willing to accept only IPv4 or IPv6 datagrams is represented by a tcpListenerLocalAddressType of the appropriate address type and a tcpListenerLocalAddress of '0.0.0.0' or '::' respectively. 3. An application that is listening for data destined only to a specific IP address, but from any remote system, is represented by a tcpListenerLocalAddressType of an appropriate address type, with tcpListenerLocalAddress as the specific local address. NOTE: The address type in this table represents the address type used for the communication, irrespective of the higher-layer abstraction. For example, an application using IPv6 'sockets' to communicate via IPv4 between ::ffff:10.0.0.1 and ::ffff:10.0.0.2 would use InetAddressType ipv4(1)).",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "udpEndpointTable": {
+        "name": "udpEndpoint",
+        "prefix": "T73",
+        "comment": "A table containing information about this entity's UDP endpoints on which a local application is currently accepting or sending datagrams. The address type in this table represents the address type used for the communication, irrespective of the higher-layer abstraction. For example, an application using IPv6 'sockets' to communicate via IPv4 between ::ffff:10.0.0.1 and ::ffff:10.0.0.2 would use InetAddressType ipv4(1). Unlike the udpTable in RFC 2013, this table also allows the representation of an application that completely specifies both local and remote addresses and ports. A listening application is represented in three possible ways: 1) An application that is willing to accept both IPv4 and IPv6 datagrams is represented by a udpEndpointLocalAddressType of unknown(0) and a udpEndpointLocalAddress of ''h (a zero-length octet-string). 2) An application that is willing to accept only IPv4 or only IPv6 datagrams is represented by a udpEndpointLocalAddressType of the appropriate address type and a udpEndpointLocalAddress of '0.0.0.0' or '::' respectively. 3) An application that is listening for datagrams only for a specific IP address but from any remote system is represented by a udpEndpointLocalAddressType of the appropriate address type, with udpEndpointLocalAddress specifying the local address. In all cases where the remote is a wildcard, the udpEndpointRemoteAddressType is unknown(0), the udpEndpointRemoteAddress is ''h (a zero-length octet-string), and the udpEndpointRemotePort is 0. If the operating system is demultiplexing UDP packets by remote address and port, or if the application has 'connected' the socket specifying a default remote address and port, the udpEndpointRemote* values should be used to reflect this.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwCdromTable": {
+        "name": "vmwCdrom",
+        "prefix": "T74",
+        "comment": "Table of DVD or CDROM drives for all vms in vmwVmTable.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwEnvTable": {
+        "name": "vmwEnv",
+        "prefix": "T75",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwFloppyTable": {
+        "name": "vmwFloppy",
+        "prefix": "T76",
+        "comment": "Table of floppy drives for all vms in vmwVmTable.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwHbaTgtTable": {
+        "name": "vmwHbaTgt",
+        "prefix": "T77",
+        "comment": "Table of all virtual disks configured for vms in vmwVmTable.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwHostBusAdapterTable": {
+        "name": "vmwHostBusAdapter",
+        "prefix": "T78",
+        "comment": "Inventory of Host Bus Adatpers found in this system. CLI: esxcfg-scsidevs -a VIM Parent Container: https://esx.example.com/mob/?moid=storageSystem VIM property: hostBusAdapter MOB: https://esx.example.com/mob/?moid=storageSystem&doPath=storageDeviceInfo",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwVmHbaTable": {
+        "name": "vmwVmHba",
+        "prefix": "T79",
+        "comment": "Table of host bus adapters (hba) for all vms in vmwVmTable.",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "vmwVmNetTable": {
+        "name": "vmwVmNet",
+        "prefix": "T80",
+        "comment": "able of network adapters (nic) for all vms in vmwVmTable.",
         "notes": "",
         "intervals": [],
         "options": {
