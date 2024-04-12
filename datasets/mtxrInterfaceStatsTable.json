@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.14988.1.1.14.1",
     "parent": "mtxrInterfaceStats",
     "description": "Extended interface statistics. Some interfaces may have only parts of this table with unavailable values set to zero.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.14988.1.1.14.1.1.1": {
                 "name": "mtxrInterfaceStatsIndex",
                 "datatype": "INTEGER32",
@@ -682,6 +683,16 @@
                 "datatype": "COUNTER",
                 "columntype": "column",
                 "order": "90",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.14.1.1.91": {
+                "name": "mtxrInterfaceStatsTxRx1024ToMax",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "91",
                 "description": "",
                 "status": "Current"
             }
