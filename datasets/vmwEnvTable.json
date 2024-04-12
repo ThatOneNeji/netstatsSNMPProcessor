@@ -1,0 +1,129 @@
+{
+    "name": "vmwEnvTable",
+    "type": "table",
+    "mib": "VMWARE-ENV-MIB",
+    "oid": ".1.3.6.1.4.1.6876.4.20.3",
+    "parent": "vmwEnv",
+    "description": "This table is populated from monitoring IPMI BMC device. One conceptual row is maintained for each reporting component. This table may be cleared by operational request to BMC and normally is configured to stop adding new entries when full.",
+    "objects": [{
+            ".1.3.6.1.4.1.6876.4.20.3.1.1": {
+                "name": "vmwEnvIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "This is the identifier as reported by the vendor hardware's BMC as per Table 32 section 32.1 SEL Event Records [1]. On ESXi: the command: localcli hardware ipmi sel list can provide the listing of IPMI SEL entries as well.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.3.1.2": {
+                "name": "vmwSubsystemType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "Hardware component reporting environmental state",
+                "status": "Current",
+                "types": [{
+                        "1": "unknown"
+                    },
+                    {
+                        "2": "chassis"
+                    },
+                    {
+                        "3": "powerSupply"
+                    },
+                    {
+                        "4": "fan"
+                    },
+                    {
+                        "5": "cpu"
+                    },
+                    {
+                        "6": "memory"
+                    },
+                    {
+                        "7": "battery"
+                    },
+                    {
+                        "8": "temperatureSensor"
+                    },
+                    {
+                        "9": "raidController"
+                    },
+                    {
+                        "10": "voltage"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.3.1.3": {
+                "name": "vmwHardwareStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "Last reported state of this component",
+                "status": "Current",
+                "types": [{
+                        "1": "unknown"
+                    },
+                    {
+                        "2": "normal"
+                    },
+                    {
+                        "3": "marginal"
+                    },
+                    {
+                        "4": "critical"
+                    },
+                    {
+                        "5": "failed"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.3.1.4": {
+                "name": "vmwEventDescription",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Human readable description of this event",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.3.1.5": {
+                "name": "vmwEnvHardwareTime",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "Timestamp as reported from BMC for the SEL entry. See CLI: 'localcli hardware ipmi sel list' for same report. Note that BMC maintains it own clock and may not be the same as the time ESX itself reports. On ESX: the CLI command: localcli hardware ipmi sel get reports the BMC clock.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.3.1.6": {
+                "name": "vmwEnvHrDeviceIndex",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "The Index into hrDeviceTable for the hardware related to this event. Report 0 if this entry does not have a related entry in hrDeviceTable.",
+                "status": "Current",
+                "range": "1..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.6876.4.20.3.1.7": {
+                "name": "vmwEnvSelSensorNumber",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "This is the BMC reported Sensor Number byte 12 from SEL Event record as per Table 32 section 32.1 SEL Event Records [1]. IPMI Sensors are reported in hrDeviceTable and vmwEnvTable provides the mapping to the specific entry there. Also from CLI on ESX the command: localcli hardware ipmi sdr list can provide the listing of IPMI Sensors that has entered this SEL record. ",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}
