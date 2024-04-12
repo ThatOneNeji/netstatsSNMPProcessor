@@ -73,10 +73,11 @@
     "T72": "tcpListenerTable",
     "T73": "udpEndpointTable",
     "T74": "vmwCdromTable",
-    "T75": "vmwEnvScalar",
+    "T75": "vmwEnvTable",
     "T76": "vmwFloppyTable",
     "T77": "vmwHbaTgtTable",
     "T78": "vmwHostBusAdapterTable",
     "T79": "vmwVmHbaTable",
-    "T80": "vmwVmNetTable"
+    "T80": "vmwVmNetTable",
+    "T81": "bgpPeerTable"
 }
