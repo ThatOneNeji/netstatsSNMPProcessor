@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.15.3",
     "parent": "bgp",
     "description": "BGP peer table. This table contains, one entry per BGP peer, information about the connections with BGP peers.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.15.3.1.7": {
                 "name": "bgpPeerRemoteAddr",
                 "datatype": "IPADDR",
@@ -33,7 +34,8 @@
                 "order": "2",
                 "description": "The BGP peer connection state.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "idle"
                     },
                     {
@@ -62,7 +64,8 @@
                 "order": "3",
                 "description": "The desired state of the BGP connection. A transition from 'stop' to 'start' will cause the BGP Manual Start Event to be generated. A transition from 'start' to 'stop' will cause the BGP Manual Stop Event to be generated. This parameter can be used to restart BGP peer connections. Care should be used in providing write access to this object without adequate authentication.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "stop"
                     },
                     {

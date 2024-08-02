@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.24.7",
     "parent": "ipForward",
     "description": "This entity's IP Routing table.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.24.7.1.1": {
                 "name": "inetCidrRouteDestType",
                 "datatype": "INTEGER",
@@ -84,7 +85,8 @@
                 "order": "8",
                 "description": "The type of route. Note that local(3) refers to a route for which the next hop is the final destination; remote(4) refers to a route for which the next hop is not the final destination. Routes that do not result in traffic forwarding or rejection should not be displayed, even if the implementation keeps them stored internally. reject(2) refers to a route that, if matched, discards the message as unreachable and returns a notification (e.g., ICMP error) to the message sender. This is used in some protocols as a means of correctly aggregating routes. blackhole(5) refers to a route that, if matched, discards the message silently.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -110,7 +112,8 @@
                 "order": "9",
                 "description": "The routing mechanism via which this route was learned. Inclusion of values for gateway routing protocols is not intended to imply that hosts should support those protocols.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -251,7 +254,8 @@
                 "order": "17",
                 "description": "The row status variable, used according to row installation and removal conventions. A row entry cannot be modified when the status is marked as active(1).",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "active"
                     },
                     {

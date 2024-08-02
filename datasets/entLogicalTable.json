@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.47.1.2.1",
     "parent": "entityLogical",
     "description": "This table contains one row per logical entity. For agents that implement more than one naming scope, at least one entry must exist. Agents which instantiate all MIB objects within a single naming scope are not required to implement this table.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.47.1.2.1.1.1": {
                 "name": "entLogicalIndex",
                 "datatype": "INTEGER32",

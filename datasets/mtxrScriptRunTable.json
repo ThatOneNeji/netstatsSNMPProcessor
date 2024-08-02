@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.14988.1.1.18.1",
     "parent": "mtxrScriptRun",
     "description": "invisible to getnext, accesible only with get request and write premission",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.14988.1.1.18.1.1.1": {
                 "name": "mtxrScriptRunIndex",
                 "datatype": "INTEGER32",

@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.6876.1",
     "parent": "vmware",
     "description": "Parent of all managed objects relating to system software identification.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.6876.1.1": {
                 "name": "vmwProdName",
                 "datatype": "OCTETSTR",

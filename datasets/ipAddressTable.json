@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.34",
     "parent": "ip",
     "description": "This table contains addressing information relevant to the entity's interfaces. This table does not contain multicast address information. Tables for such information should be contained in multicast specific MIBs, such as RFC 3019. While this table is writable, the user will note that several objects, such as ipAddressOrigin, are not. The intention in allowing a user to write to this table is to allow them to add or remove any entry that isn't permanent. The user should be allowed to modify objects and entries when that would not cause inconsistencies within the table. Allowing write access to objects, such as ipAddressOrigin, could allow a user to insert an entry and then label it incorrectly. Note well: When including IPv6 link-local addresses in this table, the entry must use an InetAddressType of 'ipv6z' in order to differentiate between the possible interfaces.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.34.1.1": {
                 "name": "ipAddressAddrType",
                 "datatype": "INTEGER",
@@ -44,7 +45,8 @@
                 "order": "4",
                 "description": "The type of address. broadcast(3) is not a valid value for IPv6 addresses (RFC 3513).",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "unicast"
                     },
                     {
@@ -74,7 +76,8 @@
                 "order": "6",
                 "description": "The origin of the address.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -100,7 +103,8 @@
                 "order": "7",
                 "description": "The status of the address, describing if the address can be used for communication. In the absence of other information, an IPv4 address is always preferred(1).",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "preferred"
                     },
                     {
@@ -155,7 +159,8 @@
                 "order": "10",
                 "description": "The status of this conceptual row. The RowStatus TC requires that this DESCRIPTION clause states under which circumstances other objects in this row can be modified. The value of this object has no effect on whether other objects in this conceptual row can be modified. A conceptual row can not be made active until the ipAddressIfIndex has been set to a valid index.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "active"
                     },
                     {
@@ -184,7 +189,8 @@
                 "order": "11",
                 "description": "The storage type for this conceptual row. If this object has a value of 'permanent', then no other objects are required to be able to be modified.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {

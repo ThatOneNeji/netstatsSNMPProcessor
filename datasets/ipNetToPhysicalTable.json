@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.35",
     "parent": "ip",
     "description": "The IP Address Translation table used for mapping from IP addresses to physical addresses. The Address Translation tables contain the IP address to 'physical' address equivalences. Some interfaces do not use translation tables for determining address equivalences (e.g., DDN-X.25 has an algorithmic method); if all interfaces are of this type, then the Address Translation table is empty, i.e., has zero entries. While many protocols may be used to populate this table, ARP and Neighbor Discovery are the most likely options.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.35.1.1": {
                 "name": "ipNetToPhysicalIfIndex",
                 "datatype": "INTEGER32",
@@ -64,7 +65,8 @@
                 "order": "6",
                 "description": "The type of mapping. Setting this object to the value invalid(2) has the effect of invalidating the corresponding entry in the ipNetToPhysicalTable. That is, it effectively dis- associates the interface identified with said entry from the mapping identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipNetToPhysicalType object. The 'dynamic(3)' type indicates that the IP address to physical addresses mapping has been dynamically resolved using e.g., IPv4 ARP or the IPv6 Neighbor Discovery protocol. The 'static(4)' type indicates that the mapping has been statically configured. Both of these refer to entries that provide mappings for other entities addresses. The 'local(5)' type indicates that the mapping is provided for an entity's own interface address. As the entries in this table are typically not persistent when this object is written the entity SHOULD NOT save the change to non-volatile storage.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -90,7 +92,8 @@
                 "order": "7",
                 "description": "The Neighbor Unreachability Detection state for the interface when the address mapping in this entry is used. If Neighbor Unreachability Detection is not in use (e.g. for IPv4), this object is always unknown(6).",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "reachable"
                     },
                     {
@@ -122,7 +125,8 @@
                 "order": "8",
                 "description": "The status of this conceptual row. The RowStatus TC requires that this DESCRIPTION clause states under which circumstances other objects in this row can be modified. The value of this object has no effect on whether other objects in this conceptual row can be modified. A conceptual row can not be made active until the ipNetToPhysicalPhysAddress object has been set. Note that if the ipNetToPhysicalType is set to 'invalid', the managed node may delete the entry independent of the state of this object.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "active"
                     },
                     {

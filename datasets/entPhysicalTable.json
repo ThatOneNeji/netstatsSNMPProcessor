@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.47.1.1.1",
     "parent": "entityPhysical",
     "description": "This table contains one row per physical entity. There is always at least one row for an 'overall' physical entity.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.47.1.1.1.1.1": {
                 "name": "entPhysicalIndex",
                 "datatype": "INTEGER32",
@@ -55,7 +56,8 @@
                 "order": "5",
                 "description": "An indication of the general hardware type of the physical entity. An agent should set this object to the standard enumeration value that most accurately indicates the general class of the physical entity, or the primary class if there is more than one entity. If no appropriate standard registration identifier exists for this physical entity, then the value 'other(1)' is returned. If the value is unknown by this agent, then the value 'unknown(2)' is returned.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -212,7 +214,8 @@
                 "order": "16",
                 "description": "This object indicates whether or not this physical entity is considered a 'field replaceable unit' by the vendor. If this object contains the value 'true(1)' then this entPhysicalEntry identifies a field replaceable unit. For all entPhysicalEntries that represent components permanently contained within a field replaceable unit, the value 'false(2)' should be returned for this object.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "true"
                     },
                     {

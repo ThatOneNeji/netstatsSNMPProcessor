@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.14988.1.1.1.2",
     "parent": "mtxrWireless",
     "description": "",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.14988.1.1.1.2.1.1": {
                 "name": "mtxrWlRtabAddr",
                 "datatype": "OCTETSTR",

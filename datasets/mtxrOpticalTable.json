@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.14988.1.1.19.1",
     "parent": "mtxrOptical",
     "description": "SFP and GPON information",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.14988.1.1.19.1.1.1": {
                 "name": "mtxrOpticalIndex",
                 "datatype": "INTEGER32",
@@ -34,7 +35,8 @@
                 "order": "3",
                 "description": "",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "0": "false"
                     },
                     {
@@ -51,7 +53,8 @@
                 "order": "4",
                 "description": "",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "0": "false"
                     },
                     {
@@ -128,6 +131,17 @@
                 "datatype": "OCTETSTR",
                 "columntype": "column",
                 "order": "11",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.19.1.1.12": {
+                "name": "mtxrOpticalVendorSerial",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "12",
                 "description": "",
                 "status": "Current",
                 "range": "0..255"

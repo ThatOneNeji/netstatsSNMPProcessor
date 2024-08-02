@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.24.2",
     "parent": "ipForward",
     "description": "This entity's IP Routing table.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.24.2.1.1": {
                 "name": "ipForwardDest",
                 "datatype": "IPADDR",
@@ -73,7 +74,8 @@
                 "order": "6",
                 "description": "The type of route. Note that local(3) refers to a route for which the next hop is the final destination; remote(4) refers to a route for which the next hop is not the final destination. Setting this object to the value invalid(2) has the effect of invalidating the corresponding entry in the ipForwardTable object. That is, it effectively disassociates the destination identified with said entry from the route identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipForwardType object.",
                 "status": "Obsolete",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {

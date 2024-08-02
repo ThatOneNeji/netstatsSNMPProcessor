@@ -1,0 +1,301 @@
+{
+    "name": "systemStats",
+    "type": "scalar",
+    "mib": "UCD-SNMP-MIB",
+    "oid": ".1.3.6.1.4.1.2021.11",
+    "parent": "ucdavis",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.2021.11.1": {
+                "name": "ssIndex",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "1",
+                "description": "Bogus Index. This should always return the integer 1.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.2": {
+                "name": "ssErrorName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "Bogus Name. This should always return the string 'systemStats'.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.3": {
+                "name": "ssSwapIn",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "The average amount of memory swapped in from disk, calculated over the last minute.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.4": {
+                "name": "ssSwapOut",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "The average amount of memory swapped out to disk, calculated over the last minute.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.5": {
+                "name": "ssIOSent",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "The average amount of data written to disk or other block device, calculated over the last minute. This object has been deprecated in favour of 'ssIORawSent(57)', which can be used to calculate the same metric, but over any desired time period.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.6": {
+                "name": "ssIOReceive",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "The average amount of data read from disk or other block device, calculated over the last minute. This object has been deprecated in favour of 'ssIORawReceived(58)', which can be used to calculate the same metric, but over any desired time period.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.7": {
+                "name": "ssSysInterrupts",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "The average rate of interrupts processed (including the clock) calculated over the last minute. This object has been deprecated in favour of 'ssRawInterrupts(59)', which can be used to calculate the same metric, but over any desired time period.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.8": {
+                "name": "ssSysContext",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "The average rate of context switches, calculated over the last minute. This object has been deprecated in favour of 'ssRawContext(60)', which can be used to calculate the same metric, but over any desired time period.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.9": {
+                "name": "ssCpuUser",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "The percentage of CPU time spent processing user-level code, calculated over the last minute. This object has been deprecated in favour of 'ssCpuRawUser(50)', which can be used to calculate the same metric, but over any desired time period.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.10": {
+                "name": "ssCpuSystem",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "The percentage of CPU time spent processing system-level code, calculated over the last minute. This object has been deprecated in favour of 'ssCpuRawSystem(52)', which can be used to calculate the same metric, but over any desired time period.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.11": {
+                "name": "ssCpuIdle",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "11",
+                "description": "The percentage of processor time spent idle, calculated over the last minute. This object has been deprecated in favour of 'ssCpuRawIdle(53)', which can be used to calculate the same metric, but over any desired time period.",
+                "status": "Deprecated"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.50": {
+                "name": "ssCpuRawUser",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "50",
+                "description": "The number of 'ticks' (typically 1/100s) spent processing user-level code. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.51": {
+                "name": "ssCpuRawNice",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "51",
+                "description": "The number of 'ticks' (typically 1/100s) spent processing reduced-priority code. This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.52": {
+                "name": "ssCpuRawSystem",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "52",
+                "description": "The number of 'ticks' (typically 1/100s) spent processing system-level code. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors). This object may sometimes be implemented as the combination of the 'ssCpuRawWait(54)' and 'ssCpuRawKernel(55)' counters, so care must be taken when summing the overall raw counters.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.53": {
+                "name": "ssCpuRawIdle",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "53",
+                "description": "The number of 'ticks' (typically 1/100s) spent idle. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.54": {
+                "name": "ssCpuRawWait",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "54",
+                "description": "The number of 'ticks' (typically 1/100s) spent waiting for IO. This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. This time may also be included within the 'ssCpuRawSystem(52)' counter. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.55": {
+                "name": "ssCpuRawKernel",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "55",
+                "description": "The number of 'ticks' (typically 1/100s) spent processing kernel-level code. This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. This time may also be included within the 'ssCpuRawSystem(52)' counter. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.56": {
+                "name": "ssCpuRawInterrupt",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "56",
+                "description": "The number of 'ticks' (typically 1/100s) spent processing hardware interrupts. This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.57": {
+                "name": "ssIORawSent",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "57",
+                "description": "Number of blocks sent to a block device",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.58": {
+                "name": "ssIORawReceived",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "58",
+                "description": "Number of blocks received from a block device",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.59": {
+                "name": "ssRawInterrupts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "59",
+                "description": "Number of interrupts processed",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.60": {
+                "name": "ssRawContexts",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "60",
+                "description": "Number of context switches",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.61": {
+                "name": "ssCpuRawSoftIRQ",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "61",
+                "description": "The number of 'ticks' (typically 1/100s) spent processing software interrupts. This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.62": {
+                "name": "ssRawSwapIn",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "62",
+                "description": "Number of blocks swapped in",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.63": {
+                "name": "ssRawSwapOut",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "63",
+                "description": "Number of blocks swapped out",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.64": {
+                "name": "ssCpuRawSteal",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "64",
+                "description": "The number of 'ticks' (typically 1/100s) spent by the hypervisor code to run other VMs even though the CPU in the current VM had something runnable. This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.65": {
+                "name": "ssCpuRawGuest",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "65",
+                "description": "The number of 'ticks' (typically 1/100s) spent by the CPU to run a virtual CPU (guest). This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.66": {
+                "name": "ssCpuRawGuestNice",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "66",
+                "description": "The number of 'ticks' (typically 1/100s) spent by the CPU to run a niced virtual CPU (guest). This object will not be implemented on hosts where the underlying operating system does not measure this particular CPU metric. On a multi-processor system, the 'ssCpuRaw*' counters are cumulative over all CPUs, so their sum will typically be N*100 (for N processors).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.2021.11.67": {
+                "name": "ssCpuNumCpus",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "67",
+                "description": "The number of processors, as counted by the agent. This object's value may be useful in the management of certain operating systems where notions such as load average do not take into account the number of processors in the system. For other objects in the systemStats group whose descriptions refer to 'N processors', this object's value is N.",
+                "status": "Current"
+            }
+        }
+    ]
+}

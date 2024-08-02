@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.21",
     "parent": "ip",
     "description": "This entity's IP Routing table.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.21.1.1": {
                 "name": "ipRouteDest",
                 "datatype": "IPADDR",
@@ -83,7 +84,8 @@
                 "order": "8",
                 "description": "The type of route. Note that the values direct(3) and indirect(4) refer to the notion of direct and indirect routing in the IP architecture. Setting this object to the value invalid(2) has the effect of invalidating the corresponding entry in the ipRouteTable object. That is, it effectively dissasociates the destination identified with said entry from the route identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipRouteType object.",
                 "status": "Mandatory",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -106,7 +108,8 @@
                 "order": "9",
                 "description": "The routing mechanism via which this route was learned. Inclusion of values for gateway routing protocols is not intended to imply that hosts should support those protocols.",
                 "status": "Mandatory",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {

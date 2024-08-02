@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.11",
     "parent": "mib-2",
     "description": "",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.11.1": {
                 "name": "snmpInPkts",
                 "datatype": "COUNTER",
@@ -283,9 +284,14 @@
                 "order": "30",
                 "description": "Indicates whether the SNMP entity is permitted to generate authenticationFailure traps. The value of this object overrides any configuration information; as such, it provides a means whereby all authenticationFailure traps may be disabled. Note that it is strongly recommended that this object be stored in non-volatile memory so that it remains constant across re-initializations of the network management system.",
                 "status": "Current",
-                "types": [{
-                    "2": "disabled"
-                }]
+                "types": [
+                    {
+                        "1": "enabled"
+                    },
+                    {
+                        "2": "disabled"
+                    }
+                ]
             }
         },
         {

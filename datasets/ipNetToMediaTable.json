@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.22",
     "parent": "ip",
     "description": "The IP Address Translation table used for mapping from IP addresses to physical addresses.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.22.1.1": {
                 "name": "ipNetToMediaIfIndex",
                 "datatype": "INTEGER",
@@ -14,7 +15,8 @@
                 "description": "The interface on which this entry's equivalence is effective. The interface identified by a particular value of this index is the same interface as identified by the same value of ifIndex.",
                 "status": "Mandatory"
             }
-        }, {
+        },
+        {
             ".1.3.6.1.2.1.4.22.1.3": {
                 "name": "ipNetToMediaNetAddress",
                 "datatype": "IPADDR",
@@ -42,7 +44,8 @@
                 "order": "4",
                 "description": "The type of mapping. Setting this object to the value invalid(2) has the effect of invalidating the corresponding entry in the ipNetToMediaTable. That is, it effectively dissasociates the interface identified with said entry from the mapping identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipNetToMediaType object.",
                 "status": "Mandatory",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {

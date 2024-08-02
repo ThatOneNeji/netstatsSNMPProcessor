@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.6876.2.5",
     "parent": "vmwVirtMachines",
     "description": "Table of floppy drives for all vms in vmwVmTable.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.6876.2.5.1.1": {
                 "name": "vmwFdVmIdx",
                 "datatype": "INTEGER32",

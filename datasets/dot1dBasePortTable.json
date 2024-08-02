@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.17.1.4",
     "parent": "dot1dBase",
     "description": "A table that contains generic information about every port that is associated with this bridge. Transparent, source-route, and srt ports are included.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.17.1.4.1.1": {
                 "name": "dot1dBasePort",
                 "datatype": "INTEGER32",

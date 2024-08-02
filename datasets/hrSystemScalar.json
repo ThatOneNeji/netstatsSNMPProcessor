@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.25.1",
     "parent": "host",
     "description": "",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.25.1.1": {
                 "name": "hrSystemUptime",
                 "datatype": "TICKS",

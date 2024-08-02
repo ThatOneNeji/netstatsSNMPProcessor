@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.14988.1.1.15.1",
     "parent": "mtxrPOE",
     "description": "Power Over Ethernet",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.14988.1.1.15.1.1.1": {
                 "name": "mtxrPOEInterfaceIndex",
                 "datatype": "INTEGER32",
@@ -34,7 +35,8 @@
                 "order": "3",
                 "description": "",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "disabled"
                     },
                     {
@@ -45,6 +47,36 @@
                     },
                     {
                         "4": "overload"
+                    },
+                    {
+                        "5": "shortCircuit"
+                    },
+                    {
+                        "6": "voltageTooLow"
+                    },
+                    {
+                        "7": "currentTooLow"
+                    },
+                    {
+                        "8": "powerReset"
+                    },
+                    {
+                        "9": "voltageTooHigh"
+                    },
+                    {
+                        "10": "controllerError"
+                    },
+                    {
+                        "11": "controllerUpgrade"
+                    },
+                    {
+                        "12": "poeInDetected"
+                    },
+                    {
+                        "13": "noValidPsu"
+                    },
+                    {
+                        "14": "controllerInit"
                     }
                 ]
             }

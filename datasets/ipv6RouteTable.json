@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.55.1.11",
     "parent": "ipv6MIBObjects",
     "description": "IPv6 Routing table. This table contains an entry for each valid IPv6 unicast route that can be used for packet forwarding determination.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.55.1.11.1.1": {
                 "name": "ipv6RouteDest",
                 "datatype": "OCTETSTR",
@@ -64,7 +65,8 @@
                 "order": "6",
                 "description": "The type of route. Note that 'local(3)' refers to a route for which the next hop is the final destination; 'remote(4)' refers to a route for which the next hop is not the final destination; 'discard(2)' refers to a route indicating that packets to destinations matching this route are to be discarded (sometimes called black-hole route).",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -87,7 +89,8 @@
                 "order": "7",
                 "description": "The routing mechanism via which this route was learned.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "other"
                     },
                     {
@@ -185,7 +188,8 @@
                 "order": "14",
                 "description": "Setting this object to the value 'false(2)' has the effect of invalidating the corresponding entry in the ipv6RouteTable object. That is, it effectively disassociates the destination identified with said entry from the route identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipv6RouteValid object.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "true"
                     },
                     {

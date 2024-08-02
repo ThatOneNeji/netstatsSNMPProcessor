@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.55.1.7",
     "parent": "ipv6MIBObjects",
     "description": "The list of IPv6 address prefixes of IPv6 interfaces.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.55.1.5.1.1": {
                 "name": "ipv6IfIndex",
                 "datatype": "INTEGER32",
@@ -43,7 +44,8 @@
                 "order": "3",
                 "description": "This object has the value 'true(1)', if this prefix can be used for on-link determination and the value 'false(2)' otherwise.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "true"
                     },
                     {
@@ -60,7 +62,8 @@
                 "order": "4",
                 "description": "Autonomous address configuration flag. When true(1), indicates that this prefix can be used for autonomous address configuration (i.e. can be used to form a local interface address). If false(2), it is not used to autoconfigure a local interface address.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "true"
                     },
                     {

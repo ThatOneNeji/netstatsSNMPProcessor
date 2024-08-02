@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.17.2.15",
     "parent": "dot1dStp",
     "description": "A table that contains port-specific information for the Spanning Tree Protocol.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.17.2.15.1.1": {
                 "name": "dot1dStpPort",
                 "datatype": "INTEGER32",
@@ -34,7 +35,8 @@
                 "order": "3",
                 "description": "The port's current state, as defined by application of the Spanning Tree Protocol. This state controls what action a port takes on reception of a frame. If the bridge has detected a port that is malfunctioning, it will place that port into the broken(6) state. For ports that are disabled (see dot1dStpPortEnable), this object will have a value of disabled(1).",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "disabled"
                     },
                     {
@@ -63,7 +65,8 @@
                 "order": "4",
                 "description": "The enabled/disabled status of the port.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "enabled"
                     },
                     {

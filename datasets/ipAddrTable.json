@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.20",
     "parent": "ip",
     "description": "The table of addressing information relevant to this entity's IP addresses.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.20.1.1": {
                 "name": "ipAdEntAddr",
                 "datatype": "IPADDR",

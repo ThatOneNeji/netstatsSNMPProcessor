@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.4.1.6876.3.5.2",
     "parent": "vmwStorage",
     "description": "Inventory of Host Bus Adatpers found in this system. CLI: esxcfg-scsidevs -a VIM Parent Container: https://esx.example.com/mob/?moid=storageSystem VIM property: hostBusAdapter MOB: https://esx.example.com/mob/?moid=storageSystem&doPath=storageDeviceInfo",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.4.1.6876.3.5.2.1.1": {
                 "name": "vmwHostBusAdapterIndex",
                 "datatype": "INTEGER32",
@@ -45,7 +46,8 @@
                 "order": "4",
                 "description": "The operational status of the adapter.",
                 "status": "Current",
-                "types": [{
+                "types": [
+                    {
                         "1": "unknown"
                     },
                     {

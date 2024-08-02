@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.5.29",
     "parent": "icmp",
     "description": "The table of generic system-wide ICMP counters.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.5.29.1.1": {
                 "name": "icmpStatsIPVersion",
                 "datatype": "INTEGER",

@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.4.31.1",
     "parent": "ipTrafficStats",
     "description": "The table containing system wide, IP version specific traffic statistics. This table and the ipIfStatsTable contain similar objects whose difference is in their granularity. Where this table contains system wide traffic statistics, the ipIfStatsTable contains the same statistics but counted on a per-interface basis.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.4.31.1.1.1": {
                 "name": "ipSystemStatsIPVersion",
                 "datatype": "INTEGER",

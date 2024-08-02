@@ -5,7 +5,8 @@
     "oid": ".1.3.6.1.2.1.15.5",
     "parent": "bgp",
     "description": "The BGP Received Path Attribute Table contains information about paths to destination networks, received from all peers running BGP version 3 or less.",
-    "objects": [{
+    "objects": [
+        {
             ".1.3.6.1.2.1.15.5.1.2": {
                 "name": "bgpPathAttrDestNetwork",
                 "datatype": "IPADDR",
@@ -33,7 +34,8 @@
                 "order": "3",
                 "description": "The ultimate origin of the path information.",
                 "status": "Obsolete",
-                "types": [{
+                "types": [
+                    {
                         "1": "igp"
                     },
                     {
