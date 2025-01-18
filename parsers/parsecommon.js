@@ -1,4 +1,4 @@
-const { relativeTimeThreshold } = require('moment');
+const {relativeTimeThreshold} = require('moment');
 
 /**
  * @function ParseCommon
@@ -67,7 +67,7 @@ function ParseCommon() {
      * @return {integer} This is teh IPv4 address in integer format
      * @description This function converts an IPv4 address to an integer
      */
-    this.ipToInt = function(ip) {
+    this.ipToInt = function (ip) {
         const parts = ip.split('.');
         return ((parts[0] * (256 * 256 * 256)) + (parts[1] * (256 * 256)) + (parts[2] * 256) + Number(parts[3]));
     };
@@ -79,7 +79,7 @@ function ParseCommon() {
      * @return {*}
      * @description description
      */
-    this.formatDT = function(item, sep) {
+    this.formatDT = function (item, sep) {
         return item.replace(/(?!^)(?=(?:\d{2})+(?:\.|$))/gm, sep);
     };
 
@@ -89,7 +89,7 @@ function ParseCommon() {
      * @param {*} type
      * @return {*}
      */
-    this.convertHexString = function(value, type = 'ip') {
+    this.convertHexString = function (value, type = 'ip') {
         const res = [];
         const mySplit = value.split(' ');
         let sep = ':';
@@ -118,7 +118,7 @@ function ParseCommon() {
      * @param {*} value
      * @return {*}
      */
-    this.convertIPv6String = function(value) {
+    this.convertIPv6String = function (value) {
         const res = [];
         const mySplit = value.split('.');
         mySplit.forEach((item) => {
@@ -133,7 +133,7 @@ function ParseCommon() {
      * @param {string} value
      * @return {string}
      */
-    this.convertHexDate = function(value) {
+    this.convertHexDate = function (value) {
         const mySplit = value.split(' ');
         let i = 0;
         let q = '';
@@ -174,7 +174,7 @@ function ParseCommon() {
      * @param {*} value
      * @return {*}
      */
-    this.converttoIPv6 = function(value) {
+    this.converttoIPv6 = function (value) {
         const res = [];
         const mySplit = value.split('.');
         let i = 1;
@@ -202,7 +202,7 @@ function ParseCommon() {
      * @param {string} value
      * @return {string}
      */
-    this.lookupOID = function(value) {
+    this.lookupOID = function (value) {
         if (oidLookups[value]) {
             return oidLookups[value];
         } else {
@@ -217,7 +217,7 @@ function ParseCommon() {
      * @param {*} div
      * @return {*}
      */
-    this.divNumber = function(value, div = 1000) {
+    this.divNumber = function (value, div = 1000) {
         if (!isNaN(parseFloat(value)) && !isNaN(value - 0) && !isNaN(parseFloat(div)) && !isNaN(div - 0)) {
             return (value / div).toString();
         }
@@ -231,7 +231,7 @@ function ParseCommon() {
      * @return {*} value
      * @description description
      */
-    this.snmpFormatValue = function(datatype, value) {
+    this.snmpFormatValue = function (datatype, value) {
         const fixvalue = value.trim();
         switch (datatype) {
             case 'STRING':
@@ -284,10 +284,10 @@ function ParseCommon() {
      * @return {object} value
      * @description description
      */
-    this.buildSQLSNMPSimple = function(data, queuename, caid, _dataset, _definitions) {
+    this.buildSQLSNMPSimple = function (data, queuename, caid, _dataset, _definitions) {
         const payloads = [];
-        data.forEach(function(entries) {
-            Object.keys(entries.parsed).forEach(function(key) {
+        data.forEach(function (entries) {
+            Object.keys(entries.parsed).forEach(function (key) {
                 let builtFields = '';
                 let builtValues = '';
                 let onDupFields = '';
@@ -295,9 +295,9 @@ function ParseCommon() {
                     queuename: queuename,
                     data: {}
                 };
-                entries.parsed[key].sort(function(a, b) {
+                entries.parsed[key].sort(function (a, b) {
                     return a.order - b.order;
-                }).forEach(function(kv) {
+                }).forEach(function (kv) {
                     builtFields += ', ' + kv.name.toLowerCase();
                     builtValues += ', \'' + kv.value.replaceAll('\'', '\'\'') + '\'';
                     onDupFields += ',' + kv.name.toLowerCase() + ' = \'' + kv.value.replaceAll('\'', '\'\'') + '\'';
@@ -322,7 +322,7 @@ function ParseCommon() {
      * @return {object} value
      * @description description
      */
-    this.buildSQLSNMPHeader = function(header, queuename, caid) {
+    this.buildSQLSNMPHeader = function (header, queuename, caid) {
         let key = 1;
         let builtFields = '';
         let builtValues = '';
@@ -332,7 +332,7 @@ function ParseCommon() {
             data: {}
         };
         newMsg.data.service = header.tablename;
-        Object.keys(header.data).forEach(function(entry) {
+        Object.keys(header.data).forEach(function (entry) {
             if (key === Object.keys(header.data).length) {
                 sep = '';
             }
@@ -367,7 +367,7 @@ function ParseCommon() {
             return header;
         }; */
 
-    this.ipaddressprefixindexes = function(data) {
+    this.ipaddressprefixindexes = function (data) {
         const ipv4 = '^(?<ifindex>[0-9]+)\\.(?<type>0|1|2|3|4|16)\\.(?<unknown0>0|1|2|3|4|16)\\.(?<prefix>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<length>[0-9]{1,3})$';
         const ipv6 = '^(?<ifindex>[0-9]+)\\.(?<type>0|1|2|3|4|16)\\.(?<unknown0>0|1|2|3|4|16)\\.(?<prefix>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<length>[0-9]{1,3})$';
 
@@ -396,7 +396,7 @@ function ParseCommon() {
         return indexes;
     };
 
-    this.inetcidrrouteindexes = function(data) {
+    this.inetcidrrouteindexes = function (data) {
         const ipv4 = '^(?<desttype>0|1|2|3|4|16)\\.(?<unknown0>0|1|2|3|4|16)\\.(?<dest>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<pfxlen>[0-9]{1,3})\\.(?<policy>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<nexthoptype>0|1|2|3|4|16).(?<unknown1>[0-9])\\.(?<nexthop>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})$';
         const ipv6 = '^(?<desttype>0|1|2|3|4|16)\\.(?<unknown0>0|1|2|3|4|16)\\.(?<dest>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<pfxlen>[0-9]{1,3})\\.(?<policy>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<nexthoptype>0|1|2|3|4|16)\\.(?<unknown1>0|1|2|3|4|16)\\.(?<nexthop>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})$';
 
@@ -429,7 +429,7 @@ function ParseCommon() {
         return indexes;
     };
 
-    this.ipaddressindexes = function(data) {
+    this.ipaddressindexes = function (data) {
         const ipv4 = '^(?<addrtype>0|1|2|3|4|16)\\.(?<unknown0>[0-9]{1,3})\\.(?<addr>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})$';
         const ipv6 = '^(?<addrtype>0|1|2|3|4|16)\\.(?<unknown0>[0-9]{1,3})\\.(?<addr>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})$';
 
@@ -456,7 +456,7 @@ function ParseCommon() {
         return indexes;
     };
 
-    this.ipnettophysicalindexes = function(data) {
+    this.ipnettophysicalindexes = function (data) {
         const ipv4 = '^(?<ifindex>[0-9]{1,3})\\.(?<netaddresstype>0|1|2|3|4|16)\\.(?<unknown0>[0-9]{1,3})\\.(?<netaddress>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})$';
         const getipv4 = new RegExp(ipv4);
 
@@ -477,7 +477,7 @@ function ParseCommon() {
     };
 
 
-    this.tcpconnectionindexes = function(data) {
+    this.tcpconnectionindexes = function (data) {
         const ipv4 = '^(?<localaddresstype>0|1|2|3|4|16)\\.(?<unknown0>[0-9]{1,3})\\.(?<localaddress>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<localport>[0-9]{1,5})\\.(?<remaddresstype>0|1|2|3|4|16)\\.(?<unknown1>[0-9]{1,3})\\.(?<remaddress>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<remport>[0-9]{1,5})';
         const getipv4 = new RegExp(ipv4);
 
@@ -500,7 +500,7 @@ function ParseCommon() {
         return indexes;
     };
 
-    this.tcplistenerindexes = function(data) {
+    this.tcplistenerindexes = function (data) {
         const ipv4 = '^(?<localaddresstype>0|1|2|3|4|16)\\.(?<unknown0>[0-9]{1,3})\\.(?<localaddress>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<localport>[0-9]{1,5})$';
         const ipv6 = '^(?<localaddresstype>0|1|2|3|4|16)\\.(?<unknown0>[0-9]{1,3})\\.(?<localaddress>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<localport>[0-9]{1,5})$';
 

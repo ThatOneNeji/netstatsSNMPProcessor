@@ -1,0 +1,174 @@
+{
+    "name": "mtxrWifiCap",
+    "type": "scalar",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.21.2",
+    "parent": "mtxrWifi",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.1": {
+                "name": "mtxrCapEnabled",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "1",
+                "description": "Indicates whether the CAP is enabled.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.2": {
+                "name": "mtxrCapInterfaces",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "List of interfaces used by the CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.3": {
+                "name": "mtxrCapCertificate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The local certificate used by the CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.4": {
+                "name": "mtxrCapCapsManAddresses",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Addresses of associated CapsMan controllers.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.5": {
+                "name": "mtxrCapCapsManNames",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "Names of associated CapsMan controllers.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.6": {
+                "name": "mtxrCapCapsManCertificateCommonNames",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "Common names of CapsMan certificates.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.7": {
+                "name": "mtxrCapLockToCapsMan",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "7",
+                "description": "Indicates if the CAP is locked to a specific CapsMan.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.8": {
+                "name": "mtxrCapSlavesStatic",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "8",
+                "description": "Indicates if CAP slaves are set to static mode.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.9": {
+                "name": "mtxrCapSlavesDatapath",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "description": "Datapath configuration of CAP slaves.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.10": {
+                "name": "mtxrCapRequestedCertificate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "10",
+                "description": "Requested certificate for the CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.11": {
+                "name": "mtxrCapLockedCapsManCommonName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "11",
+                "description": "Locked CapsMan common name.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.12": {
+                "name": "mtxrCapCurrentCapsManAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "12",
+                "description": "Current CapsMan address being used.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.2.13": {
+                "name": "mtxrCapCurrentCapsManIdentity",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "13",
+                "description": "Current identity of the connected CapsMan.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

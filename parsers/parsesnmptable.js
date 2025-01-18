@@ -15,7 +15,7 @@ function ParseSnmpTable() {
      * @return {object} value
      * @description description
      */
-    this.parseSNMPTable = function(data, dataset, definitions, Logger, oidoverrides) {
+    this.parseSNMPTable = function (data, dataset, definitions, Logger, oidoverrides) {
         const regexParse = '^(?<mainoid>' + dataset.oid + '.1.)(?<oid>[0-9]+).(?<id>[0-9.]+) = (?<blank>""|(?<datatype>[A-Za-z0-9-]+): (?<value>"[a-zA-Z0-9-_.,:!()\/\\s\\S]+"|[a-zA-Z0-9-_.,:!()\/\\s\\S]+|""))';
         const newID = '.(?<newID>[0-9]+)$';
         const ipCidrRouteIndexRegex = '^(?<RouteDest>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).(?<RouteMask>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).(?<RouteTos>[0-9]{1,3}).(?<RouteNextHop>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})$';
@@ -28,7 +28,7 @@ function ParseSnmpTable() {
         const snmpSections = {};
         const snmpIndexes = {};
         dataset.objects.forEach((section) => {
-            Object.keys(section).forEach(function(entry) {
+            Object.keys(section).forEach(function (entry) {
                 snmpSections[entry] = section[entry];
                 if (section[entry].columntype == 'index') {
                     snmpIndexes[entry] = section[entry];
@@ -67,7 +67,7 @@ function ParseSnmpTable() {
         }
 
         if (lines.length) {
-            lines.forEach(function(line) {
+            lines.forEach(function (line) {
                 reExec = reMask.exec(line);
                 let res = {
                     raw: '',
@@ -128,8 +128,8 @@ function ParseSnmpTable() {
             });
         }
         if (Object.keys(parsedGroups).length) {
-            Object.keys(parsedGroups).forEach(function(entry) {
-                Object.keys(snmpIndexes).forEach(function(index) {
+            Object.keys(parsedGroups).forEach(function (entry) {
+                Object.keys(snmpIndexes).forEach(function (index) {
                     if (parsedGroups[entry].findIndex((x) => x.name === snmpIndexes[index].name) == -1) {
                         const tempIdx = JSON.parse(JSON.stringify(snmpIndexes[index]));
                         tempIdx.value = entry;

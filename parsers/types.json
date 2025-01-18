@@ -7,7 +7,7 @@
     "T06": "hrSystemScalar",
     "T07": "ipCidrRouteTable",
     "T08": "ipForwardTable",
-    "T09": "mtxrLicense",
+    "T09": "mtxrLicenseScalar",
     "T10": "mtxrLTEModemTable",
     "T11": "mtxrNeighborTable",
     "T12": "mtxrOpticalTable",
@@ -79,5 +79,11 @@
     "T78": "vmwHostBusAdapterTable",
     "T79": "vmwVmHbaTable",
     "T80": "vmwVmNetTable",
-    "T81": "bgpPeerTable"
+    "T81": "bgpPeerTable",
+    "T82": "mtxrWirelessModemScalar",
+    "T83": "mtxrRemoteCapTable",
+    "T84": "mtxrWifiRegistrationTable",
+    "T85": "mtxrWifiCapsmanScalar",
+    "T86": "mtxrWifiCapScalar",
+    "T87": "mtxrWifiInterfacesScalar"
 }

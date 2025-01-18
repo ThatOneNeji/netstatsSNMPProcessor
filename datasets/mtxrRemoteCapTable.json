@@ -1,0 +1,107 @@
+{
+    "name": "mtxrRemoteCapTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.21.3",
+    "parent": "mtxrWifi",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.1": {
+                "name": "mtxrRemoteCapId",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "ID of the remote CAP.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.2": {
+                "name": "mtxrRemoteCapAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "IP address of the remote CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.3": {
+                "name": "mtxrRemoteCapIdentity",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "Identity name of the remote CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.4": {
+                "name": "mtxrRemoteCapBoardName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Board name of the remote CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.5": {
+                "name": "mtxrRemoteCapSerial",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "Serial number of the remote CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.6": {
+                "name": "mtxrRemoteCapVersion",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "RouterOS version of the remote CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.7": {
+                "name": "mtxrRemoteCapBaseMac",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "7",
+                "description": "Base MAC address of the remote CAP.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.8": {
+                "name": "mtxrRemoteCapCommonName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "Certificate common name of the remote CAP.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.3.1.9": {
+                "name": "mtxrRemoteCapState",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "description": "State of the remote CAP (e.g., connected, disconnected).",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

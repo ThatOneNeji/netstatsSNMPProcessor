@@ -1,0 +1,201 @@
+{
+    "name": "mtxrWifiRegistrationTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.21.4",
+    "parent": "mtxrWifi",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.1": {
+                "name": "mtxrWifiRegistrationMacAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "MAC address of the registered device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.2": {
+                "name": "mtxrWifiRegistrationInterface",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "Interface id of the registered device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.3": {
+                "name": "mtxrWifiRegistrationSsid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "SSID of the connected access point.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.4": {
+                "name": "mtxrWifiRegistrationUptime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "4",
+                "description": "Uptime of the registered connection.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.5": {
+                "name": "mtxrWifiRegistrationLastActivity",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "Time since the last activity of the registered device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.6": {
+                "name": "mtxrWifiRegistrationSignal",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "Signal strength of the registered device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.7": {
+                "name": "mtxrWifiRegistrationAuthType",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "7",
+                "description": "Authentication type used by the registered device.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.8": {
+                "name": "mtxrWifiRegistrationBand",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "Wireless band used by the registered device.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.9": {
+                "name": "mtxrWifiRegistrationTxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "9",
+                "description": "Transmission rate of the registered device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.10": {
+                "name": "mtxrWifiRegistrationRxRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "10",
+                "description": "Reception rate of the registered device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.11": {
+                "name": "mtxrWifiRegistrationTxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "11",
+                "description": "Number of transmitted packets.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.12": {
+                "name": "mtxrWifiRegistrationRxPackets",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "12",
+                "description": "Number of received packets.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.13": {
+                "name": "mtxrWifiRegistrationTxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "13",
+                "description": "Number of transmitted bytes.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.14": {
+                "name": "mtxrWifiRegistrationRxBytes",
+                "datatype": "COUNTER64",
+                "columntype": "column",
+                "order": "14",
+                "description": "Number of received bytes.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.15": {
+                "name": "mtxrWifiRegistrationTxBitsPerSecond",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "15",
+                "description": "Transmission rate in bits per second.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.16": {
+                "name": "mtxrWifiRegistrationRxBitsPerSecond",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "16",
+                "description": "Reception rate in bits per second.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.17": {
+                "name": "mtxrWifiRegistrationVlanId",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "17",
+                "description": "VLAN ID of the registered device.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.4.1.18": {
+                "name": "mtxrWifiRegistrationAuthorized",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "18",
+                "description": "Indicates whether the device is authorized.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -15,7 +15,7 @@ function ParseSnmpScalar() {
      * @return {object} value
      * @description description
      */
-    this.parseSNMPScalar = function(data, dataset, definitions, _Logger, oidoverrides) {
+    this.parseSNMPScalar = function (data, dataset, definitions, _Logger, oidoverrides) {
         const regexParse = '^(?<mainoid>' + dataset.oid + '.)(?<oid>[0-9]+).(?<id>[0-9.]+) = (?<blank>""|(?<datatype>[A-Za-z0-9-]+): (?<value>"[a-zA-Z0-9-_.,:!()\/\\s\\S]+"|[a-zA-Z0-9-_.,:!()\/\\s\\S]+|""))';
         const lines2 = data.rawdata.split('\n');
         const lines = [];
@@ -27,7 +27,7 @@ function ParseSnmpScalar() {
         const snmpIndexes = {};
 
         dataset.objects.forEach((section) => {
-            Object.keys(section).forEach(function(entry) {
+            Object.keys(section).forEach(function (entry) {
                 snmpSections[entry] = section[entry];
                 if (section[entry].columntype == 'index') {
                     snmpIndexes[entry] = section[entry];
@@ -68,7 +68,7 @@ function ParseSnmpScalar() {
         }
 
         if (lines.length) {
-            lines.forEach(function(line) {
+            lines.forEach(function (line) {
                 reExec = reMask.exec(line);
                 let res = {
                     raw: '',
@@ -140,8 +140,8 @@ function ParseSnmpScalar() {
         }
         const cleanParsedGroups = {};
         if (Object.keys(parsedGroups).length) {
-            Object.keys(parsedGroups).forEach(function(entry) {
-                Object.keys(snmpIndexes).forEach(function(index) {
+            Object.keys(parsedGroups).forEach(function (entry) {
+                Object.keys(snmpIndexes).forEach(function (index) {
                     if (parsedGroups[entry].findIndex((x) => x.name === snmpIndexes[index].name) == -1) {
                         snmpIndexes[index].value = entry;
                         parsedGroups[entry].push(snmpIndexes[index]);

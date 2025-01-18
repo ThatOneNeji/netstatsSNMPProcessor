@@ -19,8 +19,8 @@ function ParseSnmp() {
      * @return {object} value
      * @description description
      */
-    this.parseSNMP = function(data, queuename, dataset, definitions, Logger, oidoverrides) {
-        return new Promise(function(resolve, _reject) {
+    this.parseSNMP = function (data, queuename, dataset, definitions, Logger, oidoverrides) {
+        return new Promise(function (resolve, _reject) {
             switch (dataset.type) {
                 case 'table':
                     data.parsed.sections.push(parsesnmptable.parseSNMPTable(data, dataset, definitions, Logger, oidoverrides));
@@ -32,15 +32,15 @@ function ParseSnmp() {
                     console.error('Unknown type: ' + dataset.type);
             }
             resolve(data);
-        }).then(function(result) {
+        }).then(function (result) {
             return result;
-        }).then(function(result) {
+        }).then(function (result) {
             data.sql = parsecommon.buildSQLSNMPSimple(data.parsed.sections, queuename, data.caid, dataset, definitions);
             if (data.parsed.header.data) {
                 data.sql.push(parsecommon.buildSQLSNMPHeader(data.parsed.header, queuename, data.caid));
             }
             return result;
-        }).then(function(result) {
+        }).then(function (result) {
             data.parsed.sections.forEach((section) => {
                 section.timeend = process.hrtime.bigint();
                 section.timetaken = (section.timeend - section.timestart) / nanoConst;

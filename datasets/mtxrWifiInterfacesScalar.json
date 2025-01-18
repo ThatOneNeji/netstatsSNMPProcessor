@@ -1,0 +1,54 @@
+{
+    "name": "mtxrWifiInterfaces",
+    "type": "scalar",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.21.5",
+    "parent": "mtxrWifi",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.5.1.1": {
+                "name": "mtxrWifiInterfacesId",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "1",
+                "description": "Unique identifier for each WiFi interface",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.5.1.2": {
+                "name": "mtxrWifiInterfacesName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "Name of the WiFi interface",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.5.1.3": {
+                "name": "mtxrWifiInterfacesSsid",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "SSID associated with the WiFi interface",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.5.1.4": {
+                "name": "mtxrWifiInterfacesFreq",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Frequency used by the WiFi interface",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

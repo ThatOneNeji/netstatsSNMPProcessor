@@ -1,0 +1,122 @@
+{
+    "name": "mtxrWifiCapsman",
+    "type": "scalar",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.21.1",
+    "parent": "mtxrWifi",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.1": {
+                "name": "mtxrWifiCapsmanEnabled",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "1",
+                "description": "Indicates whether the Capsman is enabled.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.2": {
+                "name": "mtxrWifiCapsmanInterfaces",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "List of interfaces associated with Capsman.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.3": {
+                "name": "mtxrWifiCapsmanCACertificate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The CA certificate used by Capsman.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.4": {
+                "name": "mtxrWifiCapsmanCertificate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The local certificate used by Capsman.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.5": {
+                "name": "mtxrWifiCapsmanRequirePeerCertificate",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "Whether a peer certificate is required.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.6": {
+                "name": "mtxrWifiCapsmanPackagePath",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "6",
+                "description": "Path to the Capsman package directory.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.7": {
+                "name": "mtxrWifiCapsmanUpgradePolicy",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "Capsman upgrade policy.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.8": {
+                "name": "mtxrWifiCapsmanGeneratedCaCertificate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "Automatically generated CA certificate.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.1.9": {
+                "name": "mtxrWifiCapsmanGeneratedCertificate",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "description": "Automatically generated local certificate.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

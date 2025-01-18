@@ -56,6 +56,8 @@ const messagebroker = new MessageBroker();
 
 /* 3rd party libraries */
 const fs = require('fs');
+const os = require('os');
+const hostname = os.hostname().split('.');
 
 /* Global vars */
 let Logging;
@@ -104,21 +106,21 @@ function loadOverRides() {
     Logging.system.info('Loading overrides');
     try {
         overRideDataSets = definitions.overrides.counters;
-        Object.keys(definitions.datasets).forEach(function(dataset) {
+        Object.keys(definitions.datasets).forEach(function (dataset) {
             if (overRideDataSets[dataset]) {
                 Logging.system.debug('Override(s) found for dataset: ' + dataset);
                 const tmpOverRide = overRideDataSets[dataset];
                 if (Object.keys(tmpOverRide).length) {
                     const selectedDataset = loadedDataSets[dataset].objects;
-                    Object.keys(tmpOverRide).forEach(function(override) {
+                    Object.keys(tmpOverRide).forEach(function (override) {
                         const tmpObjOR = tmpOverRide[override];
-                        Object.keys(tmpObjOR).forEach(function(obj) {
-                            Object.keys(selectedDataset).forEach(function(selectedDatasetObj) {
+                        Object.keys(tmpObjOR).forEach(function (obj) {
+                            Object.keys(selectedDataset).forEach(function (selectedDatasetObj) {
                                 if (tmpObjOR[obj].datatype) {
                                     oidTypeOverRides[obj] = tmpObjOR[obj].datatype;
                                 }
                                 if (selectedDataset[selectedDatasetObj][obj]) {
-                                    const merged = {...selectedDataset[selectedDatasetObj][obj], ...tmpObjOR[obj] };
+                                    const merged = {...selectedDataset[selectedDatasetObj][obj], ...tmpObjOR[obj]};
                                     selectedDataset[selectedDatasetObj][obj] = merged;
                                 }
                             });
@@ -151,7 +153,7 @@ function initialiseApplication() {
  */
 function loadDataSets() {
     Logging.system.info('Loading definitions');
-    Object.keys(snmpTypes).forEach(function(key) {
+    Object.keys(snmpTypes).forEach(function (key) {
         Logging.system.info(snmpTypes[key]);
         try {
             Logging.system.info('Reading "' + snmpTypes[key] + '" file from disk');
@@ -175,7 +177,7 @@ function loadDataSets() {
  */
 function loadDefinitions() {
     Logging.system.info('Loading definitions');
-    Object.keys(definitions).forEach(function(key) {
+    Object.keys(definitions).forEach(function (key) {
         Logging.system.info(key);
         try {
             Logging.system.info('Reading "' + key + '" file from disk');
@@ -220,7 +222,7 @@ initialiseApplication();
 const messageBrokerOptions = {
     logger: Logging.messagebroker,
     config: appConfig.messagebrokers,
-    receiveQueue: appConfig.queues.consumeBaseName,
+    receiveQueue: hostname[0] + '/' + appConfig.queues.consumeBaseName,
     publishQueueName: appConfig.queues.publishBaseName,
     externalHandover: receiveHandler
 };
@@ -306,7 +308,7 @@ function loadFile(fileName) {
  * @description description
  */
 function readSNMPFile(fdata) {
-    return new Promise(function(resolve, _reject) {
+    return new Promise(function (resolve, _reject) {
         fdata.parsed = {
             sections: [],
             header: {}
@@ -314,16 +316,16 @@ function readSNMPFile(fdata) {
         fdata.sql = [];
         fdata.rawdata = loadFile(fdata.fullpath);
         resolve(fdata);
-    }).then(function(_result) {
+    }).then(function (_result) {
         Logging.parser.info('Routing to the "' + loadedDataSets[snmpTypes[fdata.header.type]].name + '" parser');
         return parsersnmp.parseSNMP(fdata, appConfig.queues.publishBaseName, loadedDataSets[snmpTypes[fdata.header.type]], definitions, Logging.parser, oidTypeOverRides);
-    }).then(function(result) {
+    }).then(function (result) {
         if (result.sql.length) {
             Logging.messageclient.info('Sending ' + result.sql.length + ' item(s) to the message broker');
             messagebroker.batchPublish(result.sql);
         }
         return result;
-    }).then(function(result) {
+    }).then(function (result) {
         removeSNMPFile(result.fullpath);
         return result;
     });
