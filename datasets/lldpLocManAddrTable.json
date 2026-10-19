@@ -1,0 +1,81 @@
+{
+    "name": "lldpLocManAddrTable",
+    "type": "table",
+    "mib": "LLDP-MIB",
+    "oid": ".1.0.8802.1.1.2.1.3.8",
+    "parent": "lldpLocalSystemData",
+    "description": "This table contains management address information on the local system known to this agent.",
+    "objects": [
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.1": {
+                "name": "lldpLocManAddrSubtype",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "1",
+                "description": "The type of management address identifier encoding used in the associated 'lldpLocManagmentAddr' object.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.2": {
+                "name": "lldpLocManAddr",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "2",
+                "description": "The string value used to identify the management address component associated with the local system. The purpose of this address is to contact the management entity.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.3": {
+                "name": "lldpLocManAddrLen",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "The total length of the management address subtype and the management address fields in LLDPDUs transmitted by the local LLDP agent. The management address length field is needed so that the receiving systems that do not implement SNMP will not be required to implement an iana family numbers/address length equivalency table in order to decode the management address.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.4": {
+                "name": "lldpLocManAddrIfSubtype",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The enumeration value that identifies the interface numbering method used for defining the interface number, associated with the local system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "unknown"
+                    },
+                    {
+                        "2": "ifIndex"
+                    },
+                    {
+                        "3": "systemPortNumber"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.5": {
+                "name": "lldpLocManAddrIfId",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "The integer value used to identify the interface number regarding the management address component associated with the local system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.6": {
+                "name": "lldpLocManAddrOID",
+                "datatype": "OBJECTID",
+                "columntype": "column",
+                "order": "6",
+                "description": "The OID value used to identify the type of hardware component or protocol entity associated with the management address advertised by the local system agent.",
+                "status": "Current"
+            }
+        }
+    ]
+}

@@ -869,6 +869,69 @@
                     },
                     {
                         "282": "fastdsl"
+                    },
+                    {
+                        "283": "docsCableScte55d1FwdOob"
+                    },
+                    {
+                        "284": "docsCableScte55d1RetOob"
+                    },
+                    {
+                        "285": "docsCableScte55d2DsOob"
+                    },
+                    {
+                        "286": "docsCableScte55d2UsOob"
+                    },
+                    {
+                        "287": "docsCableNdf"
+                    },
+                    {
+                        "288": "docsCableNdr"
+                    },
+                    {
+                        "289": "ptm"
+                    },
+                    {
+                        "290": "ghn"
+                    },
+                    {
+                        "291": "otnOtsi"
+                    },
+                    {
+                        "292": "otnOtuc"
+                    },
+                    {
+                        "293": "otnOduc"
+                    },
+                    {
+                        "294": "otnOtsig"
+                    },
+                    {
+                        "295": "microwaveCarrierTermination"
+                    },
+                    {
+                        "296": "microwaveRadioLinkTerminal"
+                    },
+                    {
+                        "297": "ieee8021axDrni"
+                    },
+                    {
+                        "298": "ax25"
+                    },
+                    {
+                        "299": "ieee19061nanocom"
+                    },
+                    {
+                        "300": "cpri"
+                    },
+                    {
+                        "301": "omni"
+                    },
+                    {
+                        "302": "roe"
+                    },
+                    {
+                        "303": "p2pOverLan"
                     }
                 ]
             }

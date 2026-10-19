@@ -85,5 +85,11 @@
     "T84": "mtxrWifiRegistrationTable",
     "T85": "mtxrWifiCapsmanScalar",
     "T86": "mtxrWifiCapScalar",
-    "T87": "mtxrWifiInterfacesScalar"
+    "T87": "mtxrWifiInterfacesScalar",
+    "T88": "mtxrCTScalar",
+    "T89": "lldpRemTable",
+    "T90": "lldpLocPortTable",
+    "T91": "lldpLocalSystemDataScalar",
+    "T92": "mtxrLTECarrierAggTable",
+    "T93": "lldpLocManAddrTable"
 }

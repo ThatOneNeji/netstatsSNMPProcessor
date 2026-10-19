@@ -1,0 +1,75 @@
+{
+    "name": "lldpLocPortTable",
+    "type": "table",
+    "mib": "LLDP-MIB",
+    "oid": ".1.0.8802.1.1.2.1.3.7",
+    "parent": "lldpLocalSystemData",
+    "description": "This table contains one or more rows per port information associated with the local system known to this agent.",
+    "objects": [
+        {
+            ".1.0.8802.1.1.2.1.3.7.1.1": {
+                "name": "lldpLocPortNum",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The index value used to identify the port component (contained in the local chassis with the LLDP agent) associated with this entry. The value of this object is used as a port index to the lldpLocPortTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.7.1.2": {
+                "name": "lldpLocPortIdSubtype",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The type of port identifier encoding used in the associated 'lldpLocPortId' object.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "interfaceAlias"
+                    },
+                    {
+                        "2": "portComponent"
+                    },
+                    {
+                        "3": "macAddress"
+                    },
+                    {
+                        "4": "networkAddress"
+                    },
+                    {
+                        "5": "interfaceName"
+                    },
+                    {
+                        "6": "agentCircuitId"
+                    },
+                    {
+                        "7": "local"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.7.1.3": {
+                "name": "lldpLocPortId",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The string value used to identify the port component associated with a given port in the local system.",
+                "status": "Current",
+                "range": "1..255"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.7.1.4": {
+                "name": "lldpLocPortDesc",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The string value used to identify the IEEE 802 LAN station's port description associated with the local system. If the local agent supports IETF RFC 2863, lldpLocPortDesc object should have the same value of ifDescr object.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

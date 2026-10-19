@@ -4,7 +4,7 @@
     "mib": "IPV6-MIB",
     "oid": ".1.3.6.1.2.1.55.1.11",
     "parent": "ipv6MIBObjects",
-    "description": "IPv6 Routing table. This table contains an entry for each valid IPv6 unicast route that can be used for packet forwarding determination.",
+    "description": "IPv6 Routing table. This table contains an entry for each valid IPv6 unicast route that can be used for packet forwarding determination. This table is obsoleted by IP-FORWARD-MIB::inetCidrRouteTable.",
     "objects": [
         {
             ".1.3.6.1.2.1.55.1.11.1.1": {
@@ -12,8 +12,8 @@
                 "datatype": "OCTETSTR",
                 "columntype": "index",
                 "order": "1",
-                "description": "The destination IPv6 address of this route. This object may not take a Multicast address value.",
-                "status": "Current"
+                "description": "The destination IPv6 address of this route. This object may not take a Multicast address value. This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteDest.",
+                "status": "Obsolete"
             }
         },
         {
@@ -22,8 +22,8 @@
                 "datatype": "INTEGER",
                 "columntype": "index",
                 "order": "2",
-                "description": "Indicates the prefix length of the destination address.",
-                "status": "Current"
+                "description": "Indicates the prefix length of the destination address. This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePfxLen.",
+                "status": "Obsolete"
             }
         },
         {
@@ -32,8 +32,8 @@
                 "datatype": "UNSIGNED32",
                 "columntype": "index",
                 "order": "3",
-                "description": "The value which uniquely identifies the route among the routes to the same network layer destination. The way this value is chosen is implementation specific but it must be unique for ipv6RouteDest/ipv6RoutePfxLength pair and remain constant for the life of the route.",
-                "status": "Current"
+                "description": "The value which uniquely identifies the route among the routes to the same network layer destination. The way this value is chosen is implementation specific but it must be unique for ipv6RouteDest/ipv6RoutePfxLength pair and remain constant for the life of the route. This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy.",
+                "status": "Obsolete"
             }
         },
         {
@@ -42,8 +42,8 @@
                 "datatype": "INTEGER32",
                 "columntype": "column",
                 "order": "4",
-                "description": "The index value which uniquely identifies the local interface through which the next hop of this route should be reached. The interface identified by a particular value of this index is the same interface as identified by the same value of ipv6IfIndex. For routes of the discard type this value can be zero.",
-                "status": "Current",
+                "description": "The index value which uniquely identifies the local interface through which the next hop of this route should be reached. The interface identified by a particular value of this index is the same interface as identified by the same value of ipv6IfIndex. For routes of the discard type this value can be zero. This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteIfIndex.",
+                "status": "Obsolete",
                 "range": "0..2147483647"
             }
         },
@@ -53,8 +53,8 @@
                 "datatype": "OCTETSTR",
                 "columntype": "column",
                 "order": "5",
-                "description": "On remote routes, the address of the next system en route; otherwise, ::0 ('00000000000000000000000000000000'H in ASN.1 string representation).",
-                "status": "Current"
+                "description": "On remote routes, the address of the next system en route; otherwise, ::0 ('00000000000000000000000000000000'H in ASN.1 string representation). This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteNextHop.",
+                "status": "Obsolete"
             }
         },
         {
@@ -63,8 +63,8 @@
                 "datatype": "INTEGER",
                 "columntype": "column",
                 "order": "6",
-                "description": "The type of route. Note that 'local(3)' refers to a route for which the next hop is the final destination; 'remote(4)' refers to a route for which the next hop is not the final destination; 'discard(2)' refers to a route indicating that packets to destinations matching this route are to be discarded (sometimes called black-hole route).",
-                "status": "Current",
+                "description": "The type of route. Note that 'local(3)' refers to a route for which the next hop is the final destination; 'remote(4)' refers to a route for which the next hop is not the final destination; 'discard(2)' refers to a route indicating that packets to destinations matching this route are to be discarded (sometimes called black-hole route). This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteType.",
+                "status": "Obsolete",
                 "types": [
                     {
                         "1": "other"
@@ -87,8 +87,8 @@
                 "datatype": "INTEGER",
                 "columntype": "column",
                 "order": "7",
-                "description": "The routing mechanism via which this route was learned.",
-                "status": "Current",
+                "description": "The routing mechanism via which this route was learned. This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteProto.",
+                "status": "Obsolete",
                 "types": [
                     {
                         "1": "other"
@@ -126,8 +126,8 @@
                 "datatype": "INTEGER32",
                 "columntype": "column",
                 "order": "8",
-                "description": "The general set of conditions that would cause the selection of one multipath route (set of next hops for a given destination) is referred to as 'policy'. Unless the mechanism indicated by ipv6RouteProtocol specified otherwise, the policy specifier is the 8-bit Traffic Class field of the IPv6 packet header that is zero extended at the left to a 32-bit value. Protocols defining 'policy' otherwise must either define a set of values which are valid for this object or must implement an integer- instanced policy table for which this object's value acts as an index.",
-                "status": "Current"
+                "description": "The general set of conditions that would cause the selection of one multipath route (set of next hops for a given destination) is referred to as 'policy'. Unless the mechanism indicated by ipv6RouteProtocol specified otherwise, the policy specifier is the 8-bit Traffic Class field of the IPv6 packet header that is zero extended at the left to a 32-bit value. Protocols defining 'policy' otherwise must either define a set of values which are valid for this object or must implement an integer- instanced policy table for which this object's value acts as an index. This object is obsoleted by IP-FORWARD-MIB::inetCidrRoutePolicy.",
+                "status": "Obsolete"
             }
         },
         {
@@ -136,8 +136,8 @@
                 "datatype": "UNSIGNED32",
                 "columntype": "column",
                 "order": "9",
-                "description": "The number of seconds since this route was last updated or otherwise determined to be correct. Note that no semantics of `too old' can be implied except through knowledge of the routing protocol by which the route was learned.",
-                "status": "Current"
+                "description": "The number of seconds since this route was last updated or otherwise determined to be correct. Note that no semantics of `too old' can be implied except through knowledge of the routing protocol by which the route was learned. This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteAge.",
+                "status": "Obsolete"
             }
         },
         {
@@ -146,8 +146,8 @@
                 "datatype": "UNSIGNED32",
                 "columntype": "column",
                 "order": "10",
-                "description": "The Routing Domain ID of the Next Hop. The semantics of this object are determined by the routing-protocol specified in the route's ipv6RouteProtocol value. When this object is unknown or not relevant its value should be set to zero.",
-                "status": "Current"
+                "description": "The Routing Domain ID of the Next Hop. The semantics of this object are determined by the routing-protocol specified in the route's ipv6RouteProtocol value. When this object is unknown or not relevant its value should be set to zero. This object is obsolete, and it has no replacement. The Routing Domain ID concept did not catch on.",
+                "status": "Obsolete"
             }
         },
         {
@@ -156,8 +156,8 @@
                 "datatype": "UNSIGNED32",
                 "columntype": "column",
                 "order": "11",
-                "description": "The routing metric for this route. The semantics of this metric are determined by the routing protocol specified in the route's ipv6RouteProtocol value. When this is unknown or not relevant to the protocol indicated by ipv6RouteProtocol, the object value should be set to its maximum value (4,294,967,295).",
-                "status": "Current"
+                "description": "The routing metric for this route. The semantics of this metric are determined by the routing protocol specified in the route's ipv6RouteProtocol value. When this is unknown or not relevant to the protocol indicated by ipv6RouteProtocol, the object value should be set to its maximum value (4,294,967,295). This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteMetric1.",
+                "status": "Obsolete"
             }
         },
         {
@@ -166,8 +166,8 @@
                 "datatype": "UNSIGNED32",
                 "columntype": "column",
                 "order": "12",
-                "description": "The system internal weight value for this route. The semantics of this value are determined by the implementation specific rules. Generally, within routes with the same ipv6RoutePolicy value, the lower the weight value the more preferred is the route.",
-                "status": "Current"
+                "description": "The system internal weight value for this route. The semantics of this value are determined by the implementation specific rules. Generally, within routes with the same ipv6RoutePolicy value, the lower the weight value the more preferred is the route. This object is obsoleted, and it has not been replaced.",
+                "status": "Obsolete"
             }
         },
         {
@@ -176,8 +176,8 @@
                 "datatype": "OBJECTID",
                 "columntype": "column",
                 "order": "13",
-                "description": "A reference to MIB definitions specific to the particular routing protocol which is responsible for this route, as determined by the value specified in the route's ipv6RouteProto value. If this information is not present, its value should be set to the OBJECT ID { 0 0 }, which is a syntactically valid object identifier, and any implementation conforming to ASN.1 and the Basic Encoding Rules must be able to generate and recognize this value.",
-                "status": "Current"
+                "description": "A reference to MIB definitions specific to the particular routing protocol which is responsible for this route, as determined by the value specified in the route's ipv6RouteProto value. If this information is not present, its value should be set to the OBJECT ID { 0 0 }, which is a syntactically valid object identifier, and any implementation conforming to ASN.1 and the Basic Encoding Rules must be able to generate and recognize this value. This object is obsoleted, and it has not been replaced.",
+                "status": "Obsolete"
             }
         },
         {
@@ -186,8 +186,8 @@
                 "datatype": "INTEGER",
                 "columntype": "column",
                 "order": "14",
-                "description": "Setting this object to the value 'false(2)' has the effect of invalidating the corresponding entry in the ipv6RouteTable object. That is, it effectively disassociates the destination identified with said entry from the route identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipv6RouteValid object.",
-                "status": "Current",
+                "description": "Setting this object to the value 'false(2)' has the effect of invalidating the corresponding entry in the ipv6RouteTable object. That is, it effectively disassociates the destination identified with said entry from the route identified with said entry. It is an implementation-specific matter as to whether the agent removes an invalidated entry from the table. Accordingly, management stations must be prepared to receive tabular information from agents that corresponds to entries not currently in use. Proper interpretation of such entries requires examination of the relevant ipv6RouteValid object. This object is obsoleted by IP-FORWARD-MIB::inetCidrRouteStatus.",
+                "status": "Obsolete",
                 "types": [
                     {
                         "1": "true"

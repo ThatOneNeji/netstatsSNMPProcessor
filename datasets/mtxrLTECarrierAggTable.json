@@ -1,0 +1,157 @@
+{
+    "name": "mtxrLTECarrierAggTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.16.2.1",
+    "parent": "mtxrLTECarrierAgg",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.1": {
+                "name": "mtxrLTECarrierAggInterfaceIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.2": {
+                "name": "mtxrLTECarrierAggIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.3": {
+                "name": "mtxrLTECarrierAggBand",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "3",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.4": {
+                "name": "mtxrLTECarrierAggEARFCN",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "4",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.5": {
+                "name": "mtxrLTECarrierAggBandwidth",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "MHz",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.6": {
+                "name": "mtxrLTECarrierAggPhyCellId",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.7": {
+                "name": "mtxrLTECarrierAggRSSI",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "dBm",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.8": {
+                "name": "mtxrLTECarrierAggRSRP",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "dBm",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.9": {
+                "name": "mtxrLTECarrierAggRSRQ",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "9",
+                "description": "dB",
+                "status": "Current",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.10": {
+                "name": "mtxrLTECarrierAggSINR",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "10",
+                "description": "dB",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.11": {
+                "name": "mtxrLTECarrierAggSNR",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "11",
+                "description": "dB",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.12": {
+                "name": "mtxrLTECarrierAggNR",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "12",
+                "description": "",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.2.1.1.13": {
+                "name": "mtxrLTECarrierAggUplink",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "13",
+                "description": "",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        }
+    ]
+}

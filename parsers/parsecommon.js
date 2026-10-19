@@ -20,7 +20,27 @@ function ParseCommon() {
         '.1.3.6.1.2.1.31': 'IF-MIB::ifMIB',
         '.1.3.6.1.2.1.1': 'SNMPv2-MIB::system',
         '.1.3.6.1.2.1.17': 'BRIDGE-MIB::dot1dBridge',
-        '.1.3.6.1.2.1.4': 'IP-MIB::ip',
+        '.1.3.6.1.2.1.4': 'RFC1213-MIB::ip',
+        '.1.3.6.1.2.1.49': 'TCP-MIB::tcpMIB',
+        '.1.3.6.1.2.1.50': 'UDP-MIB::udpMIB',
+        '.1.3.6.1.2.1.25.3.1.1': 'hrDeviceOther',
+        '.1.3.6.1.2.1.25.3.1.2': 'hrDeviceUnknown',
+        '.1.3.6.1.2.1.25.3.1.3': 'hrDeviceProcessor',
+        '.1.3.6.1.2.1.25.3.1.4': 'hrDeviceNetwork',
+        '.1.3.6.1.2.1.25.3.1.5': 'hrDevicePrinter',
+        '.1.3.6.1.2.1.25.3.1.6': 'hrDeviceDiskStorage',
+        '.1.3.6.1.2.1.25.3.1.10': 'hrDeviceVideo',
+        '.1.3.6.1.2.1.25.3.1.11': 'hrDeviceAudio',
+        '.1.3.6.1.2.1.25.3.1.12': 'hrDeviceCoprocessor',
+        '.1.3.6.1.2.1.25.3.1.13': 'hrDeviceKeyboard',
+        '.1.3.6.1.2.1.25.3.1.14': 'hrDeviceModem',
+        '.1.3.6.1.2.1.25.3.1.15': 'hrDeviceParallelPort',
+        '.1.3.6.1.2.1.25.3.1.16': 'hrDevicePointing',
+        '.1.3.6.1.2.1.25.3.1.17': 'hrDeviceSerialPort',
+        '.1.3.6.1.2.1.25.3.1.18': 'hrDeviceTape',
+        '.1.3.6.1.2.1.25.3.1.19': 'hrDeviceClock',
+        '.1.3.6.1.2.1.25.3.1.20': 'hrDeviceVolatileMemory',
+        '.1.3.6.1.2.1.25.3.1.21': 'hrDeviceNonVolatileMemory',
         '.1.3.6.1.2.1.25.3.9.1': 'hrFSOther',
         '.1.3.6.1.2.1.25.3.9.2': 'hrFSUnknown',
         '.1.3.6.1.2.1.25.3.9.3': 'hrFSBerkeleyFFS',
@@ -45,15 +65,21 @@ function ParseCommon() {
         '.1.3.6.1.2.1.25.3.9.22': 'hrFSFAT32',
         '.1.3.6.1.2.1.25.3.9.23': 'hrFSLinuxExt2',
         '.1.3.6.1.6.3.1': 'SNMPv2-MIB::snmpMIB',
+        '.1.3.6.1.6.3.10.3.1.1': 'SNMP-FRAMEWORK-MIB::snmpFrameworkMIBCompliance',
+        '.1.3.6.1.6.3.11.3.1.1': 'SNMP-MPD-MIB::snmpMPDCompliance',
+        '.1.3.6.1.6.3.13.3.1.3': 'SNMP-NOTIFICATION-MIB::snmpNotifyFullCompliance',
+        '.1.3.6.1.6.3.15.2.1.1': 'SNMP-USER-BASED-SM-MIB::usmMIBCompliance',
+        '.1.3.6.1.6.3.16.2.2.1': 'SNMP-VIEW-BASED-ACM-MIB::vacmBasicGroup',
         '.1.3.6.1.2.1.4.24': 'IP-FORWARD-MIB::ipForward',
-        '.1.3.6.1.2.1.7': 'UDP-MIB::udp',
-        '.1.3.6.1.2.1.6': 'TCP-MIB::tcp',
+        '.1.3.6.1.2.1.7': 'RFC1213-MIB::udp',
+        '.1.3.6.1.2.1.6': 'RFC1213-MIB::tcp',
         '.1.3.6.1.2.1.47': 'ENTITY-MIB::entityMIB',
         '.1.3.111.2.802.1.1.2': 'IEEE8021-BRIDGE-MIB::ieee8021BridgeMib',
         '.1.3.111.2.802.1.1.4': 'IEEE8021-Q-BRIDGE-MIB::ieee8021QBridgeMib',
         '.1.2.840.10006.300.43': 'IEEE8023-LAG-MIB::lagMIB',
         '.1.3.111.2.802.1.1.13': 'LLDP-V2-MIB::lldpV2MIB',
         '.1.3.6.1.2.1.25.7.1': 'HOST-RESOURCES-MIB::hostResourcesMibModule',
+        '.1.3.6.1.2.1.92': 'NOTIFICATION-LOG-MIB::notificationLogMIB',
         '.1.3.6.1.4.1.6876.1.10': 'VMWARE-SYSTEM-MIB::vmwSystemMIB',
         '.1.3.6.1.4.1.6876.2.10': 'VMWARE-VMINFO-MIB::vmwVmInfoMIB',
         '.1.3.6.1.4.1.6876.3.10': 'VMWARE-RESOURCES-MIB::vmwResourcesMIB',
@@ -80,7 +106,7 @@ function ParseCommon() {
      * @description description
      */
     this.formatDT = function (item, sep) {
-        return item.replace(/(?!^)(?=(?:\d{2})+(?:\.|$))/gm, sep);
+        return item.replaceAll(/(?!^)(?=(?:\d{2})+(?:\.|$))/gm, sep);
     };
 
     /**
@@ -101,12 +127,12 @@ function ParseCommon() {
                 const hex = item.toString();
                 let str = '';
                 for (let n = 0; n < hex.length; n += 2) {
-                    str += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+                    str += String.fromCodePoint(Number.parseInt(hex.substr(n, 2), 16));
                 }
                 res.push(str);
             }
             if (type != 'ip' && type != 'hex-ascii') {
-                res.push(parseInt(item, 16).toString().padStart(2, '0'));
+                res.push(Number.parseInt(item, 16).toString().padStart(2, '0'));
                 sep = '.';
             }
         });
@@ -180,7 +206,7 @@ function ParseCommon() {
         let i = 1;
         let prefix = '';
         mySplit.forEach((item2) => {
-            const item = parseInt(item2);
+            const item = Number.parseInt(item2);
             if (item != 0) {
                 if (i < 3) {
                     prefix += item.toString(16);
@@ -218,7 +244,7 @@ function ParseCommon() {
      * @return {*}
      */
     this.divNumber = function (value, div = 1000) {
-        if (!isNaN(parseFloat(value)) && !isNaN(value - 0) && !isNaN(parseFloat(div)) && !isNaN(div - 0)) {
+        if (!Number.isNaN(Number.parseFloat(value)) && !Number.isNaN(value - 0) && !Number.isNaN(Number.parseFloat(div)) && !Number.isNaN(div - 0)) {
             return (value / div).toString();
         }
         return value;
@@ -256,6 +282,10 @@ function ParseCommon() {
                 return fixvalue;
             case 'Timeticks':
                 return fixvalue;
+            case 'OBJECTID1':
+                return fixvalue;
+            case 'COUNTER_DELTA':
+                return fixvalue;
             case 'OID':
                 return this.lookupOID(fixvalue);
             case 'GDiv1000':
@@ -263,7 +293,7 @@ function ParseCommon() {
             case 'GDiv100':
                 return this.divNumber(fixvalue, 100);
             default:
-                console.log('unknown::' + datatype);
+                console.log('unknown::' + datatype + ' value::' + fixvalue);
                 return fixvalue;
         }
     };
@@ -499,6 +529,26 @@ function ParseCommon() {
         delete indexes.unknown0;
         return indexes;
     };
+
+    this.mtxrwifiregistrationindexes = function (data) {
+        const regIndexes = String.raw`(?<rawmac>.*)\.(?<ifindex>\d+)$`;
+        const getIndexes = new RegExp(regIndexes);
+
+        let indexes = {
+            rawmac: data,
+            ifindex: data
+        };
+
+        const v4indexes = getIndexes.exec(data);
+
+        if (v4indexes) {
+            indexes = v4indexes.groups;
+        }
+
+        delete indexes.unknown0;
+        return indexes;
+    };
+
 
     this.tcplistenerindexes = function (data) {
         const ipv4 = '^(?<localaddresstype>0|1|2|3|4|16)\\.(?<unknown0>[0-9]{1,3})\\.(?<localaddress>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})\\.(?<localport>[0-9]{1,5})$';

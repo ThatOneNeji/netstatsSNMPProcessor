@@ -213,6 +213,24 @@
                 "description": "rpm",
                 "status": "Current"
             }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.3.19": {
+                "name": "mtxrAlarmSocketStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "19",
+                "description": "Alarm socket status",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "inactive"
+                    },
+                    {
+                        "1": "active"
+                    }
+                ]
+            }
         }
     ]
 }

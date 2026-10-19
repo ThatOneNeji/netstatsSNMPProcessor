@@ -10,7 +10,7 @@
             "lastseen": true,
             "partition": true
         },
-        "enabled": true
+        "enabled": false
     },
     "diskIOTable": {
         "name": "diskIO",
@@ -171,7 +171,9 @@
         "comment": "A list of interface entries. The number of entries is given by the value of ifNumber. This table contains additional objects for the interface table.",
         "notes": "",
         "intervals": [
-            "05"
+            "05",
+            "60",
+            "dd"
         ],
         "options": {
             "droptable": true,
@@ -270,6 +272,45 @@
             "partition": true
         },
         "enabled": false
+    },
+    "lldpRemTable": {
+        "name": "lldpRem",
+        "prefix": "T89",
+        "comment": "This table contains one or more rows per physical network connection known to this agent.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "lldpLocPortTable": {
+        "name": "lldpLocPort",
+        "prefix": "T90",
+        "comment": "This table contains one or more rows per port information associated with the local system known to this agent.",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "lldpLocalSystemDataScalar": {
+        "name": "lldpLocalSystemData",
+        "prefix": "T91",
+        "comment": "",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": true
     },
     "lmFanSensorsTable": {
         "name": "lmFanSensors",
@@ -426,7 +467,7 @@
         },
         "enabled": false
     },
-    "mtxrLicense": {
+    "mtxrLicenseScalar": {
         "name": "mtxrLicense",
         "prefix": "T09",
         "comment": "License information of Mikrotik device",
@@ -577,6 +618,19 @@
         },
         "enabled": false
     },
+    "mtxrWirelessModemScalar": {
+        "name": "mtxrWirelessModem",
+        "prefix": "T82",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
     "mtxrWl60GStaTable": {
         "name": "mtxrWl60GSta",
         "prefix": "T40",
@@ -587,6 +641,84 @@
             "60",
             "dd"
         ],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrRemoteCapTable": {
+        "name": "mtxrRemoteCap",
+        "prefix": "T83",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWifiRegistrationTable": {
+        "name": "mtxrWifiRegistration",
+        "prefix": "T84",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWifiCapsmanScalar": {
+        "name": "mtxrWifiCapsman",
+        "prefix": "T85",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWifiCapScalar": {
+        "name": "mtxrWifiCap",
+        "prefix": "T86",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrWifiInterfacesScalar": {
+        "name": "mtxrWifiInterfaces",
+        "prefix": "T87",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "mtxrCTScalar": {
+        "name": "mtxrCT",
+        "prefix": "T88",
+        "comment": "",
+        "notes": "",
+        "intervals": [],
         "options": {
             "droptable": true,
             "lastseen": true,

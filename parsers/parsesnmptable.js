@@ -17,13 +17,17 @@ function ParseSnmpTable() {
      */
     this.parseSNMPTable = function (data, dataset, definitions, Logger, oidoverrides) {
         const regexParse = '^(?<mainoid>' + dataset.oid + '.1.)(?<oid>[0-9]+).(?<id>[0-9.]+) = (?<blank>""|(?<datatype>[A-Za-z0-9-]+): (?<value>"[a-zA-Z0-9-_.,:!()\/\\s\\S]+"|[a-zA-Z0-9-_.,:!()\/\\s\\S]+|""))';
-        const newID = '.(?<newID>[0-9]+)$';
-        const ipCidrRouteIndexRegex = '^(?<RouteDest>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).(?<RouteMask>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}).(?<RouteTos>[0-9]{1,3}).(?<RouteNextHop>[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3})$';
-        const ipv6addrRegex = '^(?<interface_id>[0-9]+)\\.(?<ipv6>.*)$';
+        const newID = String.raw`.(?<newID>[\d]+)$`;
+        // // const ipCidrRouteIndexRegex = '^(?<RouteDest>[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}).(?<RouteMask>[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3}).(?<RouteTos>[\d]{1,3}).(?<RouteNextHop>[\d]{1,3}.[\d]{1,3}.[\d]{1,3}.[\d]{1,3})$';
+        const ipCidrRouteIndexRegex = String.raw`^(?<RouteDest>\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}).(?<RouteMask>\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}).(?<RouteTos>\d{1,3}).(?<RouteNextHop>\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})$`;
+        const lldpRemIndexRegex = String.raw`^(?<lldpRemTimeMark>\d{2}).(?<lldpRemLocalPortNum>\d{2}).(?<lldpRemIndex>\d{2})$`;
+        const lldpLocManAddrIndexRegex = String.raw`^(?<lldpLocManAddrSubtype>\d+).(?<lldpLocManAddrLength>\d+).(?<lldpLocManAddr>[\d\.]+)$`;
+        // // const ipv6addrRegex = '^(?<interface_id>[0-9]+)\\.(?<ipv6>.*)$';
+        const ipv6addrRegex = String.raw`^(?<interface_id>\d+)\.(?<ipv6>.*)$`;
         const lines2 = data.rawdata.split('\n');
         const lines = [];
         lines2.forEach((line) => {
-            lines.push(line.replace(/iso.3.6.1/g, '.1.3.6.1'));
+            lines.push(line.replaceAll(/iso.3.6.1/g, '.1.3.6.1'));
         });
         const snmpSections = {};
         const snmpIndexes = {};
@@ -86,7 +90,8 @@ function ParseSnmpTable() {
                         value: reExec.groups.value || ''
                     };
 
-                    if ((typeof parsedGroups[res.id]) === 'undefined') {
+                    // // if ((typeof parsedGroups[res.id]) === 'undefined') {
+                    if (parsedGroups[res.id] === undefined) {
                         parsedGroups[res.id] = [];
                     }
 
@@ -103,8 +108,13 @@ function ParseSnmpTable() {
                         res.datatype = oidoverrides[res.fulloid];
                     }
 
-                    const rrrr = JSON.parse(JSON.stringify(snmpSections[returnData.baseoid + res.oid]));
-
+                    const rrrr = structuredClone(snmpSections[returnData.baseoid + res.oid]);
+                    /*
+                                        if (res.datatype == '') {
+                                            console.log(res);
+                                            console.log(line);
+                                        }
+                    */
                     rrrr.value = parsecommon.snmpFormatValue(res.datatype, res.value);
 
                     parsedGroups[res.id].push(rrrr);
@@ -127,11 +137,16 @@ function ParseSnmpTable() {
                 msg: 'No lines to parse'
             });
         }
+        //     console.log(parsedGroups);
+        //       console.log('~~~~~')
         if (Object.keys(parsedGroups).length) {
             Object.keys(parsedGroups).forEach(function (entry) {
                 Object.keys(snmpIndexes).forEach(function (index) {
                     if (parsedGroups[entry].findIndex((x) => x.name === snmpIndexes[index].name) == -1) {
-                        const tempIdx = JSON.parse(JSON.stringify(snmpIndexes[index]));
+                        const tempIdx = structuredClone(snmpIndexes[index]);
+                        //   console.log('-----')
+                        //     console.log(tempIdx);
+                        //       console.log('+++++')
                         tempIdx.value = entry;
                         /* hrDeviceTable */
                         if (data.header.type == 'T05' && index == '.1.3.6.1.2.1.25.3.2.1.3.4') {
@@ -310,6 +325,63 @@ function ParseSnmpTable() {
                             }
                         }
 
+                        /* mtxrWifiRegistrationTable */
+                        if (data.header.type == 'T84') {
+                            const indexes = parsecommon.mtxrwifiregistrationindexes(entry);
+
+                            if (index == '.1.3.6.1.4.1.14988.1.1.21.4.1.1') {
+                                tempIdx.value = indexes.rawmac;
+                            }
+                            if (index == '.1.3.6.1.4.1.14988.1.1.21.4.1.2') {
+                                tempIdx.value = indexes.ifindex;
+                            }
+                            //     //                       console.log(tempIdx);
+                            // //                          console.log('=====')
+                        }
+
+                        /* lldpRemTable */
+                        if (data.header.type == 'T89') {
+                            const reID = entry.split('.');
+                            if (index == '.1.0.8802.1.1.2.1.4.1.1.1') {
+                                tempIdx.value = reID[0];
+                            }
+                            if (index == '.1.0.8802.1.1.2.1.4.1.1.2') {
+                                tempIdx.value = reID[1];
+                            }
+                            if (index == '.1.0.8802.1.1.2.1.4.1.1.3') {
+                                tempIdx.value = reID[2];
+                            }
+                        }
+
+                        /* lldpLocManAddrTable */
+                        if (data.header.type == 'T93') {
+
+                            const getNewID = new RegExp(lldpLocManAddrIndexRegex);
+                            const reID = getNewID.exec(entry);
+                            if (reID) {
+                                // console.log(reID);
+                                //  console.log(parsecommon.converttoIPv6(reID.groups.ipv6));
+                                if (index == '.1.0.8802.1.1.2.1.3.8.1.1') {
+                                    tempIdx.value = reID.groups.lldpLocManAddrSubtype;
+                                }
+                                if (index == '.1.0.8802.1.1.2.1.3.8.1.2') {
+                                    if (reID.groups.lldpLocManAddrSubtype == 2) {
+                                        // console.log(parsecommon.converttoIPv6(reID.groups.lldpLocManAddr));
+                                        tempIdx.value = parsecommon.converttoIPv6(reID.groups.lldpLocManAddr);
+                                    } else {
+                                        tempIdx.value = reID.groups.lldpLocManAddr;
+                                    }
+                                }
+                            } // else {
+                            // tempIdx.value = entry;
+                            // }
+                            // tempIdx.value = reID.groups.lldpLocManAddrSubtype;
+                            // String.raw`^(?<lldpLocManAddrSubtype>\d+).(?<lldpLocManAddrLength>\d+).(?<lldpLocManAddr>[\d\.]+)$`;
+                            // const getNewID = new RegExp(lldpLocManAddrIndexRegex);
+                            // const reID = entry.split('.');
+
+                        }
+
                         // T66 ipAddressPrefixTable
                         /*                             desttype: '2',
                           dest: 'ff:2:0:0:0:0:0:0:0:0:0:0:0:0:0:0',
@@ -323,6 +395,8 @@ function ParseSnmpTable() {
         }
         returnData.parsed = parsedGroups;
 
+        // //        console.log(returnData.parsed);
+        // //   console.log('^^^^^')
         if (returnData.debug.length) {
             Logger.warn(returnData.debug);
         }

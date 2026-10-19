@@ -20,7 +20,7 @@ function ParseSnmpScalar() {
         const lines2 = data.rawdata.split('\n');
         const lines = [];
         lines2.forEach((line) => {
-            lines.push(line.replace(/iso.3.6.1/g, '.1.3.6.1'));
+            lines.push(line.replaceAll(/iso.3.6.1/g, '.1.3.6.1'));
         });
 
         const snmpSections = {};
@@ -70,6 +70,7 @@ function ParseSnmpScalar() {
         if (lines.length) {
             lines.forEach(function (line) {
                 reExec = reMask.exec(line);
+         
                 let res = {
                     raw: '',
                     id: '',
@@ -77,7 +78,7 @@ function ParseSnmpScalar() {
                     blank: ''
                 };
                 if (reExec) {
-                    if ((typeof parsedGroups[reExec.groups.id]) === 'undefined') {
+                    if (parsedGroups[reExec.groups.id] === undefined) {
                         parsedGroups[reExec.groups.id] = [];
                     }
                     res = {
@@ -89,7 +90,6 @@ function ParseSnmpScalar() {
                         datatype: reExec.groups.datatype,
                         value: reExec.groups.value || ''
                     };
-
                     if (oidoverrides[res.fulloid]) {
                         res.datatype = oidoverrides[res.fulloid];
                     }
@@ -138,6 +138,7 @@ function ParseSnmpScalar() {
                 msg: 'No lines to parse'
             });
         }
+
         const cleanParsedGroups = {};
         if (Object.keys(parsedGroups).length) {
             Object.keys(parsedGroups).forEach(function (entry) {
@@ -154,7 +155,7 @@ function ParseSnmpScalar() {
         }
         returnData.parsed = cleanParsedGroups;
         if (returnData.debug.length) {
-            console.log(returnData.debug);
+            _Logger.warn(returnData.debug);
         }
         return returnData;
     };

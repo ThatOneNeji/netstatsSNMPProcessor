@@ -1,0 +1,233 @@
+{
+    "name": "lldpRemTable",
+    "type": "table",
+    "mib": "LLDP-MIB",
+    "oid": ".1.0.8802.1.1.2.1.4.1",
+    "parent": "lldpRemoteSystemsData",
+    "description": "This table contains one or more rows per physical network connection known to this agent. The agent may wish to ensure that only one lldpRemEntry is present for each local port, or it may choose to maintain multiple lldpRemEntries for the same local port. The following procedure may be used to retrieve remote systems information updates from an LLDP agent: 1. NMS polls all tables associated with remote systems and keeps a local copy of the information retrieved. NMS polls periodically the values of the following objects: a. lldpStatsRemTablesInserts b. lldpStatsRemTablesDeletes c. lldpStatsRemTablesDrops d. lldpStatsRemTablesAgeouts e. lldpStatsRxPortAgeoutsTotal for all ports. 2. LLDP agent updates remote systems MIB objects, and sends out notifications to a list of notification destinations. 3. NMS receives the notifications and compares the new values of objects listed in step 1. Periodically, NMS should poll the object lldpStatsRemTablesLastChangeTime to find out if anything has changed since the last poll. if something has changed, NMS will poll the objects listed in step 1 to figure out what kind of changes occurred in the tables. if value of lldpStatsRemTablesInserts has changed, then NMS will walk all tables by employing TimeFilter with the last-polled time value. This request will return new objects or objects whose values are updated since the last poll. if value of lldpStatsRemTablesAgeouts has changed, then NMS will walk the lldpStatsRxPortAgeoutsTotal and compare the new values with previously recorded ones. For ports whose lldpStatsRxPortAgeoutsTotal value is greater than the recorded value, NMS will have to retrieve objects associated with those ports from table(s) without employing a TimeFilter (which is performed by specifying 0 for the TimeFilter.) lldpStatsRemTablesDeletes and lldpStatsRemTablesDrops objects are provided for informational purposes.",
+    "objects": [
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.1": {
+                "name": "lldpRemTimeMark",
+                "datatype": "TICKS",
+                "columntype": "index",
+                "order": "1",
+                "description": "A TimeFilter for this entry. See the TimeFilter textual convention in IETF RFC 2021 and http://www.ietf.org/IESG/Implementations/RFC2021-Implementation.txt to see how TimeFilter works.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.2": {
+                "name": "lldpRemLocalPortNum",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The index value used to identify the port component (contained in the local chassis with the LLDP agent) associated with this entry. The lldpRemLocalPortNum identifies the port on which the remote system information is received. The value of this object is used as a port index to the lldpRemTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.3": {
+                "name": "lldpRemIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "3",
+                "description": "This object represents an arbitrary local integer value used by this agent to identify a particular connection instance, unique only for the indicated remote system. An agent is encouraged to assign monotonically increasing index values to new entries, starting with one, after each reboot. It is considered unlikely that the lldpRemIndex will wrap between reboots.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.4": {
+                "name": "lldpRemChassisIdSubtype",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The type of encoding used to identify the chassis associated with the remote system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "chassisComponent"
+                    },
+                    {
+                        "2": "interfaceAlias"
+                    },
+                    {
+                        "3": "portComponent"
+                    },
+                    {
+                        "4": "macAddress"
+                    },
+                    {
+                        "5": "networkAddress"
+                    },
+                    {
+                        "6": "interfaceName"
+                    },
+                    {
+                        "7": "local"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.5": {
+                "name": "lldpRemChassisId",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "The string value used to identify the chassis component associated with the remote system.",
+                "status": "Current",
+                "range": "1..255"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.6": {
+                "name": "lldpRemPortIdSubtype",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "The type of port identifier encoding used in the associated 'lldpRemPortId' object.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "interfaceAlias"
+                    },
+                    {
+                        "2": "portComponent"
+                    },
+                    {
+                        "3": "macAddress"
+                    },
+                    {
+                        "4": "networkAddress"
+                    },
+                    {
+                        "5": "interfaceName"
+                    },
+                    {
+                        "6": "agentCircuitId"
+                    },
+                    {
+                        "7": "local"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.7": {
+                "name": "lldpRemPortId",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "7",
+                "description": "The string value used to identify the port component associated with the remote system.",
+                "status": "Current",
+                "range": "1..255"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.8": {
+                "name": "lldpRemPortDesc",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "8",
+                "description": "The string value used to identify the description of the given port associated with the remote system.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.9": {
+                "name": "lldpRemSysName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "description": "The string value used to identify the system name of the remote system.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.10": {
+                "name": "lldpRemSysDesc",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "10",
+                "description": "The string value used to identify the system description of the remote system.",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.11": {
+                "name": "lldpRemSysCapSupported",
+                "datatype": "BITS",
+                "columntype": "column",
+                "order": "11",
+                "description": "The bitmap value used to identify which system capabilities are supported on the remote system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "other"
+                    },
+                    {
+                        "1": "repeater"
+                    },
+                    {
+                        "2": "bridge"
+                    },
+                    {
+                        "3": "wlanAccessPoint"
+                    },
+                    {
+                        "4": "router"
+                    },
+                    {
+                        "5": "telephone"
+                    },
+                    {
+                        "6": "docsisCableDevice"
+                    },
+                    {
+                        "7": "stationOnly"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.12": {
+                "name": "lldpRemSysCapEnabled",
+                "datatype": "BITS",
+                "columntype": "column",
+                "order": "12",
+                "description": "The bitmap value used to identify which system capabilities are enabled on the remote system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "other"
+                    },
+                    {
+                        "1": "repeater"
+                    },
+                    {
+                        "2": "bridge"
+                    },
+                    {
+                        "3": "wlanAccessPoint"
+                    },
+                    {
+                        "4": "router"
+                    },
+                    {
+                        "5": "telephone"
+                    },
+                    {
+                        "6": "docsisCableDevice"
+                    },
+                    {
+                        "7": "stationOnly"
+                    }
+                ]
+            }
+        }
+    ]
+}

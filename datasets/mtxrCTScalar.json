@@ -1,0 +1,40 @@
+{
+    "name": "mtxrCT",
+    "type": "scalar",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.22.1",
+    "parent": "mtXRouterOs",
+    "description": "",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.22.1.1": {
+                "name": "mtxrCtTotalEntries",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "1",
+                "description": "Total number of connections",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.22.1.2": {
+                "name": "mtxrCtIP4Entries",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "Total number of ipv4 connections",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.22.1.3": {
+                "name": "mtxrCtIP6Entries",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "Total number of ipv6 connections",
+                "status": "Current"
+            }
+        }
+    ]
+}

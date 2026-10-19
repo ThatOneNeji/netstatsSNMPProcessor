@@ -9,6 +9,11 @@
         "default": "DEFAULT NULL",
         "behaviour": "string"
     },
+    "bits": {
+        "sql_type": "varchar(255)",
+        "default": "DEFAULT NULL",
+        "behaviour": "string"
+    },
     "ticks": {
         "sql_type": "varchar(255)",
         "default": "DEFAULT NULL",
@@ -145,10 +150,10 @@
         "min": -2147483648,
         "max": 2147483647
     },
-    "counter_delta": {
+    "COUNTER_DELTA": {
         "sql_type": "bigint unsigned",
         "default": "DEFAULT NULL",
-        "behaviour": "counter_delta",
+        "behaviour": "gauge",
         "min": 0,
         "max": 18446744073709551615
     }
