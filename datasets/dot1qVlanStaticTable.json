@@ -1,0 +1,91 @@
+{
+    "name": "dot1qVlanStaticTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.4.3",
+    "parent": "dot1qVlan",
+    "description": "A table containing static configuration information for each VLAN configured into the device by (local or network) management. All entries are permanent and will be restored after the device is reset.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.2": {
+                "name": "dot1qVlanIndex",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The VLAN-ID or other identifier referring to this VLAN.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.3.1.1": {
+                "name": "dot1qVlanStaticName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "1",
+                "description": "An administratively assigned string, which may be used to identify the VLAN.",
+                "status": "Current",
+                "range": "0..32"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.3.1.2": {
+                "name": "dot1qVlanStaticEgressPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The set of ports that are permanently assigned to the egress list for this VLAN by management. Changes to a bit in this object affect the per-port, per-VLAN Registrar control for Registration Fixed for the relevant GVRP state machine on each port. A port may not be added in this set if it is already a member of the set of ports in dot1qVlanForbiddenEgressPorts. The default value of this object is a string of zeros of appropriate length, indicating not fixed.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.3.1.3": {
+                "name": "dot1qVlanForbiddenEgressPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The set of ports that are prohibited by management from being included in the egress list for this VLAN. Changes to this object that cause a port to be included or excluded affect the per-port, per-VLAN Registrar control for Registration Forbidden for the relevant GVRP state machine on each port. A port may not be added in this set if it is already a member of the set of ports in dot1qVlanStaticEgressPorts. The default value of this object is a string of zeros of appropriate length, excluding all ports from the forbidden set.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.3.1.4": {
+                "name": "dot1qVlanStaticUntaggedPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The set of ports that should transmit egress packets for this VLAN as untagged. The default value of this object for the default VLAN (dot1qVlanIndex = 1) is a string of appropriate length including all ports. There is no specified default for other VLANs. If a device agent cannot support the set of ports being set, then it will reject the set operation with an error. For example, a manager might attempt to set more than one VLAN to be untagged on egress where the device does not support this IEEE 802.1Q option.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.3.1.5": {
+                "name": "dot1qVlanStaticRowStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "This object indicates the status of this entry.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "active"
+                    },
+                    {
+                        "2": "notInService"
+                    },
+                    {
+                        "3": "notReady"
+                    },
+                    {
+                        "4": "createAndGo"
+                    },
+                    {
+                        "5": "createAndWait"
+                    },
+                    {
+                        "6": "destroy"
+                    }
+                ]
+            }
+        }
+    ]
+}

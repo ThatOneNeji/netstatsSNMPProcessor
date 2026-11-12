@@ -1,0 +1,155 @@
+{
+    "name": "mtxrInterfaceTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.24.1",
+    "parent": "mtxrInterface",
+    "description": "General interface information. Values that are not available or not applicable for an interface are reported as zero (for numeric columns) or as an empty string.",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.1": {
+                "name": "mtxrInterfaceIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "Interface index, same as used in ifTable",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.2": {
+                "name": "mtxrInterfaceName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "Interface name",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.3": {
+                "name": "mtxrInterfaceComment",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "Interface comment",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.4": {
+                "name": "mtxrInterfaceType",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "Interface type name (ether, bridge, vlan, ...)",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.5": {
+                "name": "mtxrInterfaceMtu",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "5",
+                "description": "Configured layer-3 MTU. 0 when MTU is set to auto or is not configurable for this interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.6": {
+                "name": "mtxrInterfaceActualMtu",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "6",
+                "description": "Actual layer-3 MTU currently used by the interface, same as ifMtu.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.7": {
+                "name": "mtxrInterfaceL2Mtu",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "7",
+                "description": "Layer-2 MTU (maximum frame payload the interface can handle without fragmentation). 0 when not supported by this interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.8": {
+                "name": "mtxrInterfaceMaxL2Mtu",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "8",
+                "description": "Maximum layer-2 MTU that can be configured on this interface. 0 when not supported by this interface.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.9": {
+                "name": "mtxrInterfaceMacAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "9",
+                "description": "Interface MAC address, empty for interfaces without one",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.10": {
+                "name": "mtxrInterfaceFlags",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "10",
+                "description": "Comma separated list of active interface flags: dynamic, disabled, inactive, running, slave, passthrough, power-limited",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.11": {
+                "name": "mtxrInterfaceLastLinkDownTime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "11",
+                "description": "Value of sysUpTime when the link last went down. 0 if the link has not gone down since last reboot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.12": {
+                "name": "mtxrInterfaceLastLinkUpTime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "12",
+                "description": "Value of sysUpTime when the link last went up. 0 if the link has not come up since last reboot.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.13": {
+                "name": "mtxrInterfaceLinkDowns",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "13",
+                "description": "Number of times the link went down",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.24.1.1.14": {
+                "name": "mtxrInterfaceVrf",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "14",
+                "description": "Name of the VRF the interface belongs to, 'main' for the main routing table",
+                "status": "Current",
+                "range": "0..255"
+            }
+        }
+    ]
+}

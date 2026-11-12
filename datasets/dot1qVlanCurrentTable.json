@@ -1,0 +1,91 @@
+{
+    "name": "dot1qVlanCurrentTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.4.2",
+    "parent": "dot1qVlan",
+    "description": "A table containing current configuration information for each VLAN currently configured into the device by (local or network) management, or dynamically created as a result of GVRP requests received.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.1": {
+                "name": "dot1qVlanTimeMark",
+                "datatype": "TICKS",
+                "columntype": "index",
+                "order": "1",
+                "description": "A TimeFilter for this entry. See the TimeFilter textual convention to see how this works.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.2": {
+                "name": "dot1qVlanIndex",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The VLAN-ID or other identifier referring to this VLAN.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.3": {
+                "name": "dot1qVlanFdbId",
+                "datatype": "UNSIGNED32",
+                "columntype": "column",
+                "order": "3",
+                "description": "The Filtering Database used by this VLAN. This is one of the dot1qFdbId values in the dot1qFdbTable. This value is allocated automatically by the device whenever the VLAN is created: either dynamically by GVRP, or by management, in dot1qVlanStaticTable. Allocation of this value follows the learning constraints defined for this VLAN in dot1qLearningConstraintsTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.4": {
+                "name": "dot1qVlanCurrentEgressPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The set of ports that are transmitting traffic for this VLAN as either tagged or untagged frames.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.5": {
+                "name": "dot1qVlanCurrentUntaggedPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "The set of ports that are transmitting traffic for this VLAN as untagged frames.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.6": {
+                "name": "dot1qVlanStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "6",
+                "description": "This object indicates the status of this entry. other(1) - this entry is currently in use, but the conditions under which it will remain so differ from the following values. permanent(2) - this entry, corresponding to an entry in dot1qVlanStaticTable, is currently in use and will remain so after the next reset of the device. The port lists for this entry include ports from the equivalent dot1qVlanStaticTable entry and ports learned dynamically. dynamicGvrp(3) - this entry is currently in use and will remain so until removed by GVRP. There is no static entry for this VLAN, and it will be removed when the last port leaves the VLAN.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "other"
+                    },
+                    {
+                        "2": "permanent"
+                    },
+                    {
+                        "3": "dynamicGvrp"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.7": {
+                "name": "dot1qVlanCreationTime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "7",
+                "description": "The value of sysUpTime when this VLAN was created.",
+                "status": "Current"
+            }
+        }
+    ]
+}

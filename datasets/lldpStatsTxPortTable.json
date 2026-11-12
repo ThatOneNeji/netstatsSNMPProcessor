@@ -1,0 +1,30 @@
+{
+    "name": "lldpStatsTxPortTable",
+    "type": "table",
+    "mib": "LLDP-MIB",
+    "oid": ".1.0.8802.1.1.2.1.2.6",
+    "parent": "lldpStatistics",
+    "description": "A table containing LLDP transmission statistics for individual ports. Entries are not required to exist in this table while the lldpPortConfigEntry object is equal to 'disabled(4)'.",
+    "objects": [
+        {
+            ".1.0.8802.1.1.2.1.2.6.1.1": {
+                "name": "lldpStatsTxPortNum",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The index value used to identify the port component (contained in the local chassis with the LLDP agent) associated with this entry. The value of this object is used as a port index to the lldpStatsTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.2.6.1.2": {
+                "name": "lldpStatsTxPortFramesTotal",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The number of LLDP frames transmitted by this LLDP agent on the indicated port.",
+                "status": "Current"
+            }
+        }
+    ]
+}

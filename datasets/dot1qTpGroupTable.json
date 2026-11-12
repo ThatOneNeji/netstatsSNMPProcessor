@@ -1,0 +1,50 @@
+{
+    "name": "dot1qTpGroupTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.2.3",
+    "parent": "dot1qTp",
+    "description": "A table containing filtering information for VLANs configured into the bridge by (local or network) management, or learned dynamically, specifying the set of ports to which frames received on a VLAN for this FDB and containing a specific Group destination address are allowed to be forwarded.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.2": {
+                "name": "dot1qVlanIndex",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The VLAN-ID or other identifier referring to this VLAN.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.2.3.1.1": {
+                "name": "dot1qTpGroupAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The destination Group MAC address in a frame to which this entry's filtering information applies.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.2.3.1.2": {
+                "name": "dot1qTpGroupEgressPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The complete set of ports, in this VLAN, to which frames destined for this Group MAC address are currently being explicitly forwarded. This does not include ports for which this address is only implicitly forwarded, in the dot1qForwardAllPorts list.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.2.3.1.3": {
+                "name": "dot1qTpGroupLearnt",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The subset of ports in dot1qTpGroupEgressPorts that were learned by GMRP or some other dynamic mechanism, in this Filtering database.",
+                "status": "Current"
+            }
+        }
+    ]
+}

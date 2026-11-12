@@ -1,0 +1,41 @@
+{
+    "name": "dot1dPortCapabilitiesTable",
+    "type": "table",
+    "mib": "P-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.6.1.1.4",
+    "parent": "dot1dExtBase",
+    "description": "A table that contains capabilities information about every port that is associated with this bridge.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.1.4.1.1": {
+                "name": "dot1dBasePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains bridge management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.1.4.1.1": {
+                "name": "dot1dPortCapabilities",
+                "datatype": "BITS",
+                "columntype": "column",
+                "order": "1",
+                "description": "Indicates the parts of IEEE 802.1D and 802.1Q that are optional on a per-port basis, that are implemented by this device, and that are manageable through this MIB. dot1qDot1qTagging(0), -- supports 802.1Q VLAN tagging of -- frames and GVRP. dot1qConfigurableAcceptableFrameTypes(1), -- allows modified values of -- dot1qPortAcceptableFrameTypes. dot1qIngressFiltering(2) -- supports the discarding of any -- frame received on a Port whose -- VLAN classification does not -- include that Port in its Member -- set.",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "dot1qDot1qTagging"
+                    },
+                    {
+                        "1": "dot1qConfigurableAcceptableFrameTypes"
+                    },
+                    {
+                        "2": "dot1qIngressFiltering"
+                    }
+                ]
+            }
+        }
+    ]
+}

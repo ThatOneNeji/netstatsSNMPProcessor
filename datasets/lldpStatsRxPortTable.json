@@ -1,0 +1,80 @@
+{
+    "name": "lldpStatsRxPortTable",
+    "type": "table",
+    "mib": "LLDP-MIB",
+    "oid": ".1.0.8802.1.1.2.1.2.7",
+    "parent": "lldpStatistics",
+    "description": "A table containing LLDP reception statistics for individual ports. Entries are not required to exist in this table while the lldpPortConfigEntry object is equal to 'disabled(4)'.",
+    "objects": [
+        {
+            ".1.0.8802.1.1.2.1.2.7.1.1": {
+                "name": "lldpStatsRxPortNum",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The index value used to identify the port component (contained in the local chassis with the LLDP agent) associated with this entry. The value of this object is used as a port index to the lldpStatsTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.2.7.1.2": {
+                "name": "lldpStatsRxPortFramesDiscardedTotal",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The number of LLDP frames received by this LLDP agent on the indicated port, and then discarded for any reason. This counter can provide an indication that LLDP header formating problems may exist with the local LLDP agent in the sending system or that LLDPDU validation problems may exist with the local LLDP agent in the receiving system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.2.7.1.3": {
+                "name": "lldpStatsRxPortFramesErrors",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of invalid LLDP frames received by this LLDP agent on the indicated port, while this LLDP agent is enabled.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.2.7.1.4": {
+                "name": "lldpStatsRxPortFramesTotal",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The number of valid LLDP frames received by this LLDP agent on the indicated port, while this LLDP agent is enabled.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.2.7.1.5": {
+                "name": "lldpStatsRxPortTLVsDiscardedTotal",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The number of LLDP TLVs discarded for any reason by this LLDP agent on the indicated port.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.2.7.1.6": {
+                "name": "lldpStatsRxPortTLVsUnrecognizedTotal",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "The number of LLDP TLVs received on the given port that are not recognized by this LLDP agent on the indicated port. An unrecognized TLV is referred to as the TLV whose type value is in the range of reserved TLV types (000 1001 -111 1110) in Table 9.1 of IEEE Std 802.1AB-2005. An unrecognized TLV may be a basic management TLV from a later LLDP version.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.2.7.1.7": {
+                "name": "lldpStatsRxPortAgeoutsTotal",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "7",
+                "description": "The counter that represents the number of age-outs that occurred on a given port. An age-out is the number of times the complete set of information advertised by a particular MSAP has been deleted from tables contained in lldpRemoteSystemsData and lldpExtensions objects because the information timeliness interval has expired. This counter is similar to lldpStatsRemTablesAgeouts, except that the counter is on a per port basis. This enables NMS to poll tables associated with the lldpRemoteSystemsData objects and all LLDP extension objects associated with remote systems on the indicated port only. This counter should be set to zero during agent initialization and its value should not be saved in non-volatile storage. When a port's admin status changes from 'disabled' to 'rxOnly', 'txOnly' or 'txAndRx', the counter associated with the same port should reset to 0. The agent should also flush all remote system information associated with the same port. This counter should be incremented only once when the complete set of information is invalidated (aged out) from all related tables on a particular port. Partial aging is not allowed, and thus, should not change the value of this counter.",
+                "status": "Current"
+            }
+        }
+    ]
+}

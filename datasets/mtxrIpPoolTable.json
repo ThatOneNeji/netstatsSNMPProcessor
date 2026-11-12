@@ -1,0 +1,61 @@
+{
+    "name": "mtxrIpPoolTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.23.1",
+    "parent": "mtxrIpPool",
+    "description": "IP pool usage information",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.23.1.1.1": {
+                "name": "mtxrIpPoolIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.23.1.1.2": {
+                "name": "mtxrIpPoolName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "IP pool name",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.23.1.1.3": {
+                "name": "mtxrIpPoolTotalAddresses",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "3",
+                "description": "Total number of addresses in the pool",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.23.1.1.4": {
+                "name": "mtxrIpPoolUsedAddresses",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "4",
+                "description": "Number of used addresses in the pool",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.23.1.1.5": {
+                "name": "mtxrIpPoolAvailableAddresses",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "5",
+                "description": "Number of available addresses in the pool",
+                "status": "Current"
+            }
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "name": "dot1dUserPriorityRegenTable",
+    "type": "table",
+    "mib": "P-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.6.1.2.2",
+    "parent": "dot1dPriority",
+    "description": "A list of Regenerated User Priorities for each received User Priority on each port of a bridge. The Regenerated User Priority value may be used to index the Traffic Class Table for each input port. This only has effect on media that support native User Priority. The default values for Regenerated User Priorities are the same as the User Priorities.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.1.4.1.1": {
+                "name": "dot1dBasePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains bridge management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.2.2.1.1": {
+                "name": "dot1dUserPriority",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The User Priority for a frame received on this port.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.2.2.1.2": {
+                "name": "dot1dRegenUserPriority",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "description": "The Regenerated User Priority that the incoming User Priority is mapped to for this port. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "range": "0..7"
+            }
+        }
+    ]
+}

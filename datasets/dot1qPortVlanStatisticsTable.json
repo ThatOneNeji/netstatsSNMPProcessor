@@ -1,0 +1,90 @@
+{
+    "name": "dot1qPortVlanStatisticsTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.4.6",
+    "parent": "dot1qVlan",
+    "description": "A table containing per-port, per-VLAN statistics for traffic received. Separate objects are provided for both the most-significant and least-significant bits of statistics counters for ports that are associated with this transparent bridge. The most-significant bit objects are only required on high-capacity interfaces, as defined in the conformance clauses for these objects. This mechanism is provided as a way to read 64-bit counters for agents that support only SNMPv1. Note that the reporting of most-significant and least- significant counter bits separately runs the risk of missing an overflow of the lower bits in the interval between sampling. The manager must be aware of this possibility, even within the same varbindlist, when interpreting the results of a request or asynchronous notification.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.1.4.1.1": {
+                "name": "dot1dBasePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains bridge management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.2": {
+                "name": "dot1qVlanIndex",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The VLAN-ID or other identifier referring to this VLAN.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.6.1.1": {
+                "name": "dot1qTpVlanPortInFrames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "1",
+                "description": "The number of valid frames received by this port from its segment that were classified as belonging to this VLAN. Note that a frame received on this port is counted by this object if and only if it is for a protocol being processed by the local forwarding process for this VLAN. This object includes received bridge management frames classified as belonging to this VLAN (e.g., GMRP, but not GVRP or STP.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.6.1.2": {
+                "name": "dot1qTpVlanPortOutFrames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The number of valid frames transmitted by this port to its segment from the local forwarding process for this VLAN. This includes bridge management frames originated by this device that are classified as belonging to this VLAN (e.g., GMRP, but not GVRP or STP).",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.6.1.3": {
+                "name": "dot1qTpVlanPortInDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of valid frames received by this port from its segment that were classified as belonging to this VLAN and that were discarded due to VLAN-related reasons. Specifically, the IEEE 802.1Q counters for Discard Inbound and Discard on Ingress Filtering.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.6.1.4": {
+                "name": "dot1qTpVlanPortInOverflowFrames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The number of times the associated dot1qTpVlanPortInFrames counter has overflowed.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.6.1.5": {
+                "name": "dot1qTpVlanPortOutOverflowFrames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "5",
+                "description": "The number of times the associated dot1qTpVlanPortOutFrames counter has overflowed.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.6.1.6": {
+                "name": "dot1qTpVlanPortInOverflowDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "6",
+                "description": "The number of times the associated dot1qTpVlanPortInDiscards counter has overflowed.",
+                "status": "Current"
+            }
+        }
+    ]
+}

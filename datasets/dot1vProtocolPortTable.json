@@ -1,0 +1,71 @@
+{
+    "name": "dot1vProtocolPortTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.5.2",
+    "parent": "dot1vProtocol",
+    "description": "A table that contains VID sets used for Port-and-Protocol-based VLAN Classification.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.1.4.1.1": {
+                "name": "dot1dBasePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains bridge management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.5.2.1.1": {
+                "name": "dot1vProtocolPortGroupId",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "Designates a group of protocols in the Protocol Group Database.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.5.2.1.2": {
+                "name": "dot1vProtocolPortGroupVid",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "description": "The VID associated with a group of protocols for each port.",
+                "status": "Current",
+                "range": "1..4094"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.5.2.1.3": {
+                "name": "dot1vProtocolPortRowStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "This object indicates the status of this entry.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "active"
+                    },
+                    {
+                        "2": "notInService"
+                    },
+                    {
+                        "3": "notReady"
+                    },
+                    {
+                        "4": "createAndGo"
+                    },
+                    {
+                        "5": "createAndWait"
+                    },
+                    {
+                        "6": "destroy"
+                    }
+                ]
+            }
+        }
+    ]
+}

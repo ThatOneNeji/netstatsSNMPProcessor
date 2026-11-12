@@ -33,7 +33,7 @@
                 "columntype": "column",
                 "order": "3",
                 "description": "dB",
-                "status": "Current"
+                "status": "Deprecated"
             }
         },
         {
@@ -184,6 +184,123 @@
                 "description": "",
                 "status": "Current",
                 "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.15": {
+                "name": "mtxrLTEModemPrimaryBand",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "15",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.16": {
+                "name": "mtxrLTEModemSessionUptime",
+                "datatype": "TICKS",
+                "columntype": "column",
+                "order": "16",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.17": {
+                "name": "mtxrLTEModemRegStatus",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "17",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.18": {
+                "name": "mtxrLTEModemPinStatus",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "18",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.19": {
+                "name": "mtxrLTEModemModel",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "19",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.20": {
+                "name": "mtxrLTEModemFirmware",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "20",
+                "description": "",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.21": {
+                "name": "mtxrLTEModemCQI",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "21",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.22": {
+                "name": "mtxrLTEModemNrRSRP",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "22",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.23": {
+                "name": "mtxrLTEModemNrRSRQ",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "23",
+                "description": "",
+                "status": "Current",
+                "range": "-2147483648..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.24": {
+                "name": "mtxrLTEModemNrSINR",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "24",
+                "description": "",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.16.1.1.25": {
+                "name": "mtxrLTEModemSignalRSRQD10",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "25",
+                "description": "",
+                "status": "Current",
+                "range": "-2147483648..2147483647"
             }
         }
     ]

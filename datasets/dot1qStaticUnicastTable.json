@@ -1,0 +1,77 @@
+{
+    "name": "dot1qStaticUnicastTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.3.1",
+    "parent": "dot1qStatic",
+    "description": "A table containing filtering information for Unicast MAC addresses for each Filtering Database, configured into the device by (local or network) management specifying the set of ports to which frames received from specific ports and containing specific unicast destination addresses are allowed to be forwarded. A value of zero in this table (as the port number from which frames with a specific destination address are received) is used to specify all ports for which there is no specific entry in this table for that particular destination address. Entries are valid for unicast addresses only.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.2.1.1.1": {
+                "name": "dot1qFdbId",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The identity of this Filtering Database.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.1.1.1": {
+                "name": "dot1qStaticUnicastAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The destination MAC address in a frame to which this entry's filtering information applies. This object must take the value of a unicast address.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.1.1.2": {
+                "name": "dot1qStaticUnicastReceivePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "Either the value '0' or the port number of the port from which a frame must be received in order for this entry's filtering information to apply. A value of zero indicates that this entry applies on all ports of the device for which there is no other applicable entry.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.1.1.3": {
+                "name": "dot1qStaticUnicastAllowedToGoTo",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The set of ports for which a frame with a specific unicast address will be flooded in the event that it has not been learned. It also specifies the set of ports on which a specific unicast address may be dynamically learned. The dot1qTpFdbTable will have an equivalent entry with a dot1qTpFdbPort value of '0' until this address has been learned, at which point it will be updated with the port the address has been seen on. This only applies to ports that are members of the VLAN, defined by dot1qVlanCurrentEgressPorts. The default value of this object is a string of ones of appropriate length. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.1.1.4": {
+                "name": "dot1qStaticUnicastStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "This object indicates the status of this entry. other(1) - this entry is currently in use, but the conditions under which it will remain so differ from the following values. invalid(2) - writing this value to the object removes the corresponding entry. permanent(3) - this entry is currently in use and will remain so after the next reset of the bridge. deleteOnReset(4) - this entry is currently in use and will remain so until the next reset of the bridge. deleteOnTimeout(5) - this entry is currently in use and will remain so until it is aged out. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "other"
+                    },
+                    {
+                        "2": "invalid"
+                    },
+                    {
+                        "3": "permanent"
+                    },
+                    {
+                        "4": "deleteOnReset"
+                    },
+                    {
+                        "5": "deleteOnTimeout"
+                    }
+                ]
+            }
+        }
+    ]
+}

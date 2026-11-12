@@ -1,0 +1,78 @@
+{
+    "name": "dot1qLearningConstraintsTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.4.8",
+    "parent": "dot1qVlan",
+    "description": "A table containing learning constraints for sets of Shared and Independent VLANs.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.4.8.1.1": {
+                "name": "dot1qConstraintVlan",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The index of the row in dot1qVlanCurrentTable for the VLAN constrained by this entry.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.8.1.2": {
+                "name": "dot1qConstraintSet",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The identity of the constraint set to which dot1qConstraintVlan belongs. These values may be chosen by the management station.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.8.1.3": {
+                "name": "dot1qConstraintType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The type of constraint this entry defines. independent(1) - the VLAN, dot1qConstraintVlan, uses a filtering database independent from all other VLANs in the same set, defined by dot1qConstraintSet. shared(2) - the VLAN, dot1qConstraintVlan, shares the same filtering database as all other VLANs in the same set, defined by dot1qConstraintSet.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "independent"
+                    },
+                    {
+                        "2": "shared"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.4.8.1.4": {
+                "name": "dot1qConstraintStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The status of this entry.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "active"
+                    },
+                    {
+                        "2": "notInService"
+                    },
+                    {
+                        "3": "notReady"
+                    },
+                    {
+                        "4": "createAndGo"
+                    },
+                    {
+                        "5": "createAndWait"
+                    },
+                    {
+                        "6": "destroy"
+                    }
+                ]
+            }
+        }
+    ]
+}

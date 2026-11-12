@@ -1,0 +1,243 @@
+{
+    "name": "mtxrNetwatchTable",
+    "type": "table",
+    "mib": "MIKROTIK-MIB",
+    "oid": ".1.3.6.1.4.1.14988.1.1.26.1",
+    "parent": "mtxrNetwatch",
+    "description": "Netwatch probe status and statistics",
+    "objects": [
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.1": {
+                "name": "mtxrNetwatchIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "Netwatch entry id (stable while the entry exists)",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.2": {
+                "name": "mtxrNetwatchName",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "Netwatch entry name; empty if the entry is unnamed",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.3": {
+                "name": "mtxrNetwatchHost",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "Probed host as configured: DNS name, or literal IPv4/IPv6 address",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.4": {
+                "name": "mtxrNetwatchType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "Probe type",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "simple"
+                    },
+                    {
+                        "1": "icmp"
+                    },
+                    {
+                        "2": "tcpConn"
+                    },
+                    {
+                        "3": "httpGet"
+                    },
+                    {
+                        "4": "httpsGet"
+                    },
+                    {
+                        "5": "dns"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.5": {
+                "name": "mtxrNetwatchStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "Result of the last test. unknown(0) means the entry is disabled or has not completed a test yet",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "unknown"
+                    },
+                    {
+                        "1": "down"
+                    },
+                    {
+                        "2": "up"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.6": {
+                "name": "mtxrNetwatchSince",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "6",
+                "description": "Time of the last status change, as seconds since 1970-01-01 in router local time; 0 if no status change happened yet",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.7": {
+                "name": "mtxrNetwatchDoneTests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "7",
+                "description": "Number of tests performed. Resets when the entry is disabled/re-enabled or the router reboots",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.8": {
+                "name": "mtxrNetwatchFailedTests",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "8",
+                "description": "Number of failed tests. Resets when the entry is disabled/re-enabled or the router reboots",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.9": {
+                "name": "mtxrNetwatchSentCount",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "9",
+                "description": "Probes sent in the last test window; icmp probes only, 0 for other types",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.10": {
+                "name": "mtxrNetwatchResponseCount",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "10",
+                "description": "Responses received in the last test window; icmp probes only, 0 for other types",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.11": {
+                "name": "mtxrNetwatchLossCount",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "11",
+                "description": "Probes lost in the last test window; icmp probes only, 0 for other types",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.12": {
+                "name": "mtxrNetwatchLossRate",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "12",
+                "description": "Packet loss in the last test window in per-mille (0..1000, divide by 10 for percent); icmp probes only",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.13": {
+                "name": "mtxrNetwatchRttAvg",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "13",
+                "description": "Average round trip time in the last test window; icmp probes only, 0 when no responses were received",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.14": {
+                "name": "mtxrNetwatchRttMin",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "14",
+                "description": "Minimal round trip time in the last test window; icmp probes only, 0 when no responses were received",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.15": {
+                "name": "mtxrNetwatchRttMax",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "15",
+                "description": "Maximal round trip time in the last test window; icmp probes only, 0 when no responses were received",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.16": {
+                "name": "mtxrNetwatchRttJitter",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "16",
+                "description": "Round trip time jitter (max - min) in the last test window; icmp probes only, 0 when no responses were received",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.17": {
+                "name": "mtxrNetwatchRttStdev",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "17",
+                "description": "Round trip time standard deviation in the last test window; icmp probes only, 0 when no responses were received",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.18": {
+                "name": "mtxrNetwatchTcpConnectTime",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "18",
+                "description": "Time to establish the TCP connection in the last test; tcp-conn, http-get and https-get probes only, 0 for other types",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.19": {
+                "name": "mtxrNetwatchHttpStatusCode",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "19",
+                "description": "HTTP status code of the last test; http-get and https-get probes only, 0 when no response was received",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.26.1.1.20": {
+                "name": "mtxrNetwatchHttpRespTime",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "20",
+                "description": "Time until the HTTP response was received in the last test; http-get and https-get probes only",
+                "status": "Current"
+            }
+        }
+    ]
+}

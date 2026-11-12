@@ -1,0 +1,50 @@
+{
+    "name": "dot1qForwardUnregisteredTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.2.5",
+    "parent": "dot1qTp",
+    "description": "A table containing forwarding information for each VLAN, specifying the set of ports to which forwarding of multicast group-addressed frames for which no more specific forwarding information applies. This is configured statically by management and determined dynamically by GMRP. An entry appears in this table for all VLANs that are currently instantiated.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.2": {
+                "name": "dot1qVlanIndex",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The VLAN-ID or other identifier referring to this VLAN.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.2.5.1.1": {
+                "name": "dot1qForwardUnregisteredPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "1",
+                "description": "The complete set of ports in this VLAN to which multicast group-addressed frames for which there is no more specific forwarding information will be forwarded. This includes ports for which this need has been determined dynamically by GMRP, or configured statically by management.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.2.5.1.2": {
+                "name": "dot1qForwardUnregisteredStaticPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "2",
+                "description": "The set of ports configured by management, in this VLAN, to which multicast group-addressed frames for which there is no more specific forwarding information are to be forwarded. Ports entered in this list will also appear in the complete set shown by dot1qForwardUnregisteredPorts. This value will be restored after the device is reset. A port may not be added in this set if it is already a member of the set of ports in dot1qForwardUnregisteredForbiddenPorts. The default value is a string of zeros of appropriate length, although this has no effect with the default value of dot1qForwardAllStaticPorts. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.2.5.1.3": {
+                "name": "dot1qForwardUnregisteredForbiddenPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The set of ports configured by management in this VLAN for which the Service Requirement attribute Forward Unregistered Multicast Groups may not be dynamically registered by GMRP. This value will be restored after the device is reset. A port may not be added in this set if it is already a member of the set of ports in dot1qForwardUnregisteredStaticPorts. The default value is a string of zeros of appropriate length. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current"
+            }
+        }
+    ]
+}

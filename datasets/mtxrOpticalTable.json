@@ -146,6 +146,146 @@
                 "status": "Current",
                 "range": "0..255"
             }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.19.1.1.13": {
+                "name": "mtxrOpticalModulePresent",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "13",
+                "description": "Whether a transceiver module is inserted in the cage",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "false"
+                    },
+                    {
+                        "1": "true"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.19.1.1.14": {
+                "name": "mtxrOpticalVendorPartNumber",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "14",
+                "description": "Vendor part number of the transceiver module",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.19.1.1.15": {
+                "name": "mtxrOpticalType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "15",
+                "description": "Transceiver module type, SFF-8024 identifier value",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "unknown"
+                    },
+                    {
+                        "1": "gbic"
+                    },
+                    {
+                        "2": "soldered"
+                    },
+                    {
+                        "3": "sfp"
+                    },
+                    {
+                        "11": "dwdmSfp"
+                    },
+                    {
+                        "12": "qsfp"
+                    },
+                    {
+                        "13": "qsfpPlus"
+                    },
+                    {
+                        "17": "qsfp28"
+                    },
+                    {
+                        "24": "qsfpDD"
+                    },
+                    {
+                        "30": "qsfpCmis"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.19.1.1.16": {
+                "name": "mtxrOpticalConnectorType",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "16",
+                "description": "Transceiver connector type, SFF-8024 connector value",
+                "status": "Current",
+                "types": [
+                    {
+                        "0": "unknown"
+                    },
+                    {
+                        "1": "sc"
+                    },
+                    {
+                        "7": "lc"
+                    },
+                    {
+                        "11": "opticalPigtail"
+                    },
+                    {
+                        "12": "mpo1x12"
+                    },
+                    {
+                        "13": "mpo2x16"
+                    },
+                    {
+                        "32": "hssdc2"
+                    },
+                    {
+                        "33": "copperPigtail"
+                    },
+                    {
+                        "34": "rj45"
+                    },
+                    {
+                        "35": "noSeparableConnector"
+                    },
+                    {
+                        "39": "mpo2x12"
+                    },
+                    {
+                        "40": "mpo1x16"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.19.1.1.17": {
+                "name": "mtxrOpticalLinkLengthCopperOM4",
+                "datatype": "GAUGE",
+                "columntype": "column",
+                "order": "17",
+                "description": "Supported link length for copper cable or OM4 fiber",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.19.1.1.18": {
+                "name": "mtxrOpticalSupportedRates",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "18",
+                "description": "Comma separated list of link rates supported by the module",
+                "status": "Current",
+                "range": "0..255"
+            }
         }
     ]
 }

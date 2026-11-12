@@ -1,0 +1,53 @@
+{
+    "name": "dot1dPortGarpTable",
+    "type": "table",
+    "mib": "P-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.6.1.3.1",
+    "parent": "dot1dGarp",
+    "description": "A table of GARP control information about every bridge port. This is indexed by dot1dBasePort.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.1.4.1.1": {
+                "name": "dot1dBasePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains bridge management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.3.1.1.1": {
+                "name": "dot1dPortGarpJoinTime",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "1",
+                "description": "The GARP Join time, in centiseconds. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.3.1.1.2": {
+                "name": "dot1dPortGarpLeaveTime",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The GARP Leave time, in centiseconds. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.3.1.1.3": {
+                "name": "dot1dPortGarpLeaveAllTime",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The GARP LeaveAll time, in centiseconds. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "range": "0..2147483647"
+            }
+        }
+    ]
+}

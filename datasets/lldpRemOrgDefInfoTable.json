@@ -1,0 +1,81 @@
+{
+    "name": "lldpRemOrgDefInfoTable",
+    "type": "table",
+    "mib": "LLDP-MIB",
+    "oid": ".1.0.8802.1.1.2.1.4.4",
+    "parent": "lldpRemoteSystemsData",
+    "description": "This table contains one or more rows per physical network connection which advertises the organizationally defined information. Note that this table contains one or more rows of organizationally defined information that is not recognized by the local agent. If the local system is capable of recognizing any organizationally defined information, appropriate extension MIBs from the organization should be used for information retrieval.",
+    "objects": [
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.1": {
+                "name": "lldpRemTimeMark",
+                "datatype": "TICKS",
+                "columntype": "index",
+                "order": "1",
+                "description": "A TimeFilter for this entry. See the TimeFilter textual convention in IETF RFC 2021 and http://www.ietf.org/IESG/Implementations/RFC2021-Implementation.txt to see how TimeFilter works.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.2": {
+                "name": "lldpRemLocalPortNum",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The index value used to identify the port component (contained in the local chassis with the LLDP agent) associated with this entry. The lldpRemLocalPortNum identifies the port on which the remote system information is received. The value of this object is used as a port index to the lldpRemTable.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.1.1.3": {
+                "name": "lldpRemIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "3",
+                "description": "This object represents an arbitrary local integer value used by this agent to identify a particular connection instance, unique only for the indicated remote system. An agent is encouraged to assign monotonically increasing index values to new entries, starting with one, after each reboot. It is considered unlikely that the lldpRemIndex will wrap between reboots.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.4.1.1": {
+                "name": "lldpRemOrgDefInfoOUI",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The Organizationally Unique Identifier (OUI), as defined in IEEE Std 802-2001, is a 24 bit (three octets) globally unique assigned number referenced by various standards, of the information received from the remote system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.4.1.2": {
+                "name": "lldpRemOrgDefInfoSubtype",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The integer value used to identify the subtype of the organizationally defined information received from the remote system. The subtype value is required to identify different instances of organizationally defined information that could not be retrieved without a unique identifier that indicates the particular type of information contained in the information string.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.4.1.3": {
+                "name": "lldpRemOrgDefInfoIndex",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "3",
+                "description": "This object represents an arbitrary local integer value used by this agent to identify a particular unrecognized organizationally defined information instance, unique only for the lldpRemOrgDefInfoOUI and lldpRemOrgDefInfoSubtype from the same remote system. An agent is encouraged to assign monotonically increasing index values to new entries, starting with one, after each reboot. It is considered unlikely that the lldpRemOrgDefInfoIndex will wrap between reboots.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.4.4.1.4": {
+                "name": "lldpRemOrgDefInfo",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The string value used to identify the organizationally defined information of the remote system. The encoding for this object should be as defined for SnmpAdminString TC.",
+                "status": "Current",
+                "range": "0..507"
+            }
+        }
+    ]
+}

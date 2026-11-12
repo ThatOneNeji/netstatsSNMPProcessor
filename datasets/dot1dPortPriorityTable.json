@@ -1,0 +1,42 @@
+{
+    "name": "dot1dPortPriorityTable",
+    "type": "table",
+    "mib": "P-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.6.1.2.1",
+    "parent": "dot1dPriority",
+    "description": "A table that contains information about every port that is associated with this transparent bridge.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.1.4.1.1": {
+                "name": "dot1dBasePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains bridge management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.2.1.1.1": {
+                "name": "dot1dPortDefaultUserPriority",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "1",
+                "description": "The default ingress User Priority for this port. This only has effect on media, such as Ethernet, that do not support native User Priority. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "range": "0..7"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.2.1.1.2": {
+                "name": "dot1dPortNumTrafficClasses",
+                "datatype": "INTEGER32",
+                "columntype": "column",
+                "order": "2",
+                "description": "The number of egress traffic classes supported on this port. This object may optionally be read-only. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "range": "1..8"
+            }
+        }
+    ]
+}

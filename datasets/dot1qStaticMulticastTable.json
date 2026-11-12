@@ -1,0 +1,87 @@
+{
+    "name": "dot1qStaticMulticastTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.3.2",
+    "parent": "dot1qStatic",
+    "description": "A table containing filtering information for Multicast and Broadcast MAC addresses for each VLAN, configured into the device by (local or network) management specifying the set of ports to which frames received from specific ports and containing specific Multicast and Broadcast destination addresses are allowed to be forwarded. A value of zero in this table (as the port number from which frames with a specific destination address are received) is used to specify all ports for which there is no specific entry in this table for that particular destination address. Entries are valid for Multicast and Broadcast addresses only.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.4.2.1.2": {
+                "name": "dot1qVlanIndex",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "2",
+                "description": "The VLAN-ID or other identifier referring to this VLAN.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.2.1.1": {
+                "name": "dot1qStaticMulticastAddress",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "1",
+                "description": "The destination MAC address in a frame to which this entry's filtering information applies. This object must take the value of a Multicast or Broadcast address.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.2.1.2": {
+                "name": "dot1qStaticMulticastReceivePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "2",
+                "description": "Either the value '0' or the port number of the port from which a frame must be received in order for this entry's filtering information to apply. A value of zero indicates that this entry applies on all ports of the device for which there is no other applicable entry.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.2.1.3": {
+                "name": "dot1qStaticMulticastStaticEgressPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The set of ports to which frames received from a specific port and destined for a specific Multicast or Broadcast MAC address must be forwarded, regardless of any dynamic information, e.g., from GMRP. A port may not be added in this set if it is already a member of the set of ports in dot1qStaticMulticastForbiddenEgressPorts. The default value of this object is a string of ones of appropriate length. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.2.1.4": {
+                "name": "dot1qStaticMulticastForbiddenEgressPorts",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "4",
+                "description": "The set of ports to which frames received from a specific port and destined for a specific Multicast or Broadcast MAC address must not be forwarded, regardless of any dynamic information, e.g., from GMRP. A port may not be added in this set if it is already a member of the set of ports in dot1qStaticMulticastStaticEgressPorts. The default value of this object is a string of zeros of appropriate length. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.3.2.1.5": {
+                "name": "dot1qStaticMulticastStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "5",
+                "description": "This object indicates the status of this entry. other(1) - this entry is currently in use, but the conditions under which it will remain so differ from the following values. invalid(2) - writing this value to the object removes the corresponding entry. permanent(3) - this entry is currently in use and will remain so after the next reset of the bridge. deleteOnReset(4) - this entry is currently in use and will remain so until the next reset of the bridge. deleteOnTimeout(5) - this entry is currently in use and will remain so until it is aged out. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "other"
+                    },
+                    {
+                        "2": "invalid"
+                    },
+                    {
+                        "3": "permanent"
+                    },
+                    {
+                        "4": "deleteOnReset"
+                    },
+                    {
+                        "5": "deleteOnTimeout"
+                    }
+                ]
+            }
+        }
+    ]
+}

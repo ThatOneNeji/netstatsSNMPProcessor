@@ -1,0 +1,50 @@
+{
+    "name": "dot1dTpPortOverflowTable",
+    "type": "table",
+    "mib": "P-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.4.6",
+    "parent": "dot1dTp",
+    "description": "A table that contains the most-significant bits of statistics counters for ports that are associated with this transparent bridge that are on high-capacity interfaces, as defined in the conformance clauses for this table. This table is provided as a way to read 64-bit counters for agents that support only SNMPv1. Note that the reporting of most-significant and least-significant counter bits separately runs the risk of missing an overflow of the lower bits in the interval between sampling. The manager must be aware of this possibility, even within the same varbindlist, when interpreting the results of a request or asynchronous notification.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.4.4.1.1": {
+                "name": "dot1dTpPort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains Transparent bridging management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.4.6.1.1": {
+                "name": "dot1dTpPortInOverflowFrames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "1",
+                "description": "The number of times the associated dot1dTpPortInFrames counter has overflowed.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.4.6.1.2": {
+                "name": "dot1dTpPortOutOverflowFrames",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The number of times the associated dot1dTpPortOutFrames counter has overflowed.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.4.6.1.3": {
+                "name": "dot1dTpPortInOverflowDiscards",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "3",
+                "description": "The number of times the associated dot1dTpPortInDiscards counter has overflowed.",
+                "status": "Current"
+            }
+        }
+    ]
+}

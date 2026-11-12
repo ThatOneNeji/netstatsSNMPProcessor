@@ -1,0 +1,30 @@
+{
+    "name": "dot1qFdbTable",
+    "type": "table",
+    "mib": "Q-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.7.1.2.1",
+    "parent": "dot1qTp",
+    "description": "A table that contains configuration and control information for each Filtering Database currently operating on this device. Entries in this table appear automatically when VLANs are assigned FDB IDs in the dot1qVlanCurrentTable.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.7.1.2.1.1.1": {
+                "name": "dot1qFdbId",
+                "datatype": "UNSIGNED32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The identity of this Filtering Database.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.7.1.2.1.1.2": {
+                "name": "dot1qFdbDynamicCount",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The current number of dynamic entries in this Filtering Database.",
+                "status": "Current"
+            }
+        }
+    ]
+}

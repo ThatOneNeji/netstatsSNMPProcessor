@@ -154,7 +154,7 @@
                 "datatype": "INTEGER32",
                 "columntype": "column",
                 "order": "14",
-                "description": "Mhz",
+                "description": "MHz",
                 "status": "Current"
             }
         },

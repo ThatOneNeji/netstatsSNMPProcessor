@@ -1,0 +1,41 @@
+{
+    "name": "lldpConfigManAddrTable",
+    "type": "table",
+    "mib": "LLDP-MIB",
+    "oid": ".1.0.8802.1.1.2.1.1.7",
+    "parent": "lldpConfiguration",
+    "description": "The table that controls selection of LLDP management address TLV instances to be transmitted on individual ports.",
+    "objects": [
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.1": {
+                "name": "lldpLocManAddrSubtype",
+                "datatype": "INTEGER",
+                "columntype": "index",
+                "order": "1",
+                "description": "The type of management address identifier encoding used in the associated 'lldpLocManagmentAddr' object.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.3.8.1.2": {
+                "name": "lldpLocManAddr",
+                "datatype": "OCTETSTR",
+                "columntype": "index",
+                "order": "2",
+                "description": "The string value used to identify the management address component associated with the local system. The purpose of this address is to contact the management entity.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.0.8802.1.1.2.1.1.7.1.1": {
+                "name": "lldpConfigManAddrPortsTxEnable",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "1",
+                "description": "A set of ports that are identified by a PortList, in which each port is represented as a bit. The corresponding local system management address instance will be transmitted on the member ports of the lldpManAddrPortsTxEnable. The default value for lldpConfigManAddrPortsTxEnable object is empty binary string, which means no ports are specified for advertising indicated management address instance.",
+                "status": "Current",
+                "range": "0..512"
+            }
+        }
+    ]
+}

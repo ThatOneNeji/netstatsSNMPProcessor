@@ -1,6 +1,6 @@
 {
     "name": "mtxrWifiInterfaces",
-    "type": "table",
+    "type": "scalar",
     "mib": "MIKROTIK-MIB",
     "oid": ".1.3.6.1.4.1.14988.1.1.21.5",
     "parent": "mtxrWifi",
@@ -46,6 +46,17 @@
                 "columntype": "column",
                 "order": "4",
                 "description": "Frequency used by the WiFi interface",
+                "status": "Current",
+                "range": "0..255"
+            }
+        },
+        {
+            ".1.3.6.1.4.1.14988.1.1.21.5.1.5": {
+                "name": "mtxrWifiInterfacesCurrentChannel",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "5",
+                "description": "Channel currently in use by the WiFi interface. Empty when the interface is not running",
                 "status": "Current",
                 "range": "0..255"
             }

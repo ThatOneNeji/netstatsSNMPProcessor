@@ -1,0 +1,76 @@
+{
+    "name": "dot1dPortGmrpTable",
+    "type": "table",
+    "mib": "P-BRIDGE-MIB",
+    "oid": ".1.3.6.1.2.1.17.6.1.4.1",
+    "parent": "dot1dGmrp",
+    "description": "A table of GMRP control and status information about every bridge port. Augments the dot1dBasePortTable.",
+    "objects": [
+        {
+            ".1.3.6.1.2.1.17.1.4.1.1": {
+                "name": "dot1dBasePort",
+                "datatype": "INTEGER32",
+                "columntype": "index",
+                "order": "1",
+                "description": "The port number of the port for which this entry contains bridge management information.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.4.1.1.1": {
+                "name": "dot1dPortGmrpStatus",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "1",
+                "description": "The administrative state of GMRP operation on this port. The value enabled(1) indicates that GMRP is enabled on this port in all VLANs as long as dot1dGmrpStatus is also enabled(1). A value of disabled(2) indicates that GMRP is disabled on this port in all VLANs: any GMRP packets received will be silently discarded, and no GMRP registrations will be propagated from other ports. Setting this to a value of enabled(1) will be stored by the agent but will only take effect on the GMRP protocol operation if dot1dGmrpStatus also indicates the value enabled(1). This object affects all GMRP Applicant and Registrar state machines on this port. A transition from disabled(2) to enabled(1) will cause a reset of all GMRP state machines on this port. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "enabled"
+                    },
+                    {
+                        "2": "disabled"
+                    }
+                ]
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.4.1.1.2": {
+                "name": "dot1dPortGmrpFailedRegistrations",
+                "datatype": "COUNTER",
+                "columntype": "column",
+                "order": "2",
+                "description": "The total number of failed GMRP registrations, for any reason, in all VLANs, on this port.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.4.1.1.3": {
+                "name": "dot1dPortGmrpLastPduOrigin",
+                "datatype": "OCTETSTR",
+                "columntype": "column",
+                "order": "3",
+                "description": "The Source MAC Address of the last GMRP message received on this port.",
+                "status": "Current"
+            }
+        },
+        {
+            ".1.3.6.1.2.1.17.6.1.4.1.1.4": {
+                "name": "dot1dPortRestrictedGroupRegistration",
+                "datatype": "INTEGER",
+                "columntype": "column",
+                "order": "4",
+                "description": "The state of Restricted Group Registration on this port. If the value of this control is true(1), then creation of a new dynamic entry is permitted only if there is a Static Filtering Entry for the VLAN concerned, in which the Registrar Administrative Control value is Normal Registration. The value of this object MUST be retained across reinitializations of the management system.",
+                "status": "Current",
+                "types": [
+                    {
+                        "1": "true"
+                    },
+                    {
+                        "2": "false"
+                    }
+                ]
+            }
+        }
+    ]
+}
