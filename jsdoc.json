@@ -3,26 +3,33 @@
         "allowUnknownTags": true
     },
     "source": {
-        "include": "./parsers",
-        "includePattern": ".js$",
-        "excludePatterns": "(^|\\/|\\\\)"
+        "includePattern": ".+\\.js(doc|x)?$",
+        "exclude": [
+            "node_modules",
+            "lib/node_modules",
+            "documentation",
+            "eslint.config.js"
+        ]
     },
     "plugins": [
         "plugins/markdown"
     ],
     "templates": {
-        "cleverLinks": false,
-        "systemName": "Netstats SNMP File Processor",
-        "monospaceLinks": false,
-        "dateFormat": "YYYY/MM/DD",
-        "navType": "inline",
-        "theme": "cyborg",
-        "linenums": true,
+        "systemName": "netstats - SNMP File Processor",
         "footer": "",
+        "copyright": "",
+        "includeDate": true,
+        "navType": "inline",
+        "theme": "slate",
+        "linenums": true,
+        "collapseSymbols": false,
         "inverseNav": false,
-        "highlightTutorialCode": true,
-        "outputSourceFiles": true,
-        "hideGenerator": true
+        "dateFormat": "YYYY/MM/DD",
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": true
+        }
     },
     "opts": {
         "template": "./node_modules/ink-docstrap/template",

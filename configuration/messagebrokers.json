@@ -1,0 +1,32 @@
+{
+    "messagebrokers": [
+        {
+            "host": "rabbitmq01.bwcsystem.local",
+            "user": "dev_mcnms_mysql_loader",
+            "password": "dev_mcnms_mysql_loader",
+            "port": 5672,
+            "vhost": "dev_mcnms",
+            "active": false
+        },
+        {
+            "host": "rabbitmq02.bwcsystem.local",
+            "user": "dev_mcnms_mysql_loader",
+            "password": "dev_mcnms_mysql_loader",
+            "port": 5672,
+            "vhost": "dev_mcnms",
+            "active": false
+        },
+        {
+            "host": "rabbitmq03.bwcsystem.local",
+            "user": "dev_mcnms_mysql_loader",
+            "password": "dev_mcnms_mysql_loader",
+            "port": 5672,
+            "vhost": "dev_mcnms",
+            "active": true
+        }
+    ],
+    "queues": {
+        "consumeBaseName": "fm/dev_mcnms/SNMP",
+        "publishBaseName": "dev_db2/orsted/dev_mcnms/data"
+    }
+}

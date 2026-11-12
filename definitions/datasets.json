@@ -299,10 +299,36 @@
         },
         "enabled": false
     },
+    "mtxrLTECarrierAggTable": {
+        "name": "mtxrLTECarrierAgg",
+        "prefix": "T92",
+        "comment": "",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
     "lldpLocalSystemDataScalar": {
         "name": "lldpLocalSystemData",
         "prefix": "T91",
         "comment": "",
+        "notes": "No intervals. Raw and last seen is enough",
+        "intervals": [],
+        "options": {
+            "droptable": true,
+            "lastseen": true,
+            "partition": true
+        },
+        "enabled": false
+    },
+    "lldpLocManAddrTable": {
+        "name": "lldpLocManAddr",
+        "prefix": "T93",
+        "comment": "This table contains management address information on the local system known to this agent.",
         "notes": "No intervals. Raw and last seen is enough",
         "intervals": [],
         "options": {

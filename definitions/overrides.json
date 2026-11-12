@@ -85,7 +85,7 @@
             {
                 ".1.3.6.1.2.1.25.3.3.1.1": {
                     "name": "hrProcessorFrwID",
-                    "datatype": "OBJECTID",
+                    "datatype": "objectid",
                     "columntype": "index",
                     "order": "1",
                     "description": "The product ID of the firmware associated with the processor.",
@@ -97,89 +97,36 @@
             {
                 ".1.3.6.1.4.1.14988.1.1.21.5.1.1": {
                     "name": "mtxrWifiInterfacesId",
-                    "datatype": "OBJECTID",
+                    "datatype": "objectid",
                     "columntype": "index"
-                }
-            }
-        ],
-        "mtxrOpticalTable22": [
-            {
-                ".1.3.6.1.4.1.14988.1.1.19.1.1.5": {
-                    "name": "mtxrOpticalWavelength",
-                    "datatype": "GAUGEDIV100"
-                }
-            },
-            {
-                ".1.3.6.1.4.1.14988.1.1.19.1.1.7": {
-                    "name": "mtxrOpticalSupplyVoltage",
-                    "datatype": "GAUGEDIV1000"
-                }
-            },
-            {
-                ".1.3.6.1.4.1.14988.1.1.19.1.1.9": {
-                    "name": "mtxrOpticalTxPower",
-                    "datatype": "INTEGER32DIV1000",
-                    "range": "-2147483648..2147483647"
-                }
-            },
-            {
-                ".1.3.6.1.4.1.14988.1.1.19.1.1.10": {
-                    "name": "mtxrOpticalRxPower",
-                    "datatype": "INTEGER32DIV1000",
-                    "range": "-2147483648..2147483647"
                 }
             }
         ],
         "ipRouteTable": [
             {
                 ".1.3.6.1.2.1.4.21.1.13": {
-                    "datatype": "OCTETSTR"
+                    "datatype": "octetstr"
                 }
             }
         ],
         "dot1dTpFdbTable": [
             {
                 ".1.3.6.1.2.1.17.4.3.1.1": {
-                    "datatype": "Hex-MAC"
+                    "datatype": "hex-mac"
                 }
             }
         ],
         "mtxrWifiRegistrationTable": [
             {
                 ".1.3.6.1.4.1.14988.1.1.21.4.1.1": {
-                    "datatype": "Hex-MAC"
-                }
-            }
-        ],
-        "mtxrRemoteCapTable": [
-            {
-                ".1.3.6.1.4.1.14988.1.1.21.3.1.7": {
-                    "datatype": "Hex-MAC"
+                    "datatype": "hex-mac"
                 }
             }
         ],
         "ifTable": [
             {
                 ".1.3.6.1.2.1.2.2.1.6": {
-                    "datatype": "Hex-MAC"
-                }
-            },
-            {
-                ".1.3.6.1.2.1.2.2.1.13aa": {
-                    "name": "ifInDiscards",
-                    "datatype": "COUNTER_DELTA"
-                }
-            },
-            {
-                ".1.3.6.1.2.1.2.2.1.14aa": {
-                    "name": "ifInErrors",
-                    "datatype": "COUNTER_DELTA"
-                }
-            },
-            {
-                ".1.3.6.1.2.1.2.2.1.20aa": {
-                    "name": "ifOutErrors",
-                    "datatype": "COUNTER_DELTA"
+                    "datatype": "hex-mac"
                 }
             }
         ],
@@ -187,12 +134,24 @@
             {
                 ".1.3.6.1.2.1.25.1.4": {
                     "name": "hrSystemInitialLoadParameters",
-                    "datatype": "COUNTER_DELTA"
+                    "datatype": "counter_delta"
                 }
             },
             {
                 ".1.3.6.1.2.1.25.1.2": {
-                    "datatype": "Hex-DATE"
+                    "datatype": "hex-date"
+                }
+            }
+        ],
+        "lldpRemTable": [
+            {
+                ".1.0.8802.1.1.2.1.4.1.1.11": {
+                    "datatype": "integer"
+                }
+            },
+            {
+                ".1.0.8802.1.1.2.1.4.1.1.12": {
+                    "datatype": "integer"
                 }
             }
         ],
@@ -200,7 +159,7 @@
             {
                 ".1.3.6.1.4.1.14988.1.1.11.1.1.3": {
                     "name": "mtxrNeighborMacAddress",
-                    "datatype": "Hex-MAC"
+                    "datatype": "hex-mac"
                 }
             }
         ],
@@ -208,7 +167,7 @@
             {
                 ".1.3.6.1.4.1.14988.1.1.1.2.1.1": {
                     "name": "mtxrWlRtabAddr",
-                    "datatype": "Hex-MAC"
+                    "datatype": "hex-mac"
                 }
             }
         ],
@@ -216,7 +175,7 @@
             {
                 ".1.3.6.1.2.1.4.22.1.2": {
                     "name": "ipNetToMediaPhysAddress",
-                    "datatype": "Hex-MAC"
+                    "datatype": "hex-mac"
                 }
             }
         ],
@@ -224,7 +183,7 @@
             {
                 ".1.3.6.1.4.1.14988.1.1.1.5.1.1": {
                     "name": "mtxrWlCMRtabAddr",
-                    "datatype": "Hex-MAC"
+                    "datatype": "hex-mac"
                 }
             }
         ],
@@ -232,7 +191,7 @@
             {
                 ".1.3.6.1.4.1.2021.13.16.2.1.3": {
                     "name": "lmTempSensorsValue",
-                    "datatype": "GDiv1000"
+                    "datatype": "gdiv1000"
                 }
             }
         ],
@@ -240,15 +199,7 @@
             {
                 ".1.3.6.1.4.1.2021.13.16.4.1.3": {
                     "name": "lmVoltSensorsValue",
-                    "datatype": "GDiv1000"
-                }
-            }
-        ],
-        "ipv6AddrTable22": [
-            {
-                ".1.3.6.1.2.1.55.1.8.1.1": {
-                    "name": "ipv6AddrAddress",
-                    "datatype": "GDiv1000"
+                    "datatype": "gdiv1000"
                 }
             }
         ],
@@ -256,7 +207,7 @@
             {
                 ".1.3.6.1.2.1.55.1.5.1.8": {
                     "name": "ipv6IfPhysicalAddress",
-                    "datatype": "Hex-MAC"
+                    "datatype": "hex-mac"
                 }
             }
         ]

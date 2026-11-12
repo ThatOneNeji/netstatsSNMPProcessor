@@ -1,9 +1,9 @@
 {
     "base": {
-        "prefix33": "tbl_base_snmp",
         "prefix": "dev_tbl_base_snmp",
         "suffix": "raw",
-        "fields": [{
+        "fields": [
+            {
                 "name": "rdate",
                 "properties": "datetime NOT NULL",
                 "comment": "Row date",
@@ -32,27 +32,38 @@
                 "position": "suffix"
             }
         ],
-        "missing_index_fields": [{
-            "name": "id",
-            "properties": "varchar(255) NOT NULL",
-            "comment": "ID field",
-            "position": "prefix"
-        }],
-        "indexes": [{
-                "primary": ["rdate", "host"],
+        "missing_index_fields": [
+            {
+                "name": "id",
+                "properties": "varchar(255) NOT NULL",
+                "comment": "ID field",
+                "position": "prefix"
+            }
+        ],
+        "indexes": [
+            {
+                "primary": [
+                    "rdate",
+                    "host"
+                ],
                 "comment": "Primary index"
             },
             {
-                "updates": ["ldate", "processed"],
+                "updates": [
+                    "ldate",
+                    "processed"
+                ],
                 "comment": "Update trigger index"
             }
         ],
-        "triggers": ["update"]
+        "triggers": [
+            "update"
+        ]
     },
     "summary": {
-        "prefix33": "tbl_base_snmp",
         "prefix": "dev_tbl_base_snmp",
-        "fields": [{
+        "fields": [
+            {
                 "name": "rdate",
                 "properties": "datetime NOT NULL",
                 "comment": "Row date",
@@ -95,20 +106,32 @@
                 "position": "suffix"
             }
         ],
-        "missing_indexes": [{
-            "name": "id",
-            "properties": "varchar(255) NOT NULL",
-            "position": "prefix"
-        }],
-        "indexes": [{
-                "primary": ["rdate", "host"],
+        "missing_indexes": [
+            {
+                "name": "id",
+                "properties": "varchar(255) NOT NULL",
+                "position": "prefix"
+            }
+        ],
+        "indexes": [
+            {
+                "primary": [
+                    "rdate",
+                    "host"
+                ],
                 "comment": "Primary index"
             },
             {
-                "updates": ["ldate", "processed"],
+                "updates": [
+                    "ldate",
+                    "processed"
+                ],
                 "comment": "Update trigger index"
             }
         ],
-        "triggers": ["insert", "update"]
+        "triggers": [
+            "insert",
+            "update"
+        ]
     }
 }

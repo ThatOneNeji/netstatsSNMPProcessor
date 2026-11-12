@@ -1,6 +1,7 @@
 {
     "raw": {
-        "counter": [{
+        "counter": [
+            {
                 "name": "sum",
                 "function": "if(a.{{field_name}} < b.{{field_name}}, a.{{field_name}}, a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_sum",
                 "comment": ""
@@ -11,35 +12,44 @@
                 "comment": ""
             }
         ],
-        "gauge": [{
-            "name": "gauge",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
-        "gaugediv100": [{
-            "name": "gaugediv100",
-            "function": "ROUND(a.{{field_name}}/100),2) AS {{field_name}}",
-            "comment": ""
-        }],
-        "gaugediv1000": [{
-            "name": "gaugediv1000",
-            "function": "ROUND(a.{{field_name}}/1000),3) AS {{field_name}}",
-            "comment": ""
-        }],
-        "indicator": [{
-            "name": "indicator",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
+        "gauge": [
+            {
+                "name": "gauge",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
+        "gaugediv100": [
+            {
+                "name": "gaugediv100",
+                "function": "ROUND(a.{{field_name}}/100),2) AS {{field_name}}",
+                "comment": ""
+            }
+        ],
+        "gaugediv1000": [
+            {
+                "name": "gaugediv1000",
+                "function": "ROUND(a.{{field_name}}/1000),3) AS {{field_name}}",
+                "comment": ""
+            }
+        ],
+        "indicator": [
+            {
+                "name": "indicator",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
         "dates": {
             "nowrdate": "new.rdate",
             "prevdate": "new.rdate - INTERVAL 5 MINUTE",
-            "nowidate": "(UNIX_TIMESTAMP(new.rdate) + 7200) * 1000"
+            "nowidate": "UNIX_TIMESTAMP(new.rdate) * 1000"
         },
         "partition": "pCurrentDay"
     },
     "05": {
-        "counter": [{
+        "counter": [
+            {
                 "name": "sum",
                 "function": "if(a.{{field_name}} < b.{{field_name}}, a.{{field_name}}, a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_sum",
                 "comment": ""
@@ -50,39 +60,50 @@
                 "comment": ""
             }
         ],
-        "counter_delta": [{
-            "name": "delta",
-            "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
-            "comment": ""
-        }],
-        "gauge": [{
-            "name": "gauge",
-            "function": "a.{{field_name}} AS {{field_name}}"
-        }],
-        "gaugediv100": [{
-            "name": "gaugediv100",
-            "function": "ROUND(a.{{field_name}}/100),2) AS {{field_name}}",
-            "comment": ""
-        }],
-        "gaugediv1000": [{
-            "name": "gaugediv1000",
-            "function": "ROUND(a.{{field_name}}/1000),3) AS {{field_name}}",
-            "comment": ""
-        }],
-        "indicator": [{
-            "name": "indicator",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
+        "counter_delta": [
+            {
+                "name": "delta",
+                "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
+                "comment": ""
+            }
+        ],
+        "gauge": [
+            {
+                "name": "gauge",
+                "function": "a.{{field_name}} AS {{field_name}}"
+            }
+        ],
+        "gaugediv100": [
+            {
+                "name": "gaugediv100",
+                "function": "ROUND(a.{{field_name}}/100),2) AS {{field_name}}",
+                "comment": ""
+            }
+        ],
+        "gaugediv1000": [
+            {
+                "name": "gaugediv1000",
+                "function": "ROUND(a.{{field_name}}/1000),3) AS {{field_name}}",
+                "comment": ""
+            }
+        ],
+        "indicator": [
+            {
+                "name": "indicator",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
         "dates": {
             "nowrdate": "new.rdate",
             "prevdate": "new.rdate - INTERVAL 5 MINUTE",
-            "nowidate": "(UNIX_TIMESTAMP(new.rdate) + 7200) * 1000"
+            "nowidate": "UNIX_TIMESTAMP(new.rdate) * 1000"
         },
         "partition": "pCurrentDay"
     },
     "60": {
-        "counter": [{
+        "counter": [
+            {
                 "name": "sum",
                 "function": "sum(a.{{field_name}}_sum) AS {{field_name}}_sum",
                 "comment": ""
@@ -93,12 +114,15 @@
                 "comment": ""
             }
         ],
-        "counter_delta": [{
-            "name": "delta",
-            "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
-            "comment": ""
-        }],
-        "gauge": [{
+        "counter_delta": [
+            {
+                "name": "delta",
+                "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
+                "comment": ""
+            }
+        ],
+        "gauge": [
+            {
                 "name": "gauge",
                 "function": "avg(a.{{field_name}}) AS {{field_name}}",
                 "comment": ""
@@ -114,7 +138,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv100": [{
+        "gaugediv100": [
+            {
                 "name": "gaugediv100",
                 "function": "ROUND(avg(a.{{field_name}}/100),2) AS {{field_name}}",
                 "comment": ""
@@ -130,7 +155,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv1000": [{
+        "gaugediv1000": [
+            {
                 "name": "gaugediv1000",
                 "function": "ROUND(avg(a.{{field_name}}/1000),3) AS {{field_name}}",
                 "comment": ""
@@ -146,21 +172,23 @@
                 "comment": ""
             }
         ],
-        "indicator": [{
-            "name": "indicator",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
+        "indicator": [
+            {
+                "name": "indicator",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
         "dates": {
             "nowrdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')",
             "nextdate": "DATE_FORMAT(new.rdate + INTERVAL 1 HOUR, '%Y-%m-%d %H:00:00')",
-            "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')) + 7200) * 1000"
+            "nowidate": "UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d %H:00:00')) * 1000"
         },
-        "where": "a.rdate >= @nowrdate AND a.rdate < @prevdate",
         "partition": "pCurrentWeek"
     },
     "dd": {
-        "counter": [{
+        "counter": [
+            {
                 "name": "sum",
                 "function": "sum(a.{{field_name}}_sum) AS {{field_name}}_sum",
                 "comment": ""
@@ -171,12 +199,15 @@
                 "comment": ""
             }
         ],
-        "counter_delta": [{
-            "name": "delta",
-            "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
-            "comment": ""
-        }],
-        "gauge": [{
+        "counter_delta": [
+            {
+                "name": "delta",
+                "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
+                "comment": ""
+            }
+        ],
+        "gauge": [
+            {
                 "name": "gauge",
                 "function": "avg(a.{{field_name}}) AS {{field_name}}",
                 "comment": ""
@@ -192,7 +223,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv100": [{
+        "gaugediv100": [
+            {
                 "name": "gaugediv100",
                 "function": "ROUND(avg(a.{{field_name}}/100),2) AS {{field_name}}",
                 "comment": ""
@@ -208,7 +240,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv1000": [{
+        "gaugediv1000": [
+            {
                 "name": "gaugediv1000",
                 "function": "ROUND(avg(a.{{field_name}}/1000),3) AS {{field_name}}",
                 "comment": ""
@@ -224,21 +257,23 @@
                 "comment": ""
             }
         ],
-        "indicator": [{
-            "name": "indicator",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
+        "indicator": [
+            {
+                "name": "indicator",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
         "dates": {
             "nowrdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')",
-            "prevdate": "DATE_FORMAT(new.rdate - INTERVAL 1 DAY, '%Y-%m-%d 00:00:00')",
-            "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) + 7200) * 1000"
+            "nextdate": "DATE_FORMAT(new.rdate + INTERVAL 1 DAY, '%Y-%m-%d 00:00:00')",
+            "nowidate": "UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) * 1000"
         },
-        "where": "a.rdate >= @nowrdate AND a.rdate < @prevdate",
         "partition": "pCurrentWeek"
     },
     "wk": {
-        "counter": [{
+        "counter": [
+            {
                 "name": "sum",
                 "function": "sum(a.{{field_name}}_sum) AS {{field_name}}_sum",
                 "comment": ""
@@ -249,12 +284,15 @@
                 "comment": ""
             }
         ],
-        "counter_delta": [{
-            "name": "delta",
-            "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
-            "comment": ""
-        }],
-        "gauge": [{
+        "counter_delta": [
+            {
+                "name": "delta",
+                "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
+                "comment": ""
+            }
+        ],
+        "gauge": [
+            {
                 "name": "gauge",
                 "function": "avg(a.{{field_name}}) AS {{field_name}}",
                 "comment": ""
@@ -270,7 +308,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv100": [{
+        "gaugediv100": [
+            {
                 "name": "gaugediv100",
                 "function": "ROUND(avg(a.{{field_name}}/100),2) AS {{field_name}}",
                 "comment": ""
@@ -286,7 +325,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv1000": [{
+        "gaugediv1000": [
+            {
                 "name": "gaugediv1000",
                 "function": "ROUND(avg(a.{{field_name}}/1000),3) AS {{field_name}}",
                 "comment": ""
@@ -302,37 +342,42 @@
                 "comment": ""
             }
         ],
-        "indicator": [{
-            "name": "indicator",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
+        "indicator": [
+            {
+                "name": "indicator",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
         "dates": {
-            "nowrdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')",
-            "prevdate": "DATE_FORMAT(new.rdate - INTERVAL 1 WEEK, '%Y-%m-%d 00:00:00')",
-            "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) + 7200) * 1000"
+            "nowrdate": "DATE_FORMAT(new.rdate - INTERVAL WEEKDAY(new.rdate) DAY, '%Y-%m-%d 00:00:00')",
+            "nextdate": "DATE_FORMAT(new.rdate - INTERVAL WEEKDAY(new.rdate) DAY + INTERVAL 1 WEEK, '%Y-%m-%d 00:00:00')",
+            "nowidate": "UNIX_TIMESTAMP(DATE_FORMAT(new.rdate - INTERVAL WEEKDAY(new.rdate) DAY, '%Y-%m-%d 00:00:00')) * 1000"
         },
-        "where": "a.rdate >= @nowrdate AND a.rdate < @prevdate",
         "partition": "pCurrentMonth"
     },
     "mo": {
-        "counter": [{
+        "counter": [
+            {
                 "name": "sum",
                 "function": "sum(a.{{field_name}}_sum) AS {{field_name}}_sum",
                 "comment": ""
             },
             {
                 "name": "rate",
-                "function": "Round((sum(a.{{field_name}}_sum)) / 7200, 0) AS {{field_name}}_rate",
+                "function": "Round((sum(a.{{field_name}}_sum)) / TIMESTAMPDIFF(SECOND, @nowrdate, @nextdate), 0) AS {{field_name}}_rate",
                 "comment": ""
             }
         ],
-        "counter_delta": [{
-            "name": "delta",
-            "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
-            "comment": ""
-        }],
-        "gauge": [{
+        "counter_delta": [
+            {
+                "name": "delta",
+                "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
+                "comment": ""
+            }
+        ],
+        "gauge": [
+            {
                 "name": "gauge",
                 "function": "avg(a.{{field_name}}) AS {{field_name}}",
                 "comment": ""
@@ -348,7 +393,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv100": [{
+        "gaugediv100": [
+            {
                 "name": "gaugediv100",
                 "function": "ROUND(avg(a.{{field_name}}/100),2) AS {{field_name}}",
                 "comment": ""
@@ -364,7 +410,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv1000": [{
+        "gaugediv1000": [
+            {
                 "name": "gaugediv1000",
                 "function": "ROUND(avg(a.{{field_name}}/1000),3) AS {{field_name}}",
                 "comment": ""
@@ -380,37 +427,42 @@
                 "comment": ""
             }
         ],
-        "indicator": [{
-            "name": "indicator",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
+        "indicator": [
+            {
+                "name": "indicator",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
         "dates": {
-            "nowrdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')",
-            "prevdate": "DATE_FORMAT(new.rdate - INTERVAL 1 MONTH, '%Y-%m-%d 00:00:00')",
-            "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) + 7200) * 1000"
+            "nowrdate": "DATE_FORMAT(new.rdate, '%Y-%m-01 00:00:00')",
+            "nextdate": "DATE_FORMAT(new.rdate + INTERVAL 1 MONTH, '%Y-%m-01 00:00:00')",
+            "nowidate": "UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-01 00:00:00')) * 1000"
         },
-        "where": "a.rdate >= @nowrdate AND a.rdate < @prevdate",
         "partition": "pCurrentMonth"
     },
     "yr": {
-        "counter": [{
+        "counter": [
+            {
                 "name": "sum",
                 "function": "sum(a.{{field_name}}_sum) AS {{field_name}}_sum",
                 "comment": ""
             },
             {
                 "name": "rate",
-                "function": "Round((sum(a.{{field_name}}_sum)) / 7200, 0) AS {{field_name}}_rate",
+                "function": "Round((sum(a.{{field_name}}_sum)) / TIMESTAMPDIFF(SECOND, @nowrdate, @nextdate), 0) AS {{field_name}}_rate",
                 "comment": ""
             }
         ],
-        "counter_delta": [{
-            "name": "delta",
-            "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
-            "comment": ""
-        }],
-        "gauge": [{
+        "counter_delta": [
+            {
+                "name": "delta",
+                "function": "(a.{{field_name}} - b.{{field_name}}) AS {{field_name}}_delta",
+                "comment": ""
+            }
+        ],
+        "gauge": [
+            {
                 "name": "gauge",
                 "function": "avg(a.{{field_name}}) AS {{field_name}}",
                 "comment": ""
@@ -426,7 +478,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv100": [{
+        "gaugediv100": [
+            {
                 "name": "gaugediv100",
                 "function": "ROUND(avg(a.{{field_name}}/100),2) AS {{field_name}}",
                 "comment": ""
@@ -442,7 +495,8 @@
                 "comment": ""
             }
         ],
-        "gaugediv1000": [{
+        "gaugediv1000": [
+            {
                 "name": "gaugediv1000",
                 "function": "ROUND(avg(a.{{field_name}}/1000),3) AS {{field_name}}",
                 "comment": ""
@@ -458,17 +512,18 @@
                 "comment": ""
             }
         ],
-        "indicator": [{
-            "name": "indicator",
-            "function": "a.{{field_name}} AS {{field_name}}",
-            "comment": ""
-        }],
+        "indicator": [
+            {
+                "name": "indicator",
+                "function": "a.{{field_name}} AS {{field_name}}",
+                "comment": ""
+            }
+        ],
         "dates": {
-            "nowrdate": "DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')",
-            "prevdate": "DATE_FORMAT(new.rdate - INTERVAL 1 DAY, '%Y-%m-%d 00:00:00')",
-            "nowidate": "(UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-%m-%d 00:00:00')) + 7200) * 1000"
+            "nowrdate": "DATE_FORMAT(new.rdate, '%Y-01-01 00:00:00')",
+            "nextdate": "DATE_FORMAT(new.rdate + INTERVAL 1 YEAR, '%Y-01-01 00:00:00')",
+            "nowidate": "UNIX_TIMESTAMP(DATE_FORMAT(new.rdate, '%Y-01-01 00:00:00')) * 1000"
         },
-        "where": "a.rdate >= @nowrdate AND a.rdate < @prevdate",
         "partition": "pCurrentYear"
     },
     "lastseen": {
