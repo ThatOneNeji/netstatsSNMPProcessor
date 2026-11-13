@@ -51,7 +51,6 @@ let appConfig;
  * @property {string} cfgPath
  * @description This is the path to the configuration files
  */
-
 const cfgPath = './configuration';
 
 /**
@@ -124,9 +123,9 @@ function loadConfigurationFiles() {
             try {
                 const cfgData = JSON.parse(fs.readFileSync(cfgFile, 'utf8'));
                 if (cfgFile.includes('logging.json')) {
-                    appConfig = Object.assign({}, appConfig, {logging: cfgData});
+                    appConfig = Object.assign({}, appConfig, {logging: cfgData.logging, logger: cfgData.logger});
                 } else if (cfgFile.includes('messagebrokers.json')) {
-                    appConfig = Object.assign({}, appConfig, {messagebrokers: cfgData, queues: cfgData.queues});
+                    appConfig = Object.assign({}, appConfig, {messagebrokers: cfgData.messagebrokers, queues: cfgData.queues, credentials: cfgData.credentials});
                 }
             } catch (err) {
                 bail(err);
@@ -135,7 +134,6 @@ function loadConfigurationFiles() {
     } else {
         bail('The configuration directory does not exist(' + cfgPath + '), please create it and add the required configuration files');
     }
-    process.exit(1);
 }
 
 /**
@@ -306,6 +304,7 @@ initialiseApplication();
 const messageBrokerOptions = {
     logger: Logging.messagebroker,
     config: appConfig.messagebrokers,
+    credentials: appConfig.credentials,
     receiveQueue: hostname[0] + '/' + appConfig.queues.consumeBaseName,
     publishQueueName: appConfig.queues.publishBaseName,
     externalHandover: receiveHandler

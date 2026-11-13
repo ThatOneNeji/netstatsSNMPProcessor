@@ -259,28 +259,31 @@ function ParseCommon() {
      */
     this.snmpFormatValue = function (datatype, value) {
         const fixvalue = value.trim();
-        switch (datatype) {
+        if (datatype == null || datatype == undefined) {
+            return fixvalue;
+        }
+        switch (datatype.toUpperCase()) {
             case 'STRING':
                 return fixvalue.replace(/\\"$/, '').replace(/"$/, '').replace(/^"/, '');
             case 'INTEGER':
                 return fixvalue;
-            case 'Hex-STRING':
+            case 'HEX-STRING':
                 return this.convertHexString(fixvalue, 'qwerty');
-            case 'Hex-MAC':
+            case 'HEX-MAC':
                 return this.convertHexString(fixvalue);
-            case 'Hex-DATE':
+            case 'HEX-DATE':
                 return this.convertHexDate(fixvalue);
-            case 'IpAddress':
+            case 'IPADDRESS':
                 return fixvalue;
-            case 'Counter32':
+            case 'COUNTER32':
                 return fixvalue;
-            case 'Counter64':
+            case 'COUNTER64':
                 return fixvalue;
-            case 'Gauge32':
+            case 'GAUGE32':
                 return fixvalue;
-            case 'Gauge64':
+            case 'GAUGE64':
                 return fixvalue;
-            case 'Timeticks':
+            case 'TIMETICKS':
                 return fixvalue;
             case 'OBJECTID1':
                 return fixvalue;
@@ -288,9 +291,9 @@ function ParseCommon() {
                 return fixvalue;
             case 'OID':
                 return this.lookupOID(fixvalue);
-            case 'GDiv1000':
+            case 'GDIV1000':
                 return this.divNumber(fixvalue);
-            case 'GDiv100':
+            case 'GDIV100':
                 return this.divNumber(fixvalue, 100);
             default:
                 console.log('unknown::' + datatype + ' value::' + fixvalue);
